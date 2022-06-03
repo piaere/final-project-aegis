@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import ConnectButton from "./ConnectButton";
+
 
 const Header = () => {
   const [showText, setShowText] = useState(false);
@@ -17,8 +19,10 @@ const Header = () => {
         <Aegis>aegis</Aegis>
         {showText ? <Logo></Logo> : <span></span>}
       </Left>
-      <Center>search</Center>
-      <Right>login</Right>
+      {/* <Center>search</Center> */}
+      <Right>
+        <ConnectButton string={"Connect wallet"}/>
+      </Right>
     </Wrapper>
   );
 };
@@ -26,7 +30,7 @@ const Header = () => {
 const Wrapper = styled.div`
   /* background-color: seashell; */
   margin-left: 2vw;
-  width: 96vw;
+  width: 91vw;
   height: 8vh;
   display: flex;
   flex-direction: row;
@@ -46,14 +50,14 @@ const Center = styled.span``;
 
 const Aegis = styled.span`
   font-family: "Amiri", serif;
-  font-size: 3em;
+  font-size: 3vw;
   font-weight: 300;
   color: #0000ff;
 `;
 const Logo = styled.span`
-  margin-top: 5px;
-  max-width: 20px;
-  max-height: 35px;
+  margin-top: 1vh;
+  max-width: 1.1vw;
+  max-height: 3.5vh;
   background-color: #0000ff;
 `;
 
