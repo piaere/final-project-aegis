@@ -1,4 +1,4 @@
-# final-project-aegis
+#aegis
 Concordia U full-stack web dev bootcamp - final project : aegis
 
 aegis is a non-custodial open plateforme for independent journalists, writers and readers to interact directly. Users can support their favourite creators with a p2p tipping function. Log in and paiements are done using MetaMask. 
