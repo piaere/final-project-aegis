@@ -1,36 +1,23 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
-import ConnectButton from "./ConnectButton";
-
+import ConnectButton from "./buttons/ConnectButton";
 
 const Header = () => {
-  const [showText, setShowText] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowText((showText) => !showText);
-    }, 600);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <Wrapper>
       <Left>
         <Aegis>aegis</Aegis>
-        {showText ? <Logo></Logo> : <span></span>}
+        <Logo></Logo>
       </Left>
-      {/* <Center>search</Center> */}
       <Right>
-        <ConnectButton string={"Connect wallet"}/>
+        <ConnectButton string={"Connect wallet"} />
       </Right>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  /* background-color: seashell; */
   margin-left: 2vw;
-  width: 91vw;
+  width: 96vw;
   height: 8vh;
   display: flex;
   flex-direction: row;
@@ -46,7 +33,7 @@ const Left = styled.span`
 `;
 
 const Right = styled.span``;
-const Center = styled.span``;
+// const Center = styled.span``;
 
 const Aegis = styled.span`
   font-family: "Amiri", serif;
@@ -54,10 +41,11 @@ const Aegis = styled.span`
   font-weight: 300;
   color: #0000ff;
 `;
+
 const Logo = styled.span`
-  margin-top: 1vh;
+  margin-top: 0.7vh;
   max-width: 1.1vw;
-  max-height: 3.5vh;
+  max-height: 3.6vh;
   background-color: #0000ff;
 `;
 

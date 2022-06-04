@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import Button from "./Button";
+import Button from "./buttons/Button";
+
 
 const Home = () => {
   const [lastWord, setLastWord] = useState("");
@@ -20,6 +21,9 @@ const Home = () => {
       "Give",
       "Receive",
       "Earn",
+      "Participate",
+      "Voice",
+      "Build"
     ];
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * wordList.length);
@@ -35,7 +39,7 @@ const Home = () => {
         <LastWord> {lastWord}</LastWord>
       </Slogan>
       <Pitch>
-        Join <span>aegis</span>, the web3 plateform where writers and readers
+        Welcome to <span>aegis</span>, the web3 plateform where writers and readers
         connect.
       </Pitch>
       <Button string={"Try it now"} />
