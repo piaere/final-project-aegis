@@ -23,7 +23,9 @@ const Home = () => {
       "Earn",
       "Participate",
       "Voice",
-      "Build"
+      "Build",
+      "Research",
+      "Publish"
     ];
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * wordList.length);

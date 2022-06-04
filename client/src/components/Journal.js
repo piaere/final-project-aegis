@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 
 
-const Feed = () => {
+const Journal = () => {
   return (
     <Wrapper>Feed</Wrapper>
   )
@@ -15,4 +15,4 @@ background-color: aliceblue;
 `
 
 
-export default Feed
+export default Journal

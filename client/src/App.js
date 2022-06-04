@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Article from "./components/Article";
 import Aegis from "./components/Aegis";
 import Error from "./components/Error";
-import Feed from "./components/Feed";
+import Journal from "./components/Journal";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
@@ -18,7 +18,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="aegis" element={<Aegis />}>
             <Route path="article" element={<Article />} />
-            <Route path="feed" element={<Feed />} />
+            <Route path="journal" element={<Journal />} />
             <Route path="profile" element={<Profile />} />
             <Route path="publish" element={<Publish />} />
             <Route path="error" element={<Error />} />
