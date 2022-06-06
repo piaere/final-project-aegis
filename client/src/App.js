@@ -1,7 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import styled from "styled-components";
 import Article from "./components/Article";
-import Aegis from "./components/Aegis";
+// import Aegis from "./components/Aegis";
 import Error from "./components/Error";
 import Journal from "./components/Journal";
 import Header from "./components/Header";
@@ -13,18 +14,28 @@ function App() {
   return (
     <Main>
       <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="aegis" element={<Aegis />}>
-            <Route path="article" element={<Article />} />
-            <Route path="journal" element={<Journal />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="publish" element={<Publish />} />
-            <Route path="error" element={<Error />} />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
           </Route>
-        </Routes>
-      </BrowserRouter>
+          <Route path="/article/:articleId">
+            <Article />
+          </Route>
+          <Route path="/journal">
+            <Journal />
+          </Route>
+          <Route path="/profile/:profileId">
+            <Profile />
+          </Route>
+          <Route path="/publish">
+            <Publish />
+          </Route>
+          <Route path="/error">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
     </Main>
   );
 }
