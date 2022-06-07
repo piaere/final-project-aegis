@@ -1,64 +1,67 @@
+import styled from "styled-components";
 import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
 import { useState, useEffect } from "react";
+import HollowButton from "./buttons/SmallButtonHollow";
+
 import ImageTool from "@editorjs/image";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
 
 const Publish = () => {
-  // const [currentArticle, setCurrentArticle] = useState(null);
-  let currentArticle;
   const [savedArticle, setSavedArticle] = useState(null);
+  const [currentArticle, setCurrentArticle] = useState(null);
 
-  const editor = new EditorJS({
-    holder: "editor",
-    tools: {
-      header: {
-        class: Header,
-        config: {
-          placeholder: "Enter a header",
-          levels: [1, 2, 3, 4],
-          defaultLevel: 1,
+  useEffect(() => {
+    const editor = new EditorJS({
+      holder: "editor",
+      tools: {
+        header: {
+          class: Header,
+          config: {
+            placeholder: "Enter a header",
+            levels: [1, 2, 3, 4],
+            defaultLevel: 1,
+          },
+          inlineToolbar: ["link"],
         },
-        inlineToolbar: ["link"],
-      },
-      list: {
-        class: List,
-        inlineToolbar: true,
-      },
-      image: SimpleImage,
-      embed: Embed,
-      linkTool: {
-        class: LinkTool,
-        config: {
-          endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
+        list: {
+          class: List,
+          inlineToolbar: true,
+        },
+        image: SimpleImage,
+        embed: Embed,
+        linkTool: {
+          class: LinkTool,
+          config: {
+            endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
+          },
         },
       },
-    },
-    data: { savedArticle },
-    onReady: () => {
-      console.log("Editor.js is ready to work!");
-    },
-    onChange: (api, event) => {
-      console.log("Now I know that Editor's content changed!", event);
-      editor
-        .save()
-        .then((outputData) => {
-          console.log("Article data: ", outputData);
-          // setCurrentArticle(outputData);
-          currentArticle = outputData;
-          // console.log(currentArticle);
-        })
-        .catch((error) => {
-          console.log("Saving failed: ", error);
-        });
-    },
-    placeholder: "What is going on?",
-  });
+      data: { savedArticle },
+      // onReady: () => {
+      //   console.log("Editor.js is ready to work!");
+      // },
+      onChange: (api, event) => {
+        // console.log("Now I know that Editor's content changed!", event);
+        editor
+          .save()
+          .then((outputData) => {
+            // console.log("Article data: ", outputData);
 
-  console.log(currentArticle);
+            setCurrentArticle(outputData);
+          })
+          .catch((error) => {
+            console.log("Saving failed: ", error);
+          });
+      },
+      placeholder: "What is going on?",
+    });
+  }, []);
+
+  savedArticle && console.log(savedArticle);
 
   const SaveDraft = () => {
     fetch("/save-draft", {
@@ -83,10 +86,21 @@ const Publish = () => {
 
   return (
     <div>
-      <div id="editor"></div>
-      <button onClick={() => SaveDraft()}>save draft</button>
+      <Right>
+        <HollowButton onClick={() => SaveDraft()} string={"Save draft"} />
+      </Right>
+      <EditorSection id="editor"></EditorSection>
     </div>
   );
 };
+
+const EditorSection = styled.div``;
+
+const Right = styled.div`
+  width: 100%;
+
+  margin: 3em 60%;
+  position: fixed;
+`;
 
 export default Publish;

@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 const Journal = () => {
   return (
-    <Wrapper>Feed</Wrapper>
+    <Wrapper>Journal</Wrapper>
   )
 }
 

@@ -1,15 +1,38 @@
-import { Outlet } from "react-router-dom";
+import { Route } from "react-router-dom";
 import styled from "styled-components";
+import Article from "./Article";
+import Error from "./Error";
+import Journal from "./Journal";
 import Navbar from "./Navbar";
+import Profile from "./Profile";
+import Publish from "./Publish";
+import HollowButton from "./buttons/SmallButtonHollow";
 
 const Aegis = () => {
   return (
     <>
       <Wrapper>
-        <Navbar />
-        <Outlet />
-        <Right>
-        </Right>
+        <LeftMargin>
+          <Navbar />
+        </LeftMargin>{" "}
+        <Center>
+          <Route path="/aegis/article/:articleId">
+            <Article />
+          </Route>
+          <Route path="/aegis/journal">
+            <Journal />
+          </Route>
+          <Route path="/aegis/profile/:profileId">
+            <Profile />
+          </Route>
+          <Route path="/aegis/publish">
+            <Publish />
+          </Route>
+          <Route path="/aegis/error">
+            <Error />
+          </Route>
+        </Center>
+        <Right>{/* <HollowButton string={"Save draft"}/> */}</Right>
       </Wrapper>
     </>
   );
@@ -19,19 +42,23 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
   grid-template-columns: 25vw 55vw 20vw;
-
   grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
 `;
-const Right = styled.div`
-
+const LeftMargin = styled.div`
   width: 100%;
   height: 100%;
-
-  background-color: red;
+`;
+const Center = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+const Right = styled.div`
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 5em 42em;
+  position: fixed;
 `;
 
 export default Aegis;

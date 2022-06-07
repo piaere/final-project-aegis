@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ConnectButton from "./buttons/ConnectButton";
+import ConnectButton from "./buttons/SmallButtonColor";
 
 const Header = () => {
   return (
@@ -24,6 +24,8 @@ const Wrapper = styled.div`
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+
 `;
 const Left = styled.span`
   display: grid;
