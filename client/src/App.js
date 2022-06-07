@@ -1,5 +1,10 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "./Context";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -10,12 +15,18 @@ function App() {
   const { accounts, setAccounts, isLoggedIn, setIsLoggedIn } =
     useContext(Context);
 
+  // Set account on load if connected & listen to accounts changes
   useEffect(() => {
+
+    // Check if account is connected
     const checkAccount = async () => {
       let res = await window.ethereum.request({ method: "eth_accounts" });
-      // console.log(res);
       setAccounts(res);
-      // console.log(accounts);
+      
+      // Check if user disconnect or change account
+      window.ethereum.on("accountsChanged", function (res) {
+        setAccounts(res);
+      });
     };
     checkAccount();
   }, [setAccounts]);
@@ -23,6 +34,7 @@ function App() {
   console.log("accounts", accounts);
   console.log("isLoggedIn", isLoggedIn);
 
+  // Connect function (on buttons click)
   const connect = async () => {
     if (accounts.length === 0) {
       try {
@@ -30,8 +42,6 @@ function App() {
           method: "eth_requestAccounts",
         });
         setAccounts(res);
-        setIsLoggedIn(true);
-        isLoggedIn && console.log("Logged in with : ", accounts[0]);
       } catch (error) {}
     } else {
       // setAccounts([]);
@@ -39,9 +49,10 @@ function App() {
     }
   };
 
+  // Set isLoggedIn state
   useEffect(() => {
     accounts.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
-  }, [accounts, setIsLoggedIn]);// eslint-disable-line react-hooks/exhaustive-deps
+  }, [accounts, setIsLoggedIn]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Main>
@@ -50,10 +61,14 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <Home connect={connect} />
+              {isLoggedIn ? (
+                <Redirect to="/aegis/publish" />
+              ) : (
+                <Home connect={connect} />
+              )}
             </Route>
             <Route path="/aegis">
-              <Aegis />
+              {!isLoggedIn ? <Redirect to="/" /> : <Aegis />}
             </Route>
           </Switch>
         </Router>

@@ -42,7 +42,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 25vw 55vw 20vw;
+  grid-template-columns: 20vw 60vw 20vw;
   grid-template-rows: 1fr;
 `;
 const LeftMargin = styled.div`
