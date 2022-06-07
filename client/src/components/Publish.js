@@ -12,7 +12,6 @@ const Publish = () => {
   let currentArticle;
   const [savedArticle, setSavedArticle] = useState(null);
 
-
   const editor = new EditorJS({
     holder: "editor",
     tools: {
@@ -38,7 +37,7 @@ const Publish = () => {
         },
       },
     },
-    data: {savedArticle},
+    data: { savedArticle },
     onReady: () => {
       console.log("Editor.js is ready to work!");
     },
@@ -61,10 +60,8 @@ const Publish = () => {
 
   console.log(currentArticle);
 
-
-  const SaveDraft = (e) => {
-    e.preventDefault();
-    fetch("/api/add-reservation", {
+  const SaveDraft = () => {
+    fetch("/save-draft", {
       method: "POST",
       body: JSON.stringify(currentArticle),
       headers: {
@@ -75,9 +72,9 @@ const Publish = () => {
       .then((res) => res.json())
       .then((json) => {
         const { status, message, data } = json;
-
+        console.log(json);
         if (status === 200) {
-          setSavedArticle(json.data);
+          setSavedArticle(data);
         } else {
           alert(message);
         }

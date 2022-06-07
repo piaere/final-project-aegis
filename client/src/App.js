@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import styled from "styled-components";
 import Article from "./components/Article";
 // import Aegis from "./components/Aegis";
@@ -19,21 +18,26 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/article/:articleId">
-            <Article />
-          </Route>
-          <Route path="/journal">
-            <Journal />
-          </Route>
-          <Route path="/profile/:profileId">
-            <Profile />
-          </Route>
-          <Route path="/publish">
-            <Publish />
-          </Route>
-          <Route path="/error">
-            <Error />
-          </Route>
+          <div>
+            <aside>
+              hello
+            </aside>
+            <Route path="/article/:articleId">
+              <Article />
+            </Route>
+            <Route path="/journal">
+              <Journal />
+            </Route>
+            <Route path="/profile/:profileId">
+              <Profile />
+            </Route>
+            <Route path="/publish">
+              <Publish />
+            </Route>
+            <Route path="/error">
+              <Error />
+            </Route>
+          </div>
         </Switch>
       </Router>
     </Main>
