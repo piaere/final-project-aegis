@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const ConnectButton = ({ string }) => {
-  return <StyledButton>{string}</StyledButton>;
+const ConnectButton = ({ string, connect }) => {
+  return <StyledButton onClick={() => connect()}>{string}</StyledButton>;
 };
 
 const StyledButton = styled.button`

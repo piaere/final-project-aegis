@@ -1,51 +1,68 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { Context } from "./Context";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import styled from "styled-components";
 import Aegis from "./components/Aegis";
-// import Article from "./components/Article";
-// import Error from "./components/Error";
-// import Journal from "./components/Journal";
-// import Profile from "./components/Profile";
-// import Publish from "./components/Publish";
 
 function App() {
+  const { accounts, setAccounts, isLoggedIn, setIsLoggedIn } =
+    useContext(Context);
+
+  useEffect(() => {
+    const checkAccount = async () => {
+      let res = await window.ethereum.request({ method: "eth_accounts" });
+      // console.log(res);
+      setAccounts(res);
+      // console.log(accounts);
+    };
+    checkAccount();
+  }, [setAccounts]);
+
+  console.log("accounts", accounts);
+  console.log("isLoggedIn", isLoggedIn);
+
+  const connect = async () => {
+    if (accounts.length === 0) {
+      try {
+        const res = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        setAccounts(res);
+        setIsLoggedIn(true);
+        isLoggedIn && console.log("Logged in with : ", accounts[0]);
+      } catch (error) {}
+    } else {
+      // setAccounts([]);
+      alert("already connected!");
+    }
+  };
+
+  useEffect(() => {
+    accounts.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
+  }, [accounts, setIsLoggedIn]);// eslint-disable-line react-hooks/exhaustive-deps
+
   return (
     <Main>
-      <Header />
+      <Header connect={connect} />
       <Body>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/aegis">
-            <Aegis />
-          </Route>
-          {/* <Route path="/article/:articleId">
-            <Article />
-          </Route>
-          <Route path="/journal">
-            <Journal />
-          </Route>
-          <Route path="/profile/:profileId">
-            <Profile />
-          </Route>
-          <Route path="/publish">
-            <Publish />
-          </Route>
-          <Route path="/error">
-            <Error />
-          </Route> */}
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home connect={connect} />
+            </Route>
+            <Route path="/aegis">
+              <Aegis />
+            </Route>
+          </Switch>
+        </Router>
       </Body>
     </Main>
   );
 }
 
 const Main = styled.main`
-
   width: 100vw;
   height: 100vh;
 
@@ -59,7 +76,7 @@ const Main = styled.main`
 `;
 
 const Body = styled.div`
-margin-top: 8vh;
-`
+  margin-top: 8vh;
+`;
 
 export default App;

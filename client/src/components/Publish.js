@@ -1,11 +1,10 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import HollowButton from "./buttons/SmallButtonHollow";
 import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
-import { useState, useEffect } from "react";
-import HollowButton from "./buttons/SmallButtonHollow";
-
 import ImageTool from "@editorjs/image";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");

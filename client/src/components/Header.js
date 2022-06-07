@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import ConnectButton from "./buttons/SmallButtonColor";
+import { useContext } from "react";
+import { Context } from "../Context";
 
-const Header = () => {
+const Header = ({ connect }) => {
+  const { accounts, isLoggedIn } = useContext(Context);
+
   return (
     <Wrapper>
       <Left>
@@ -9,7 +13,10 @@ const Header = () => {
         <Logo></Logo>
       </Left>
       <Right>
-        <ConnectButton string={"Connect wallet"} />
+        <ConnectButton
+          string={isLoggedIn ? accounts[0] : "Connect wallet"}
+          connect={connect}
+        />
       </Right>
     </Wrapper>
   );
@@ -25,7 +32,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-
 `;
 const Left = styled.span`
   display: grid;

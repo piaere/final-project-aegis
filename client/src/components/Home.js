@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import Button from "./buttons/Button";
+import Button from "./buttons/ConnectButton";
 
 
-const Home = () => {
+const Home = ({connect}) => {
   const [lastWord, setLastWord] = useState("");
 
   useEffect(() => {
@@ -14,7 +14,6 @@ const Home = () => {
       "Echo",
       "Amplify",
       "Inspire",
-      "Free",
       "Learn",
       "Connect",
       "Share",
@@ -30,9 +29,11 @@ const Home = () => {
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * wordList.length);
       setLastWord(wordList[randomIndex]);
-    }, 250);
+    }, 500);
     return () => clearInterval(interval);
   }, []);
+
+
 
   return (
     <Section>
@@ -44,7 +45,7 @@ const Home = () => {
         Welcome to <span>aegis</span>, the web3 plateform where writers and readers
         connect.
       </Pitch>
-      <Button string={"Try it now"} />
+      <Button string={"Try it now"} connect={connect} />
     </Section>
   );
 };
@@ -52,18 +53,13 @@ const Home = () => {
 const Section = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
   align-items: center;
-  height: 80%;
   width: 69%;
-  margin-left: 14%;
+  margin: 14%;
 `;
 const Slogan = styled.div`
   display: grid;
   grid-template-columns: 35vw 10vw;
-  grid-template-rows: 1fr;
-  grid-row-gap: 0px;
   padding-right: 7%;
 `;
 const FirstWords = styled.span`
