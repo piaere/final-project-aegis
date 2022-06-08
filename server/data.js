@@ -71,6 +71,7 @@ const users = [
 const articles = [
   //Bitalik
   {
+    id: "b7594732-ce9e-4e2f-91ee-4d740fda7219",
     author: "0x20ce772c4ef862fF022E9dd0931b0c331e29715e",
     data: {
       time: 1654656858816,
@@ -515,6 +516,7 @@ const articles = [
   },
 
   {
+    id: "9fb54e39-ab2e-48f2-b546-b780fdd21b94",
     author: "0x20ce772c4ef862fF022E9dd0931b0c331e29715e",
     data: {
       time: 1654657175441,
@@ -779,6 +781,7 @@ const articles = [
   },
   //Chris Edgy
   {
+    id: "92be9c32-e44a-45e0-907f-9178dd2a4333",
     author: "0xF9614b726727087C56c9045Fc0613c498e5B7f64",
     data: {
       time: 1654657469367,
@@ -985,6 +988,7 @@ const articles = [
     },
   },
   {
+    id: "b0d6ed82-038b-41f7-bc78-8f5dd01daf90",
     author: "0xF9614b726727087C56c9045Fc0613c498e5B7f64",
     data: {
       time: 1654657644864,
@@ -1206,6 +1210,7 @@ const articles = [
   },
   //Edward Snodamn
   {
+    id: "dc1af04f-e917-4b2d-89ed-4cb2cd511994",
     author: "0x5Ae488390a369ad446d4eff61103e0fbDbABdE01",
     data: {
       time: 1654657822174,
@@ -1426,6 +1431,7 @@ const articles = [
     },
   },
   {
+    id: "2c8b4646-cff5-4d99-9128-c8fe917cd412",
     author: "0x5Ae488390a369ad446d4eff61103e0fbDbABdE01",
     data: {
       time: 1654657967084,
@@ -1768,6 +1774,7 @@ const articles = [
   },
   //Astral Codex Eleven
   {
+    id: "b6d97632-79ad-4108-89bf-0339dc3b7bdd",
     author: "0x16496589b001541701B6806a8870C4d9d7F459EF",
     data: {
       time: 1654658144126,
@@ -2724,6 +2731,7 @@ const articles = [
     },
   },
   {
+    id: "842335f3-375a-4da6-bdb2-bdb1413292b3",
     author: "0x16496589b001541701B6806a8870C4d9d7F459EF",
     data: {
       time: 1654658348337,
@@ -2855,6 +2863,7 @@ const articles = [
   },
   //Shoshanna
   {
+    id: "00c786ba-4057-49ee-9b8e-5b4b7133a6d9",
     author: "0x56611e15b75aBE1818827747F933Bc132f3C54c3",
     data: {
       time: 1654658627467,
@@ -3042,6 +3051,7 @@ const articles = [
   },
 
   {
+    id: "b4770de6-2bfd-4830-bb86-0b327ca96273",
     author: "0x56611e15b75aBE1818827747F933Bc132f3C54c3",
     data: {
       time: 1654658841182,
@@ -3162,7 +3172,7 @@ const articles = [
   },
 ];
 
-const draft = [];
+let draft;
 
 module.exports = {
   users,

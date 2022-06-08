@@ -11,7 +11,7 @@ import HollowButton from "./buttons/SmallButtonHollow";
 import { Context } from "../Context";
 
 const Aegis = () => {
-  const { isLoggedIn } = useContext(Context);
+  // const { isLoggedIn } = useContext(Context);
   return (
     <>
       <Wrapper>
@@ -19,7 +19,7 @@ const Aegis = () => {
           <Navbar />
         </LeftMargin>{" "}
         <Center>
-          <Route path="/aegis/article/:articleId">
+          <Route path="/aegis/article">
             <Article />
           </Route>
           <Route path="/aegis/journal">

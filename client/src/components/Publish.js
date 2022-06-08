@@ -14,19 +14,25 @@ const SimpleImage = require("@editorjs/simple-image");
 const Publish = () => {
   const [savedArticle, setSavedArticle] = useState(null);
   const [currentArticle, setCurrentArticle] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const [currentEditor, setCurrentEditor] = useState(null);
 
   useEffect(() => {
-    fetch("/api/get-draft")
-  
-      .then((res) => res.json())
-      .then((data) => {
-        setSavedArticle(data.data);
-      })
-      .catch((error) => console.log("Error: ", error));
-  }, []);
+    currentArticle && setIsMounted(true);
+  }, [currentArticle]);
 
   // console.log(savedArticle)
 
+  useEffect(() => {
+    currentEditor && fetch("/api/get-article")
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log("got it!");
+        setSavedArticle(data.data);
+        currentEditor.render(data.data);
+      })
+      .catch((error) => console.log("Error: ", error));
+  }, [currentEditor]);
 
   useEffect(() => {
     const editor = new EditorJS({
@@ -54,11 +60,15 @@ const Publish = () => {
           },
         },
       },
-      data: { savedArticle },
-      // onReady: () => {
-      //   console.log("Editor.js is ready to work!");
-      // },
+      data: {},
+      onReady: () => {
+        console.log("Editor.js is ready to work!");
+        setCurrentEditor(editor);
+// savedArticle && editor.render(savedArticle);
+      },
       onChange: (api, event) => {
+
+        
         // console.log("Now I know that Editor's content changed!", event);
         editor
           .save()
@@ -80,7 +90,6 @@ const Publish = () => {
   savedArticle && console.log(savedArticle);
 
   const SaveDraft = () => {
-
     fetch("/api/save-draft", {
       method: "POST",
       body: JSON.stringify(currentArticle),

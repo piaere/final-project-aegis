@@ -14,13 +14,13 @@ express()
   .post("/api/save-draft", (req, res) => {
     const newDraft = req.body;
     console.log("draft", draft);
-    draft.push(newDraft);
+    draft = newDraft
     console.log("draft", draft[0]);
 
     res.status(200).json({
       status: 200,
-      message: "draft saved!",
-      data: draft[0],
+      message: "article saved!",
+      data: draft,
     });
   })
 
@@ -32,7 +32,26 @@ express()
 
     res.status(200).json({
       status: 200,
-      message: "draft sent!",
+      data: result,
+    });
+  })
+
+  .get("/api/get-article", (req, res) => {
+    let result;
+    result = articles[0].data;
+
+    res.status(200).json({
+      status: 200,
+      data: result,
+    });
+  })
+
+  .get("/api/get-articles", (req, res) => {
+    let result;
+    result = articles;
+
+    res.status(200).json({
+      status: 200,
       data: result,
     });
   })

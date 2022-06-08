@@ -60,8 +60,8 @@ function App() {
     accounts.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, [accounts, setIsLoggedIn]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  console.log("accounts", accounts);
-  console.log("isLoggedIn", isLoggedIn);
+  // console.log("accounts", accounts);
+  // console.log("isLoggedIn", isLoggedIn);
   return (
     <Main>
       <Header connect={connect} />
