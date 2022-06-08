@@ -4,7 +4,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
+
 import { Context } from "./Context";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -17,22 +18,24 @@ function App() {
 
   // Set account on load if connected & listen to accounts changes
   useEffect(() => {
-
     // Check if account is connected
     const checkAccount = async () => {
       let res = await window.ethereum.request({ method: "eth_accounts" });
-      setAccounts(res);
-      
+      if (accounts !== res) {
+        setAccounts(res);
+      }
+      // res.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
+
       // Check if user disconnect or change account
       window.ethereum.on("accountsChanged", function (res) {
-        setAccounts(res);
+        if (accounts !== res) {
+          setAccounts(res);
+        }
+        // res.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
       });
     };
     checkAccount();
   }, [setAccounts]);
-
-  console.log("accounts", accounts);
-  console.log("isLoggedIn", isLoggedIn);
 
   // Connect function (on buttons click)
   const connect = async () => {
@@ -42,7 +45,10 @@ function App() {
           method: "eth_requestAccounts",
         });
         setAccounts(res);
-      } catch (error) {}
+        setIsLoggedIn(true);
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       // setAccounts([]);
       alert("already connected!");
@@ -54,6 +60,8 @@ function App() {
     accounts.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, [accounts, setIsLoggedIn]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  console.log("accounts", accounts);
+  console.log("isLoggedIn", isLoggedIn);
   return (
     <Main>
       <Header connect={connect} />
@@ -61,15 +69,13 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              {isLoggedIn ? (
-                <Redirect to="/aegis/publish" />
-              ) : (
-                <Home connect={connect} />
-              )}
+              <Home connect={connect} />
             </Route>
-            <Route path="/aegis">
-              {!isLoggedIn ? <Redirect to="/" /> : <Aegis />}
-            </Route>
+            {isLoggedIn && (
+              <Route path="/aegis">
+                {!isLoggedIn ? <Redirect to="/" /> : <Aegis />}
+              </Route>
+            )}
           </Switch>
         </Router>
       </Body>

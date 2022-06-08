@@ -1,4 +1,5 @@
-import { Route } from "react-router-dom";
+import { Route, useHistory, Redirect } from "react-router-dom";
+import { useContext } from "react";
 import styled from "styled-components";
 import Article from "./Article";
 import Error from "./Error";
@@ -7,8 +8,10 @@ import Navbar from "./Navbar";
 import Profile from "./Profile";
 import Publish from "./Publish";
 import HollowButton from "./buttons/SmallButtonHollow";
+import { Context } from "../Context";
 
 const Aegis = () => {
+  const { isLoggedIn } = useContext(Context);
   return (
     <>
       <Wrapper>

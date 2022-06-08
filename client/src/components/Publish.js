@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+
 import HollowButton from "./buttons/SmallButtonHollow";
+
 import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
@@ -12,6 +14,19 @@ const SimpleImage = require("@editorjs/simple-image");
 const Publish = () => {
   const [savedArticle, setSavedArticle] = useState(null);
   const [currentArticle, setCurrentArticle] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/get-draft")
+  
+      .then((res) => res.json())
+      .then((data) => {
+        setSavedArticle(data.data);
+      })
+      .catch((error) => console.log("Error: ", error));
+  }, []);
+
+  // console.log(savedArticle)
+
 
   useEffect(() => {
     const editor = new EditorJS({
@@ -60,10 +75,13 @@ const Publish = () => {
     });
   }, []);
 
+  // console.log(currentArticle);
+
   savedArticle && console.log(savedArticle);
 
   const SaveDraft = () => {
-    fetch("/save-draft", {
+
+    fetch("/api/save-draft", {
       method: "POST",
       body: JSON.stringify(currentArticle),
       headers: {
@@ -86,7 +104,7 @@ const Publish = () => {
   return (
     <div>
       <Right>
-        <HollowButton onClick={() => SaveDraft()} string={"Save draft"} />
+        <HollowButton SaveDraft={SaveDraft} string={"Save draft"} />
       </Right>
       <EditorSection id="editor"></EditorSection>
     </div>
@@ -97,7 +115,6 @@ const EditorSection = styled.div``;
 
 const Right = styled.div`
   width: 100%;
-
   margin: 3em 60%;
   position: fixed;
 `;

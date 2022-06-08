@@ -14,7 +14,7 @@ const Header = ({ connect }) => {
       </Left>
       <Right>
         <ConnectButton
-          string={isLoggedIn ? accounts[0] : "Connect wallet"}
+          string={accounts.length>0? accounts[0] : "Connect wallet"}
           connect={connect}
         />
       </Right>

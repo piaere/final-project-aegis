@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const HollowButton = ({ string }) => {
-  return <StyledButton>{string}</StyledButton>;
+const HollowButton = ({ string, SaveDraft }) => {
+  return <StyledButton onClick={()=>SaveDraft()} >{string}</StyledButton>;
 };
 
 const StyledButton = styled.button`

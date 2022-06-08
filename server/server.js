@@ -3,20 +3,37 @@
 const express = require("express");
 const morgan = require("morgan");
 
+const { users, articles, draft } = require("./data");
+
 express()
   .use(morgan("tiny"))
   .use(express.json())
 
   .use(express.static("public"))
 
-  .post("/save-draft", (req, res) => {
+  .post("/api/save-draft", (req, res) => {
     const newDraft = req.body;
-    console.log("newDraft", newDraft);
+    console.log("draft", draft);
+    draft.push(newDraft);
+    console.log("draft", draft[0]);
 
     res.status(200).json({
       status: 200,
-      message: "article saved!",
-      data: newDraft,
+      message: "draft saved!",
+      data: draft[0],
+    });
+  })
+
+  .get("/api/get-draft", (req, res) => {
+    let result;
+    if (draft.length > 0) {
+      result = draft[0];
+    }
+
+    res.status(200).json({
+      status: 200,
+      message: "draft sent!",
+      data: result,
     });
   })
 

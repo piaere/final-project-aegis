@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Button from "./buttons/ConnectButton";
+import { useHistory } from "react-router-dom";
+import { Context } from "../Context";
 
-
-const Home = ({connect}) => {
+const Home = ({ connect }) => {
   const [lastWord, setLastWord] = useState("");
+  const { isLoggedIn } = useContext(Context);
+
+  const history = useHistory();
 
   useEffect(() => {
     const wordList = [
@@ -24,7 +28,7 @@ const Home = ({connect}) => {
       "Voice",
       "Build",
       "Research",
-      "Publish"
+      "Publish",
     ];
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * wordList.length);
@@ -33,7 +37,11 @@ const Home = ({connect}) => {
     return () => clearInterval(interval);
   }, []);
 
-
+  useEffect(() => {
+    if (isLoggedIn) {
+      history.push("/aegis/journal");
+    }
+  }, [isLoggedIn]);
 
   return (
     <Section>
@@ -42,8 +50,8 @@ const Home = ({connect}) => {
         <LastWord> {lastWord}</LastWord>
       </Slogan>
       <Pitch>
-        Welcome to <span>aegis</span>, the web3 plateform where writers and readers
-        connect.
+        Welcome to <span>aegis</span>, the web3 plateform where writers and
+        readers connect.
       </Pitch>
       <Button string={"Try it now"} connect={connect} />
     </Section>
