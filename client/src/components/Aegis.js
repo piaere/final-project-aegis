@@ -19,7 +19,7 @@ const Aegis = () => {
           <Navbar />
         </LeftMargin>{" "}
         <Center>
-          <Route path="/aegis/article">
+          <Route path="/aegis/article/:id">
             <Article />
           </Route>
           <Route path="/aegis/journal">
@@ -35,7 +35,7 @@ const Aegis = () => {
             <Error />
           </Route>
         </Center>
-        <Right>{/* <HollowButton string={"Save draft"}/> */}</Right>
+        {/* <Right><HollowButton string={"Save draft"}/></Right> */}
       </Wrapper>
     </>
   );
@@ -56,12 +56,12 @@ const Center = styled.div`
   width: 100%;
   height: 100%;
 `;
-const Right = styled.div`
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  margin: 5em 42em;
-  position: fixed;
-`;
+// const Right = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   text-align: center;
+//   margin: 5em 42em;
+//   position: fixed;
+// `;
 
 export default Aegis;

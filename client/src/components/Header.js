@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ConnectButton from "./buttons/SmallButtonColor";
+import ColorButton from "./buttons/SmallButtonColor";
 import { useContext } from "react";
 import { Context } from "../Context";
 
@@ -13,9 +13,9 @@ const Header = ({ connect }) => {
         <Logo></Logo>
       </Left>
       <Right>
-        <ConnectButton
+        <ColorButton
           string={accounts.length>0? accounts[0] : "Connect wallet"}
-          connect={connect}
+          handleFunction={connect}
         />
       </Right>
     </Wrapper>

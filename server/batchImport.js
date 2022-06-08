@@ -3,49 +3,42 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
+console.log(MONGO_URI)
+
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
 
-const { users, articles, draft } = require("./data");
-
-
-let flightsIDArray = [];
-
-Object.keys(flights).forEach((flightID) => {
-  flightsIDArray.push({ flight: flightID, seats: flights[flightID] });
-});
+const { users, articles } = require("./data");
 
 const batchImport = async () => {
+  
   const client = new MongoClient(MONGO_URI, options);
-  const dbName = "slingair";
-
+  console.log("client")
   try {
+    const dbName = "aegis";
+    console.log(dbName)
     await client.connect();
     console.log("connected!");
 
     const db = client.db(dbName);
-    const resultFlights = await db
-      .collection("flights")
-      .insertMany(flightsIDArray);
-    const flightsArray = await db.collection("flights").find().toArray();
+    const resultUsers = await db.collection("users").insertMany(users);
 
-    const resultReservations = await db
-      .collection("reservations")
-      .insertMany(reservations);
-    const ReservationsArray = await db
-      .collection("reservations")
-      .find()
-      .toArray();
+    const resultArticles = await db.collection("articles").insertMany(articles);
 
-    console.log("flightsArray", flightsArray);
-    console.log("ReservationsArray", ReservationsArray);
-  } catch (err) {
+    console.log("resultUsers", resultUsers);
+    console.log("resultArticles", resultArticles);
+  } 
+  catch (err) {
     console.log(err.stack);
   }
+  finally{
 
-  client.close();
+    client.close();
+
+  }
+
   console.log("disconnected!");
 };
 

@@ -7,31 +7,21 @@ import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
-import ImageTool from "@editorjs/image";
+// import ImageTool from "@editorjs/image";
+import ColorButton from "./buttons/SmallButtonColor";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
 
 const Publish = () => {
-  const [savedArticle, setSavedArticle] = useState(null);
   const [currentArticle, setCurrentArticle] = useState(null);
-  const [isMounted, setIsMounted] = useState(false);
   const [currentEditor, setCurrentEditor] = useState(null);
 
   useEffect(() => {
-    currentArticle && setIsMounted(true);
-  }, [currentArticle]);
+    const storedDraft = window.localStorage.getItem("currentArticle");
 
-  // console.log(savedArticle)
-
-  useEffect(() => {
-    currentEditor && fetch("/api/get-article")
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log("got it!");
-        setSavedArticle(data.data);
-        currentEditor.render(data.data);
-      })
-      .catch((error) => console.log("Error: ", error));
+    storedDraft &&
+      currentEditor &&
+      currentEditor.render(JSON.parse(storedDraft));
   }, [currentEditor]);
 
   useEffect(() => {
@@ -64,17 +54,11 @@ const Publish = () => {
       onReady: () => {
         console.log("Editor.js is ready to work!");
         setCurrentEditor(editor);
-// savedArticle && editor.render(savedArticle);
       },
       onChange: (api, event) => {
-
-        
-        // console.log("Now I know that Editor's content changed!", event);
         editor
           .save()
           .then((outputData) => {
-            // console.log("Article data: ", outputData);
-
             setCurrentArticle(outputData);
           })
           .catch((error) => {
@@ -85,12 +69,23 @@ const Publish = () => {
     });
   }, []);
 
-  // console.log(currentArticle);
+  const saveDraft = () => {
+    console.log(currentArticle);
 
-  savedArticle && console.log(savedArticle);
+    currentArticle &&
+      window.localStorage.setItem(
+        "currentArticle",
+        JSON.stringify(currentArticle)
+      );
+  };
 
-  const SaveDraft = () => {
-    fetch("/api/save-draft", {
+  const deleteDraft = () => {
+    window.localStorage.clear();
+    currentEditor.clear();
+  };
+
+  const publish = () => {
+    fetch("/api/publish-article", {
       method: "POST",
       body: JSON.stringify(currentArticle),
       headers: {
@@ -103,7 +98,8 @@ const Publish = () => {
         const { status, message, data } = json;
         console.log(json);
         if (status === 200) {
-          setSavedArticle(data);
+          console.log(data);
+          alert(message);
         } else {
           alert(message);
         }
@@ -113,7 +109,9 @@ const Publish = () => {
   return (
     <div>
       <Right>
-        <HollowButton SaveDraft={SaveDraft} string={"Save draft"} />
+        <HollowButton handleFunction={saveDraft} string={"Save draft"} />
+        <ColorButton handleFunction={deleteDraft} string={"Delete draft"} />
+        <HollowButton handleFunction={publish} string={"Publish!"} />
       </Right>
       <EditorSection id="editor"></EditorSection>
     </div>
@@ -123,9 +121,10 @@ const Publish = () => {
 const EditorSection = styled.div``;
 
 const Right = styled.div`
-  width: 100%;
-  margin: 3em 60%;
+  margin: 3em 65%;
   position: fixed;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Publish;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const ConnectButton = ({ string, connect }) => {
-  return <StyledButton onClick={() => connect()}>{string}</StyledButton>;
+const ColorButton = ({ string, handleFunction }) => {
+  return <StyledButton onClick={() => handleFunction()}>{string}</StyledButton>;
 };
 
 const StyledButton = styled.button`
@@ -18,4 +18,4 @@ const StyledButton = styled.button`
   cursor: pointer;
 `;
 
-export default ConnectButton;
+export default ColorButton;

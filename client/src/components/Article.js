@@ -6,14 +6,17 @@ import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
 import ImageTool from "@editorjs/image";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
 
+
 const Article = () => {
   const [article, setArticle] = useState(null);
+  let { articleId } = useParams();
 
   useEffect(() => {
-    fetch("/api/get-article")
+    fetch(`/api/get-article/${articleId}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log("got it!");

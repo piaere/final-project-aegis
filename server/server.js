@@ -3,7 +3,7 @@
 const express = require("express");
 const morgan = require("morgan");
 
-const { users, articles, draft } = require("./data");
+const { users, articles } = require("./data");
 
 express()
   .use(morgan("tiny"))
@@ -11,32 +11,19 @@ express()
 
   .use(express.static("public"))
 
-  .post("/api/save-draft", (req, res) => {
-    const newDraft = req.body;
-    console.log("draft", draft);
-    draft = newDraft
-    console.log("draft", draft[0]);
-
+  .post("/api/publish-article", (req, res) => {
+    const newArticle = req.body;
+    articles.push(newArticle);
     res.status(200).json({
       status: 200,
       message: "article saved!",
-      data: draft,
+      data: newArticle,
     });
   })
 
-  .get("/api/get-draft", (req, res) => {
-    let result;
-    if (draft.length > 0) {
-      result = draft[0];
-    }
+  .get("/api/get-article/:id", (req, res) => {
+    const article = req.params.id;
 
-    res.status(200).json({
-      status: 200,
-      data: result,
-    });
-  })
-
-  .get("/api/get-article", (req, res) => {
     let result;
     result = articles[0].data;
 

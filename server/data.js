@@ -3172,10 +3172,9 @@ const articles = [
   },
 ];
 
-let draft;
 
 module.exports = {
   users,
   articles,
-  draft,
+
 };
