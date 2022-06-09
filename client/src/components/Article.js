@@ -26,7 +26,7 @@ const Article = () => {
         currentEditor && currentEditor.render(article.data);
       })
       .catch((error) => console.log("Error: ", error));
-  }, [ articleId, currentEditor]);
+  }, [articleId, currentEditor]);
 
   useEffect(() => {
     const editor = new EditorJS({
@@ -68,6 +68,10 @@ const Article = () => {
     </div>
   );
 };
-const EditorSection = styled.div``;
+const EditorSection = styled.div`
+  padding: 2em;
+  border: solid blue 0.5px;
+  border-radius: 20px;
+`;
 
 export default Article;

@@ -123,7 +123,11 @@ const Publish = () => {
   );
 };
 
-const EditorSection = styled.div``;
+const EditorSection = styled.div`
+  padding: 2em;
+border:  solid blue 0.5px;
+  border-radius: 20px;
+`;
 
 const Right = styled.div`
   margin-top: 62vh;

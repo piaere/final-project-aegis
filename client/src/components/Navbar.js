@@ -21,14 +21,14 @@ const Navbar = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.span`
 a:visited {
   color: blue;
 }
-  width: 100%;
+  width: 10%;
   height: 32vh;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 5vw;
   grid-template-rows: repeat(2, 1fr);
   position: fixed;
 
@@ -36,7 +36,7 @@ a:visited {
   padding: 5vh 7vw;
   font-size: 5vh;
 `;
-const Section = styled.div``;
-const Publish = styled.div``;
+const Section = styled.span``;
+const Publish = styled.span``;
 
 export default Navbar;
