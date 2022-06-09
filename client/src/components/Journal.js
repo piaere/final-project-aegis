@@ -1,76 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
-import EditorJS from "@editorjs/editorjs";
-import Header from "@editorjs/header";
-import List from "@editorjs/list";
-import Embed from "@editorjs/embed";
-import ImageTool from "@editorjs/image";
-const LinkTool = require("@editorjs/link");
-const SimpleImage = require("@editorjs/simple-image");
+import { Context } from "../Context";
 
 const Journal = () => {
-  const [articles, setArticles] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  const { users, articles } = useContext(Context);
 
   useEffect(() => {
-    fetch("/api/get-articles")
-      .then((res) => res.json())
-      .then((data) => {
-        setArticles(data.data);
-        console.log(articles);
-      })
-      .catch((error) => console.log("Error: ", error));
+    users.length > 0 && articles.length > 0 && setIsMounted(true);
+  }, [users, articles]);
 
-    const editor = new EditorJS({
-      holder: "editor",
-      tools: {
-        header: {
-          class: Header,
-          config: {
-            placeholder: "Enter a header",
-            levels: [1, 2, 3, 4],
-            defaultLevel: 1,
-          },
-          inlineToolbar: ["link"],
-        },
-        list: {
-          class: List,
-          inlineToolbar: true,
-        },
-        image: SimpleImage,
-        embed: Embed,
-        linkTool: {
-          class: LinkTool,
-          config: {
-            endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
-          },
-        },
-      },
-      data: {},
-      readOnly: true,
-      onReady: () => {
-        console.log("Editor.js is ready to work!");
-      },
+  if (isMounted) {
+    return (
+      <Wrapper>
+        {articles.map((article) => {
+          const publicKey = article.publicKey;
+          const title = article.data.blocks[0].data.text;
+          const paragraph = article.data.blocks[1].data.text;
+          const id = article.id;
 
-      placeholder: "What is going on?",
-    });
-  }, []);
+          let author;
+          let avatar;
+          users.forEach((user) => {
+            if (user.publicKey === publicKey) {
+              author = user.displayName;
+              avatar = user.avatarSrc;
+            }
+          });
 
-  
-
-  return (
-    <Wrapper>
-      <div>journal</div>
-      <EditorSection id="editor"></EditorSection>
-    </Wrapper>
-  );
+          return (
+            <Preview key={id}>
+              <img src={avatar} alt="author's avatar" />
+              <div>{publicKey}</div>
+              <div>{author}</div>
+              <div>{title}</div>
+              <div>{paragraph}</div>
+            </Preview>
+          );
+        })}
+      </Wrapper>
+    );
+  } else return <div>loading</div>;
 };
 
-const EditorSection = styled.div``;
+const Preview = styled.div`
+  padding: 2em;
+  /* border: solid seashell 0.5px; */
+`;
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
 `;
 
 export default Journal;

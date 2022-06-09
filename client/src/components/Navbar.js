@@ -1,22 +1,30 @@
 import styled from "styled-components";
 import { GiFeather } from "react-icons/gi";
 import { BsBook } from "react-icons/bs";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <Wrapper>
       <Section>
-        <BsBook />
+        <NavLink to={"/aegis/journal"}>
+          <BsBook />
+        </NavLink>
       </Section>
 
       <Publish>
-        <GiFeather />
+        <NavLink to={"/aegis/publish"}>
+          <GiFeather />
+        </NavLink>
       </Publish>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+a:visited {
+  color: blue;
+}
   width: 100%;
   height: 32vh;
   display: grid;

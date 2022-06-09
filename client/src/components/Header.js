@@ -2,19 +2,24 @@ import styled from "styled-components";
 import ColorButton from "./buttons/SmallButtonColor";
 import { useContext } from "react";
 import { Context } from "../Context";
+import { NavLink } from "react-router-dom";
 
 const Header = ({ connect }) => {
   const { accounts, isLoggedIn } = useContext(Context);
 
+  // const history = useHistory();
+
   return (
     <Wrapper>
+        <LogoLink to={"/aegis/journal"}>
       <Left>
-        <Aegis>aegis</Aegis>
-        <Logo></Logo>
+          <Aegis>aegis</Aegis>
+          <Logo></Logo>
       </Left>
+        </LogoLink>
       <Right>
         <ColorButton
-          string={accounts.length>0? accounts[0] : "Connect wallet"}
+          string={accounts.length > 0 ? accounts[0] : "Connect wallet"}
           handleFunction={connect}
         />
       </Right>
@@ -55,6 +60,10 @@ const Logo = styled.span`
   max-width: 1.1vw;
   max-height: 3.6vh;
   background-color: #0000ff;
+`;
+
+const LogoLink = styled(NavLink)`
+  text-decoration: none;
 `;
 
 export default Header;

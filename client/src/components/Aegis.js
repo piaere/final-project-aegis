@@ -1,5 +1,5 @@
-import { Route, useHistory, Redirect } from "react-router-dom";
-import { useContext } from "react";
+import { Route } from "react-router-dom";
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import Article from "./Article";
 import Error from "./Error";
@@ -7,11 +7,34 @@ import Journal from "./Journal";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
 import Publish from "./Publish";
-import HollowButton from "./buttons/SmallButtonHollow";
 import { Context } from "../Context";
 
 const Aegis = () => {
-  // const { isLoggedIn } = useContext(Context);
+  const { setArticles, setUsers } = useContext(Context);
+
+  useEffect(() => {
+    fetch("/api/get-articles")
+      .then((res) => res.json())
+      .then((data) => {
+        setArticles(data.data);
+        // console.log(data.data);
+      })
+      .catch((error) => console.log("Error: ", error));
+
+      
+  }, []);
+
+  useEffect(() => {
+    console.log("second");
+    fetch("/api/get-users")
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data.data);
+    // console.log(data.data);
+    })
+    .catch((error) => console.log("Error: ", error));
+  }, []);
+
   return (
     <>
       <Wrapper>
@@ -35,7 +58,6 @@ const Aegis = () => {
             <Error />
           </Route>
         </Center>
-        {/* <Right><HollowButton string={"Save draft"}/></Right> */}
       </Wrapper>
     </>
   );
@@ -56,12 +78,6 @@ const Center = styled.div`
   width: 100%;
   height: 100%;
 `;
-// const Right = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   text-align: center;
-//   margin: 5em 42em;
-//   position: fixed;
-// `;
+
 
 export default Aegis;

@@ -57,6 +57,7 @@ function App() {
 
   // Set isLoggedIn state
   useEffect(() => {
+    console.log("setting loggedIn");
     accounts.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
   }, [accounts, setIsLoggedIn]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -64,10 +65,10 @@ function App() {
   // console.log("isLoggedIn", isLoggedIn);
   return (
     <Main>
-      <Header connect={connect} />
-      <Body>
-        <Router>
-          <Switch>
+      <Router>
+        <Header connect={connect} />
+        <Switch>
+          <Body>
             <Route exact path="/">
               <Home connect={connect} />
             </Route>
@@ -76,9 +77,9 @@ function App() {
                 {!isLoggedIn ? <Redirect to="/" /> : <Aegis />}
               </Route>
             )}
-          </Switch>
-        </Router>
-      </Body>
+          </Body>
+        </Switch>
+      </Router>
     </Main>
   );
 }

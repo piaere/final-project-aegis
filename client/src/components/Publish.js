@@ -1,27 +1,29 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
 import HollowButton from "./buttons/SmallButtonHollow";
-
+import ColorButton from "./buttons/SmallButtonColor";
 import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
 // import ImageTool from "@editorjs/image";
-import ColorButton from "./buttons/SmallButtonColor";
+import { Context } from "../Context";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
 
 const Publish = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [currentEditor, setCurrentEditor] = useState(null);
+  const { accounts } = useContext(Context);
+  const history = useHistory();
 
   useEffect(() => {
     const storedDraft = window.localStorage.getItem("currentArticle");
-
-    storedDraft &&
-      currentEditor &&
+    if (storedDraft && currentEditor) {
       currentEditor.render(JSON.parse(storedDraft));
+      setCurrentArticle(JSON.parse(storedDraft));
+    }
   }, [currentEditor]);
 
   useEffect(() => {
@@ -85,9 +87,11 @@ const Publish = () => {
   };
 
   const publish = () => {
+    const data = currentArticle;
+
     fetch("/api/publish-article", {
       method: "POST",
-      body: JSON.stringify(currentArticle),
+      body: JSON.stringify({ data, publicKey: accounts[0] }),
       headers: {
         Accept: "application/json",
         "Content-type": "application/json",
@@ -99,7 +103,8 @@ const Publish = () => {
         console.log(json);
         if (status === 200) {
           console.log(data);
-          alert(message);
+          history.push(`/aegis/article/${data.id}`);
+          window.localStorage.clear();
         } else {
           alert(message);
         }
@@ -121,10 +126,17 @@ const Publish = () => {
 const EditorSection = styled.div``;
 
 const Right = styled.div`
-  margin: 3em 65%;
+  margin-top: 62vh;
+  margin-left: 65%;
+  /* left: 7vh; */
+  height: 25vh;
+  border: solid blue 2px;
+  border-radius: 20px;
+  padding: 0 1em;
   position: fixed;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 `;
 
 export default Publish;

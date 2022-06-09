@@ -7,7 +7,7 @@ const HollowButton = ({ string, handleFunction }) => {
 const StyledButton = styled.button`
   font-family: "Karla", sans-serif;
   font-weight: 500;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   background-color: transparent;
   color: #0000ff;
   padding: 1vh 2vw;
@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   border-style: solid blue;
   border-color: #0000ff;
   border-radius: 50px;
-  margin-top: 1vh;
+
   cursor: pointer;
 
   &:hover {
