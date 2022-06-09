@@ -5,43 +5,19 @@ const morgan = require("morgan");
 
 const { users, articles } = require("./data");
 
+const { getArticles, getUsers, getArticle, publishArticle } = require("./handlers");
+
 express()
   .use(morgan("tiny"))
   .use(express.json())
 
   .use(express.static("public"))
 
-  .post("/api/publish-article", (req, res) => {
-    const newArticle = req.body;
-    articles.push(newArticle);
-    res.status(200).json({
-      status: 200,
-      message: "article saved!",
-      data: newArticle,
-    });
-  })
+  .get("/api/get-articles", getArticles)
+  .get("/api/get-article/:id", getArticle)
+  .get("/api/get-users", getUsers)
+  .post("/api/publish-article", publishArticle)
 
-  .get("/api/get-article/:id", (req, res) => {
-    const article = req.params.id;
-
-    let result;
-    result = articles[0].data;
-
-    res.status(200).json({
-      status: 200,
-      data: result,
-    });
-  })
-
-  .get("/api/get-articles", (req, res) => {
-    let result;
-    result = articles;
-
-    res.status(200).json({
-      status: 200,
-      data: result,
-    });
-  })
 
   .get("*", (req, res) => {
     res.status(404).json({

@@ -69,10 +69,10 @@ const users = [
 ];
 
 const articles = [
-  //Bitalik
   {
+    //Bitalik
     id: "b7594732-ce9e-4e2f-91ee-4d740fda7219",
-    author: "0x20ce772c4ef862fF022E9dd0931b0c331e29715e",
+    publicKey: "0x20ce772c4ef862fF022E9dd0931b0c331e29715e",
     data: {
       time: 1654656858816,
       blocks: [
@@ -80,13 +80,6 @@ const articles = [
           id: "btCn45u76_",
           type: "header",
           data: { text: "The roads not taken", level: 1 },
-        },
-        {
-          id: "iAMED_24yt",
-          type: "paragraph",
-          data: {
-            text: '2022 Mar 29<a href="https://vitalik.ca/index.html">See all posts</a>',
-          },
         },
         {
           id: "jAh7l8osjX",
@@ -514,10 +507,695 @@ const articles = [
       version: "2.24.3",
     },
   },
+  {
+    //Shoshanna
+    id: "b4770de6-2bfd-4830-bb86-0b327ca96273",
+    publicKey: "0x56611e15b75aBE1818827747F933Bc132f3C54c3",
+    data: {
+      time: 1654658841182,
+      blocks: [
+        {
+          id: "wqKe9DLF2-",
+          type: "header",
+          data: {
+            text: "The Surveillance Threat Is Not What Orwell Imagined",
+            level: 1,
+          },
+        },
+        {
+          id: "i_0SsJu_Pv",
+          type: "image",
+          data: {
+            url: "https://api.time.com/wp-content/uploads/2019/06/george-orwell-1984-surveillance-big-brother.jpeg?quality=85&amp;w=1400",
+            caption: "",
+            withBorder: false,
+            withBackground: false,
+            stretched: false,
+          },
+        },
+        {
+          id: "nzPJETo7QA",
+          type: "paragraph",
+          data: {
+            text: 'Orwell\'s1984was published on June 8, 1949.Houghton Mifflin HarcourtIDEASBY&nbsp;<a href="https://time.com/author/shoshana-zuboff/">SHOSHANA ZUBOFF</a>JUNE 6, 2019 12:11 PM EDT',
+          },
+        },
+        {
+          id: "iPoWeLpA0j",
+          type: "paragraph",
+          data: {
+            text: 'Zuboff is the author of three major books, each signaling a new epoch in technological society. Her most recent work is&nbsp;<a href="https://www.amazon.com/Age-Surveillance-Capitalism-Future-Frontier/dp/1610395697?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=1610395697&amp;tag=timecom-20&amp;ascsubtag=dc4a326e70c6f4e4d4d5046ea44ae72e" target="_blank" rel="nofollow">The Age of Surveillance Capitalism</a>. She is the Charles Edward Wilson Professor Emeritus Harvard Business School and a faculty associate at the Harvard Kennedy School’s Carr Center for Human Rights.',
+          },
+        },
+        {
+          id: "GLRiE4Romv",
+          type: "paragraph",
+          data: {
+            text: 'George Orwell repeatedly delayed crucial medical care to complete&nbsp;<a href="https://www.amazon.com/gp/product/0451524934/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=time037-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0451524934&amp;linkId=802120e09e40ec7b81c1b2f470fd1e49" target="_blank">1984</a>,&nbsp;the book still synonymous with our worst fears of a totalitarian future — published 70 years ago this month. Half a year after his novel’s debut, he was dead. Because he believed everything was at stake, he forfeited everything, including a young son, a devoted sister, a wife of three months and a grateful public that canonized his prescient and pressing novel. But today we are haunted by a question: Did George Orwell die in vain?',
+          },
+        },
+        {
+          id: "kSaP9Nve0F",
+          type: "paragraph",
+          data: {
+            text: "Orwell sought to awaken British and U.S. societies to the totalitarian dangers that threatened democracy even after the Nazi defeat. In letters before and after his novel’s completion, Orwell urged “constant criticism,” warning that any “immunity” to totalitarianism must not be taken for granted: “Totalitarianism, if not fought against, could triumph anywhere.”",
+          },
+        },
+        {
+          id: "XTFNxry9Da",
+          type: "paragraph",
+          data: {
+            text: "State of the Art: 19840 seconds of 3 minutes, 2 secondsVolume 90%",
+          },
+        },
+        {
+          id: "aKUME1Cr1I",
+          type: "paragraph",
+          data: {
+            text: "Since&nbsp;1984’s publication, we have assumed with Orwell that the dangers of mass surveillance and social control could only originate in the state. We were wrong. This error has left us unprotected from an equally pernicious but profoundly different threat to freedom and democracy.",
+          },
+        },
+        {
+          id: "zBDVsvKNLI",
+          type: "paragraph",
+          data: {
+            text: "For 19 years, private companies practicing an unprecedented economic logic that I call&nbsp;surveillance capitalism&nbsp;have hijacked the Internet and its digital technologies. Invented at Google beginning in 2000, this new economics covertly claims private human experience as free raw material for translation into behavioral data. Some data are used to improve services, but the rest are turned into computational products that predict your behavior. These predictions are traded in a new futures market, where surveillance capitalists sell certainty to businesses determined to know what we will do next. This logic was first applied to finding which ads online will attract our interest, but similar practices now reside in nearly every sector — insurance, retail, health, education, finance and more — where personal experience is secretly captured and computed for behavioral predictions. By now it is no exaggeration to say that the Internet is owned and operated by private surveillance capital.",
+          },
+        },
+        {
+          id: "ONOANjxVud",
+          type: "paragraph",
+          data: {
+            text: 'In the competition for certainty, surveillance capitalists learned that the most predictive data come not just from monitoring but also from modifying and directing behavior. For example, by 2013, Facebook had learned how to engineer subliminal cues on its pages to shape users’ real-world actions and feelings. Later, these methods were combined with real-time emotional analyses, allowing marketers to cue behavior at the moment of maximum vulnerability. These inventions were celebrated for being both effective and undetectable.&nbsp;<a href="https://time.com/5205314/facebook-cambridge-analytica-breach/">Cambridge Analytica</a>&nbsp;later demonstrated that the same methods could be employed to shape political rather than commercial behavior.',
+          },
+        },
+        {
+          id: "3CKS7VrfHW",
+          type: "paragraph",
+          data: {
+            text: 'Augmented reality game&nbsp;<a href="https://time.com/4400791/pokemon-go-iphone-android-nintendo/">Pokémon Go</a>, developed at Google and released in 2016 by a Google spinoff, took the challenge of mass behavioral modification to a new level. Business customers from McDonalds to Starbucks paid for “footfall” to their establishments on a “cost per visit” basis, just as online advertisers pay for “cost per click.” The game engineers learned how to herd people through their towns and cities to destinations that contribute profits, all of it without game players’ knowledge.',
+          },
+        },
+        {
+          id: "7K2bjDOE3x",
+          type: "paragraph",
+          data: {
+            text: "Democracy slept while surveillance capitalism flourished. As a result, surveillance capitalists now wield a uniquely 21st century quality of power, as unprecedented as totalitarianism was nearly a century ago. I call it&nbsp;instrumentarian power,&nbsp;because it works its will through the ubiquitous architecture of digital instrumentation. Rather than an intimate Big Brother that uses murder and terror to possess each soul from the inside out, these digital networks are a Big Other: impersonal systems trained to monitor and shape our actions remotely, unimpeded by law.",
+          },
+        },
+        {
+          id: "7TQ_aXqQoN",
+          type: "paragraph",
+          data: {
+            text: "Instrumentarian power delivers our futures to surveillance capitalism’s interests, yet because this new power does not claim our bodies through violence and fear, we undervalue its effects and lower our guard. Instrumentarian power does not want to break us; it simply wants to automate us. To this end, it exiles us from our own behavior. It does not care what we think, feel or do, as long as we think, feel and do things in ways that are accessible to Big Other’s billions of sensate, computational, actuating eyes and ears.",
+          },
+        },
+        {
+          id: "6XL80T6gRM",
+          type: "paragraph",
+          data: {
+            text: "Instrumentarian power challenges democracy. Big Other knows everything, while its operations remain hidden, eliminating our right to resist. This undermines human autonomy and self-determination, without which democracy cannot survive. Instrumentarian power creates unprecedented asymmetries of knowledge, once associated with pre-modern times. Big Other’s knowledge is&nbsp;about&nbsp;us, but it is not used&nbsp;for&nbsp;us. Big Other knows everything about&nbsp;us, while we know almost nothing about&nbsp;it. This imbalance of power is not illegal, because we do not yet have laws to control it, but it is fundamentally anti-democratic.",
+          },
+        },
+        {
+          id: "bnYLt7m6OF",
+          type: "paragraph",
+          data: {
+            text: "Surveillance capitalists claim that their methods are inevitable consequences of digital technologies. This is false. It’s easy to imagine the digital future without surveillance capitalism, but impossible to imagine surveillance capitalism without digital technologies.",
+          },
+        },
+      ],
+      version: "2.24.3",
+    },
+  },
+  {
+    //Astral Codex Eleven
+    id: "842335f3-375a-4da6-bdb2-bdb1413292b3",
+    publicKey: "0x16496589b001541701B6806a8870C4d9d7F459EF",
+    data: {
+      time: 1654658348337,
+      blocks: [
+        {
+          id: "mB2YfKA3KT",
+          type: "header",
+          data: { text: "Justice Creep", level: 1 },
+        },
+        {
+          id: "4TT2D6-c0c",
+          type: "paragraph",
+          data: {
+            text: 'Freddie deBoer says we’re a&nbsp;<a href="https://freddiedeboer.substack.com/p/planet-of-cops?s=r">planet of cops</a>. Maybe that’s why justice is eating the world.',
+          },
+        },
+        {
+          id: "Uj6vMkYUfA",
+          type: "paragraph",
+          data: {
+            text: 'Helping the poor becomes&nbsp;<a href="https://en.wikipedia.org/wiki/Economic_justice">economic justice</a>. If they’re minorities, then it’s&nbsp;<a href="https://www.aclu.org/issues/racial-justice">racial justice</a>, itself a subspecies of&nbsp;<a href="http://everythingintheworld/">social justice</a>. Saving the environment becomes&nbsp;<a href="https://www.epa.gov/environmentaljustice">environmental justice</a>, except when it’s about climate change in which case it’s&nbsp;<a href="https://en.wikipedia.org/wiki/Climate_justice">climate justice</a>. Caring about young people is actually about fighting for&nbsp;<a href="https://www.oecd.org/gov/youth-and-intergenerational-justice/">intergenerational justice</a>. The very laws of space and time are subject to&nbsp;<a href="https://en.wikipedia.org/wiki/Spatial_justice">spatial justice</a>&nbsp;and&nbsp;<a href="https://www.cambridge.org/core/journals/journal-of-social-policy/article/abs/temporal-justice/C19E923FB188E759B9ABA9E4B6823F56">temporal justice</a>.',
+          },
+        },
+        {
+          id: "t_BONSYc1g",
+          type: "paragraph",
+          data: {
+            text: 'I can’t find clear evidence&nbsp;<a href="https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=%22climate%20justice%22,%22environmental%20justice%22,%22intergenerational%20justice%22">on Google Trends</a>&nbsp;that use of these terms is increasing - I just feel like I’ve been hearing them more and more often. Nor can I find a simple story behind why - it’s got to have something to do with Rawls, but I can’t trace any of these back to specific Rawlsian philosophers. Some of it seems to have something to do with Amartya Sen, who I don’t know enough about to have an opinion. But mostly it just seems to be the&nbsp;zeitgeist.',
+          },
+        },
+        {
+          id: "FWRYB3GHJS",
+          type: "paragraph",
+          data: {
+            text: "This is mostly a semantic shift - instead of saying “we should help the poor”, you can say “we should pursue economic justice”. But different framings have slightly different implications and connotations, and it’s worth examining what connotations all this justice talk has.",
+          },
+        },
+        {
+          id: "iDXDYyUjsv",
+          type: "paragraph",
+          data: {
+            text: "“We should help the poor” mildly suggests a friendly optimistic picture of progress. We are helpers - good people who are nice to others because that’s who we are. And the poor get helped - the world becomes a better place. Sometimes people go further: “We should save the poor” (or the whales, doesn’t matter). That makes us saviors, a rather more impressive title than helpers. And at the end of it, people/whales/whatever are saved - we’re one step closer to saving the world. Extrapolate the line out far enough, and you can dream of utopia.",
+          },
+        },
+        {
+          id: "JFYbzAU-GB",
+          type: "paragraph",
+          data: {
+            text: "“We should pursue economic justice” suggests other assumptions. Current economic conditions are unjust. There is some particular way to make them just, or at least closer to just. We have some kind of obligation to pursue it. We are not helpers or saviors, who can pat ourselves on the back and feel heroic for leaving the world better than we found it. We are some weird superposition of criminals and cops, both responsible for breaking the moral law and responsible for restoring it, trying to redress some sort of violation. The end result isn’t utopia, it’s people getting what they deserve.",
+          },
+        },
+        {
+          id: "plUNTgyLnj",
+          type: "paragraph",
+          data: {
+            text: "(cf. Thomas Jefferson: “I tremble for my country when I remember that God is just.”)",
+          },
+        },
+        {
+          id: "Az9LEzM0Xb",
+          type: "paragraph",
+          data: {
+            text: "What is “climate justice”? Was the Little Ice Age unjust? What if it killed millions? Is it unjust for Mali to have a less pleasant climate than California? What if I said that there’s a really high correlation between temperature and GDP, and Mali’s awful climate is a big part of why it’s so poor? Climate justice couldn’t care less about any of this. Why not? Hard to say. Maybe because there’s no violation and no villain.",
+          },
+        },
+        {
+          id: "P7CIsOmng8",
+          type: "paragraph",
+          data: {
+            text: 'Is that conflating the sophisticated Rawlsian sense of justice with the vulgar criminal sense? Maybe. But do you think the millions of people talking about _____ justice who have never heard of Rawls are somehow avoiding that conflation? I think it’s a&nbsp;<a href="https://slatestarcodex.com/2014/11/03/all-in-all-another-brick-in-the-motte/">motte-and-bailey</a>: justice - as it’s actually used - is catchy exactly because it&nbsp;does&nbsp;draw on criminal justice connotations. I don’t think it’s a coincidence people are talking about “climate justice” at the same time there are 311,000 Google hits for “climate villains”:',
+          },
+        },
+        {
+          id: "TPZR2dTKsC",
+          type: "image",
+          data: {
+            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7735a02f-d602-4ecc-9ff4-1aa66489aa7f_617x806.png",
+            caption: "",
+            withBorder: false,
+            withBackground: false,
+            stretched: false,
+          },
+        },
+        {
+          id: "I1CZBMMUK9",
+          type: "paragraph",
+          data: {
+            text: 'Slightly edited to avoid repeats. Also, the international group for pursuing climate justice is called&nbsp;<a href="https://unfccc.int/process/bodies/supreme-bodies/conference-of-the-parties-cop">COP</a>, and this is not a coincidence because nothing is ever a coincidence.',
+          },
+        },
+        {
+          id: "1eFiJblJzE",
+          type: "paragraph",
+          data: {
+            text: "You can’t “help the economy” or “save the poor” merely by harming rich people. Can you get “economic justice” this way? Depends who you ask, but I notice that “getting justice” for a murder involves punishing a suspect a lot more often than it involves resurrecting the victim.",
+          },
+        },
+        {
+          id: "EHw6pXZecj",
+          type: "paragraph",
+          data: {
+            text: "There’s one last disadvantage I’m having trouble putting into words, but which I think is the most important. A narrative of helpers and saviors allows&nbsp;saints. It allows people who are genuinely good, above and beyond expectations, who rightly serve as ideals and role models for others. A narrative of justice allows, at best,&nbsp;non-criminals&nbsp;- people who haven’t broken any of the rules yet, who don’t suck quite as much as everyone else. You either stand condemned, or you’re okay so far. If it has any real role models, it’s the cop who wins Officer Of The Year, the guy who’s more sensitive to violations and more efficient in punishment than anyone else. Turn this guy into your moral model, and you’ve got, well, the planet of cops.",
+          },
+        },
+        {
+          id: "DEBfU7fElp",
+          type: "paragraph",
+          data: {
+            text: 'Here’s a crazy theory: the moral transition from other virtues to Justice mirrors the literary transition from utopian fiction to dystopian. In Utopia, people practice virtues like Charity, Industry, and Humanity, excelling at them and making their good world even better. In Dystopia, Justice is all you can hope for. If I were in&nbsp;<a href="https://amzn.to/37DKzKB">Terra Ignota</a>, my fondest wish would be to excel in some way the same way Sniper, Apollo Mojave, and the other utopian characters excel, bringing glory to my Hive and giving its already-brilliant shine extra luster. But if I were in 1984, my fondest wish would be to bring O’Brien and the others to justice; to watch them suffer, to undo the wound in the world caused by their scheming.',
+          },
+        },
+        {
+          id: "unWnpyn6Z9",
+          type: "paragraph",
+          data: {
+            text: "Of course, every society is somewhere in between Utopia and Dystopia, and needs values relevant to both. Justice is a useful lens that I’m not at all trying to get rid of. But when it starts annexing all the other virtues, until it’s hard to think of them except as species of Justice, I do think that’s potentially a sign of a sick society.",
+          },
+        },
+        {
+          id: "eR6woWy71L",
+          type: "paragraph",
+          data: {
+            text: '(“A sick society? Sounds like you need some&nbsp;<a href="https://www.wcl.american.edu/impact/initiatives-programs/health/events/healthjustice2020/whatishealthjustice/">health justice</a>,&nbsp;<a href="https://www.msms.org/About-MSMS/News-Media/apply-now-for-medical-justice-in-advocacy-fellowship">medical justice</a>, and&nbsp;<a href="https://www.thealchemistskitchen.com/pages/wellnessjustice">wellness justice</a>!” —— “You’re not helping!”)',
+          },
+        },
+      ],
+      version: "2.24.3",
+    },
+  },
 
   {
+    //Chris Edgy
+    id: "92be9c32-e44a-45e0-907f-9178dd2a4333",
+    publicKey: "0xF9614b726727087C56c9045Fc0613c498e5B7f64",
+    data: {
+      time: 1654657469367,
+      blocks: [
+        {
+          id: "2nM5mrdE4D",
+          type: "header",
+          data: { text: "America’s Gun Fetish", level: 1 },
+        },
+        {
+          id: "oLO9kjucCa",
+          type: "header",
+          data: {
+            text: "There will be no gun control, not only because of the gun lobby and a corrupt political class, but because for many white Americans the idea of the gun is the only power they have left.",
+            level: 3,
+          },
+        },
+        {
+          id: "vzMTRPYcZR",
+          type: "image",
+          data: {
+            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F667ed472-1b6d-4bdc-a399-da89f09ec9e8_4713x3787.jpeg",
+            caption: "",
+            withBorder: false,
+            withBackground: false,
+            stretched: false,
+          },
+        },
+        {
+          id: "iF7-AlPI7m",
+          type: "paragraph",
+          data: { text: "“White Light/White Heat” - by Mr. Fish" },
+        },
+        {
+          id: "0Q9TfWp4mE",
+          type: "paragraph",
+          data: {
+            text: '<a href="https://chrishedges.substack.com/subscribe?utm_medium=web&amp;utm_source=subscribe-widget&amp;utm_content=58117687">Subscribe now</a>',
+          },
+        },
+        {
+          id: "w2rvdAwxzh",
+          type: "paragraph",
+          data: {
+            text: "Guns were a ubiquitous part of my childhood. My grandfather, who had been a master sergeant in the army, had a small arsenal in his house in Mechanic Falls, Maine. He gave me a 2020 bolt action Springfield rifle when I was 7. By the time I was 10, I had graduated to a Winchester lever action 30-30. I moved my way up the National Rifle Association’s (NRA) Marksmanship Qualification Program, helped along by a summer camp where riflery was mandatory. Like many boys in rural America, I was fascinated by guns, although I disliked hunting. Two decades as a reporter in war zones, however, resulted in a deep aversion to weapons. I saw what they did to human bodies. I inherited my grandfather’s guns and gave them to my uncle.",
+          },
+        },
+        {
+          id: "8OMaAMFmAR",
+          type: "paragraph",
+          data: {
+            text: "Guns made my family, lower working-class people in Maine, feel powerful, even when they were not. Take away their guns and what was left? Decaying small towns, shuttered textile and paper mills, dead-end jobs, seedy bars where veterans, nearly all the men in my family were veterans, drank away their trauma. Take away the guns, and the brute force of squalor, decline, and abandonment hit you in the face like a tidal wave.&nbsp;",
+          },
+        },
+        {
+          id: "sisNbD-Sxq",
+          type: "paragraph",
+          data: {
+            text: 'Yes, the gun lobby and weapons manufacturers fuel the violence with easily available assault-style weapons, whose small caliber 5.56 mm cartridges make them largely useless for hunting. Yes, the lax gun laws and risible background checks are partially to blame. But America also fetishizes guns. This fetish has intensified among white working-class men, who have seen everything slip beyond their grasp: economic stability, a sense of place within the society, hope for the future and political empowerment. The fear of losing the gun is the final crushing blow to self-esteem and dignity, a surrender to the economic and political forces that have destroyed their lives. They cling to the gun as an idea, a belief that with it they are strong, unassailable, and independent. The shifting sands of demographics, with white people&nbsp;<a href="https://www.brookings.edu/blog/the-avenue/2018/03/14/the-us-will-become-minority-white-in-2045-census-projects/">projected</a>&nbsp;to become a minority in the U.S. by 2045, intensifies this primal desire, they would say need, to own a weapon.',
+          },
+        },
+        {
+          id: "yuN9_8FzDz",
+          type: "paragraph",
+          data: {
+            text: 'There have been&nbsp;<a href="https://www.washingtonpost.com/nation/2022/06/02/mass-shootings-in-2022/">over 200</a>&nbsp;mass shootings this year. There are nearly 400 million guns in the U.S., some&nbsp;<a href="https://www.bbc.com/news/world-us-canada-41488081">120 guns</a>&nbsp;for every 100 Americans. Half of the privately-owned guns are owned by&nbsp;<a href="https://news.northeastern.edu/2016/09/26/study-70m-more-firearms-added-to-us-gun-stock-over-past-20-years/#_ga=2.130490438.814604189.1654280320-254802065.1654280320">3 percent</a>&nbsp;of the population,&nbsp;<a href="https://www.rsfjournal.org/content/rsfjss/3/5/38.full.pdf">according to</a>&nbsp;a 2016 study. Our neighbor in Maine had 23 guns. Restrictive gun laws, and gun laws that are inequitably enforced, block gun ownership for many Blacks, especially in urban neighborhoods. Federal law, for example, prohibits gun ownership for most people with felony convictions, effectively barring legal gun ownership for a third of Black men. The outlawing of guns for Blacks is part of a long continuum. Blacks were denied the right to own guns under the antebellum Slave Codes, the post-Civil War Black Codes, and the Jim Crow laws.&nbsp;',
+          },
+        },
+        {
+          id: "eFAo_dEQjt",
+          type: "paragraph",
+          data: {
+            text: "White people built their supremacy in America and globally with violence. They massacred Native Americans and stole their land. They kidnapped Africans, shipped them as cargo to the Americas, and then enslaved, lynched, imprisoned, and impoverished Black people for generations. They have always gunned down Black people with impunity, a historical reality only recently discernable to most white people because of cell phone videos of killings.&nbsp;",
+          },
+        },
+        {
+          id: "xTDxG0Iv-N",
+          type: "paragraph",
+          data: {
+            text: '“The essential American soul is hard, isolate, stoic and a killer,” D.H. Lawrence&nbsp;<a href="https://www.amazon.com/dp/1107457505/?tag=fopo-20">writes</a>. “It has never yet melted.”',
+          },
+        },
+        {
+          id: "ai2WEbeVAn",
+          type: "paragraph",
+          data: {
+            text: "White society, sometimes overtly and sometimes unconsciously, deeply fears Black retribution for its four centuries of murderous assaults.",
+          },
+        },
+        {
+          id: "dbcFoeRPi0",
+          type: "paragraph",
+          data: {
+            text: '“Again, I say that each and every Negro, during the last 300 years, possesses from that heritage a greater burden of hate for America than they themselves know,” Richard Wright notes in his&nbsp;<a href="https://archives.yale.edu/repositories/11/resources/972">journal</a>. “Perhaps it is well that Negroes try to be as unintellectual as possible, for if they ever started really thinking about what happened to them, they’d go wild. And perhaps that is the secret of whites who want to believe that Negroes really have no memory; for if they thought that Negroes remembered they would start out to shoot them all in sheer self-defense.”&nbsp;',
+          },
+        },
+        {
+          id: "BiKX_7PGn6",
+          type: "paragraph",
+          data: {
+            text: 'The Second Amendment, as the historian Roxanne Dunbar-Ortiz writes in&nbsp;<a href="https://www.rt.com/shows/on-contact/452901-amendment-supremacy-immigrants-constitution/">Loaded: A Disarming History of the Second Amendment</a>,”&nbsp;<a href="https://www.thecanary.co/feature/2019/08/06/amid-mass-shootings-leading-historian-says-white-supremacy-is-baked-into-the-us-constitution/">was designed</a>&nbsp;to solidify the rights, often demanded under state law, of whites to carry weapons. Southern white men were not only required&nbsp;to own guns but serve in slave patrols. These weapons were used to exterminate the indigenous population, hunt down enslaved people who escaped bondage and violently crush slave revolts, strikes and other uprisings by oppressed groups. Vigilante violence is wired into our DNA.',
+          },
+        },
+        {
+          id: "D6NWLe6dyM",
+          type: "paragraph",
+          data: {
+            text: '&nbsp;“Most American violence – and this also illuminates its relationship to state power – has been initiated with a ‘conservative’ bias,” the historian Richard Hofstadter&nbsp;<a href="https://books.google.com/books?id=BRVbcJGS_BUC&amp;pg=PT29&amp;lpg=PT29&amp;dq=%E2%80%9CMost+American+violence+%E2%80%93+and+this+also+illuminates+its+relationship+to+state+power+%E2%80%93+has+been+initiated+with+a+%E2%80%98conservative%E2%80%99+bias&amp;source=bl&amp;ots=9UiBN8NbNv&amp;sig=ACfU3U1TQdKWh7kPr7wLvTnYSfxip403qg&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiAobyjnJT4AhVmsIQIHfQqBbMQ6AF6BAgEEAM#v=onepage&amp;q=%E2%80%9CMost%20American%20violence%20%E2%80%93%20and%20this%20also%20illuminates%20its%20relationship%20to%20state%20power%20%E2%80%93%20has%20been%20initiated%20with%20a%20%E2%80%98conservative%E2%80%99%20bias&amp;f=false">writes</a>. “It has been unleashed against abolitionists, Catholics, radicals, workers and labor organizers, Negroes, Orientals, and other ethnic or racial or ideological minorities, and has been used ostensibly to protect the American, the Southern, the white Protestant, or simply the established middle-class way of life and morals. A high proportion of our violent actions has thus come from the top dogs or the middle dogs. Such has been the character of most mob and vigilante movements. This may help to explain why so little of it has been used against state authority, and why in turn it has been so easily and indulgently forgotten.”',
+          },
+        },
+        {
+          id: "HNNzHa_tp2",
+          type: "paragraph",
+          data: {
+            text: 'Payton Gendron, the 18-year-old white shooter in Buffalo who killed ten Black people and wounded three others, one of them Black, at the Tops Friendly Markets in a Black neighborhood, gave expression in a 180-page manifesto to this white fear, or “great replacement theory.” Gendron repeatedly cited Brenton Tarrant, the 28-year-old mass shooter who in 2019<a href="https://www.nbcnews.com/news/world/new-zealand-mosque-shootings">&nbsp;killed 51 people and injured 40 others at two mosque</a>s in&nbsp;<a href="https://www.nbcnews.com/news/world/new-zealand-mosque-shootings">Christchurch, New Zealand</a>. Tarrant, like Gendron, live streamed his attack so, he believed, he could be cheered on by a virtual audience. Robert Bowers, 46,&nbsp;<a href="https://www.nbcnews.com/news/us-news/active-shooter-reported-near-pittsburgh-synagogue-n925211">killed 11 people at the Tree of Life Synagogue in Pittsburgh</a>&nbsp;in 2018.&nbsp;<a href="https://www.npr.org/2019/10/10/769013051/el-paso-walmart-shooting-suspect-pleads-not-guilty">Patrick Crusius</a>, a 21-year-old, in 2019 drove more than 11 hours to target Hispanics, leaving 22 people dead and 26 injured in a Walmart in El Paso.&nbsp;<a href="https://www.nbcnews.com/news/us-news/california-synagogue-shooter-pleads-guilty-deadly-attack-will-spend-life-n1274564">John Earnest, who pleaded guilty</a>&nbsp;to murdering one and injuring three others in 2019 at a synagogue in Poway, California, saw the “white race” being supplanted by other races. Dylann Roof in 2015 fired 77 shots from his .45-caliber Glock pistol at parishioners attending a Bible study at the Black Emanuel AME Church in Charleston, South Carolina. He murdered nine of them. “You Blacks are killing white people on the streets everyday and raping white women everyday,” he&nbsp;<a href="https://www.nytimes.com/2017/01/10/us/dylann-roof-trial-charleston.html">shouted</a>&nbsp;at his victims as he was firing, according to a journal he kept in jail.',
+          },
+        },
+        {
+          id: "ZkIvaspNig",
+          type: "paragraph",
+          data: {
+            text: "The gun enforced white supremacy. It should not be surprising that it is embraced as the instrument that will prevent whites from being dethroned.",
+          },
+        },
+        {
+          id: "0ujUEh-E9V",
+          type: "paragraph",
+          data: {
+            text: "The specter of societal collapse, less and less a conspiracy theory as we barrel to climate breakdown, reinforces the gun fetish. Survivalist cults, infused with white supremacy, paint the scenario of gangs of marauding Black and brown people fleeing the chaos of lawless cities and ravaging the countryside. These hordes of Black and brown people, the survivalists believe, will only be kept at bay with guns, especially assault-style weapons. This is not far removed from calling for their extermination.",
+          },
+        },
+        {
+          id: "4ngH5tg0dM",
+          type: "paragraph",
+          data: {
+            text: 'Historian&nbsp;<a href="https://en.wikipedia.org/wiki/Richard_Slotkin">Richard Slotkin&nbsp;</a>calls our national lust for blood sacrifice the “structuring metaphor of the American experience,” a belief in “regeneration through violence.” Blood sacrifice, he writes in his trilogy&nbsp;<a href="https://www.oupress.com/9780806132297/regeneration-through-violence/">Regeneration Through Violence: The Mythology of the American Frontier,</a>&nbsp;&nbsp;<a href="https://www.oupress.com/9780806130309/the-fatal-environment/">The Fatal Environment: The Myth of the Frontier in the Age of Industrialization</a><a href="https://www.oupress.com/9780806130309/the-fatal-environment/">,</a>&nbsp;and&nbsp;<a href="https://www.oupress.com/9780806130316/">Gunfighter Nation: The Myth of the Frontier in Twentieth-Century America</a><a href="https://www.oupress.com/9780806130316/">,</a>&nbsp;is celebrated as the highest form of good. Sometimes it requires the blood of heroes, but most often it requires the blood of enemies.&nbsp;',
+          },
+        },
+        {
+          id: "_GmgYjumlC",
+          type: "paragraph",
+          data: {
+            text: 'This blood sacrifice, whether at home or in foreign wars, is racialized. The U.S. has slaughtered millions of the globe’s inhabitants, including women and children, in Korea, Vietnam, Afghanistan, Somalia, Iraq, Syria and Libya, as well as in numerous proxy wars, the latest in Ukraine, where the Biden administration will ship another&nbsp;<a href="https://www.usnews.com/news/world/articles/2022-06-01/u-s-rocket-systems-for-ukraine-not-meant-to-strike-russia-white-house-official">$ 700 million</a>&nbsp;in weapons to supplement&nbsp;<a href="https://www.nytimes.com/interactive/2022/05/20/upshot/ukraine-us-aid-size.html">$54 billion&nbsp;</a>in military and humanitarian aid.',
+          },
+        },
+        {
+          id: "WITGA7a0q4",
+          type: "paragraph",
+          data: {
+            text: '<a href="https://chrishedges.substack.com/subscribe?utm_medium=web&amp;utm_source=subscribe-widget&amp;utm_content=58117687">Subscribe now</a>',
+          },
+        },
+        {
+          id: "9j5TY7GjpH",
+          type: "paragraph",
+          data: {
+            text: 'When the national mythology inculcates into a population that it has the divine right to kill others to purge the earth of evil, how can this mythology not be ingested by naïve and alienated individuals? Kill them overseas. Kill them at home. The more&nbsp;<a href="https://chrishedges.substack.com/p/no-way-out-but-war?s=r">the empire deteriorates</a>, the more the impetus to kill grows. Violence, in desperation, becomes the only route to salvation.',
+          },
+        },
+        {
+          id: "7CNK6rHH5O",
+          type: "paragraph",
+          data: {
+            text: "“A people unaware of its myths is likely to continue living by them, though the world around that people may change and demand changes in their psychology, their world view, their ethics, and their institutions,” Slotkin writes.",
+          },
+        },
+        {
+          id: "ZbK1_yHEsU",
+          type: "paragraph",
+          data: {
+            text: "America’s gun fetish and culture of vigilante violence makes the U.S. very different from other industrialized nations. This is the reason there will never be serious gun control. It does not matter how many mass shootings take place, how many children are butchered in their classrooms, or how high the homicide rate climbs.",
+          },
+        },
+        {
+          id: "x2ckFML-GC",
+          type: "paragraph",
+          data: {
+            text: "The longer we remain in a state of political paralysis, dominated by a corporate oligarchy that refuses to respond to the mounting misery of the bottom half of the population, the more the rage of the underclass will find expression through violence. People who are Black, Muslim, Asian, Jewish, and LGBTQ, along with the undocumented, liberals, feminists and intellectuals, already branded as contaminants, will be slated for execution. Violence will spawn more violence.",
+          },
+        },
+        {
+          id: "lC6qrwJC5I",
+          type: "paragraph",
+          data: {
+            text: '“People pay for what they do, and, still more, for what they have allowed themselves to become,” James Baldwin&nbsp;<a href="https://www.amazon.com/James-Baldwin-Collected-Library-America/dp/1883011523/ref=sr_1_1?crid=4TIF4R2M8YBK&amp;keywords=james+baldwin+collected+essays&amp;qid=1654449402&amp;s=books&amp;sprefix=james+baldwin+collected+essays%2Cstripbooks%2C138&amp;sr=1-1">writes&nbsp;</a>of the American South. “The crucial thing, here, is that the sum of these individual abdications menaces life all over the world. For, in the generality, as social and moral and political and sexual entities, white Americans are probably the sickest and certainly the most dangerous people, of any color, to be found in the world today.” He added that he “was not struck by their wickedness, for that wickedness was but the spirit and the history of America. What struck me was the unbelievable dimension of their sorrow. I felt as though I had wandered into hell.”',
+          },
+        },
+        {
+          id: "oF0Gg10-gd",
+          type: "paragraph",
+          data: {
+            text: "Those who cling to the mythology of white supremacy cannot be reached through rational discussion. Mythology is all they have left. When this mythology appears under threat it triggers a ferocious backlash, for without the myth there is an emptiness, an emotional void, a crushing despair.",
+          },
+        },
+        {
+          id: "kVErV3bVEG",
+          type: "paragraph",
+          data: {
+            text: "America has two choices. It can reintegrate the dispossessed back into the society through radical New Deal types of reforms, or it can leave its underclass to wallow in the toxins of poverty, hate and resentment, fueling the blood sacrifices that afflict us. This choice, I fear, has already been made. The ruling oligarchy doesn’t take the subway or fly on commercial jets. It is protected by the FBI, Homeland Security, police escorts, and bodyguards. Its children attend private schools. It lives in gated communities with elaborate surveillance systems. We don’t matter.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
+          },
+        },
+      ],
+      version: "2.24.3",
+    },
+  },
+  {
+    //Edward Snodamn
+    id: "dc1af04f-e917-4b2d-89ed-4cb2cd511994",
+    publicKey: "0x5Ae488390a369ad446d4eff61103e0fbDbABdE01",
+    data: {
+      time: 1654657822174,
+      blocks: [
+        {
+          id: "E8-gjSLeTO",
+          type: "header",
+          data: { text: "Cultural Revolutions", level: 1 },
+        },
+        {
+          id: "qKHvGlXOjK",
+          type: "header",
+          data: { text: "Freedom is not a goal, but a direction", level: 3 },
+        },
+        {
+          id: "XWh0t_cqes",
+          type: "image",
+          data: {
+            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F28bc047f-1a51-45f5-90e6-8bce6ed71973_1920x1065.jpeg",
+            caption: "",
+            withBorder: false,
+            withBackground: false,
+            stretched: false,
+          },
+        },
+        {
+          id: "lgLFJgUT6Y",
+          type: "paragraph",
+          data: {
+            text: "For a long time now, I’ve wanted to write to you, but found myself unable. Not from illness—although that came and went—but because I refuse to put something in your inbox that I feel isn’t worth your time.&nbsp;",
+          },
+        },
+        {
+          id: "ILq1wqnthX",
+          type: "paragraph",
+          data: {
+            text: "The endless stream of events that the world provides to remark upon has the tendency to take on an almost physical weight, and robs me of what I can only describe as origination energy: the creative spark that empowers us not simply to do something, but to do something&nbsp;new. Without it, even the best of what I can produce feels derivative and workmanlike—good enough for government, perhaps, but not good enough for you.&nbsp;",
+          },
+        },
+        {
+          id: "Z_XnFnYeqq",
+          type: "paragraph",
+          data: {
+            text: "I suspect you may know a similar struggle—you can tell me how you fight it below, if you like—but my only means for overcoming it is an aimless wandering in search of the unknown catalyst that might help me to refill my emptied well. Where once I might have had a good chance of walking away inspired by the empathy I felt while watching a sad, sad film, achieving such inspiration feels harder now, somehow. I have to search farther, and wander longer, across centuries of painting and music until at last, when passing by a dumpster, yesterday’s internet comment might suddenly pop into my head and blossom there, as if a poem. The thing—the artifact itself—doesn’t matter, so much as what it does for me—it&nbsp;enlivens&nbsp;me.",
+          },
+        },
+        {
+          id: "JcY6p6R3E8",
+          type: "paragraph",
+          data: { text: "This, to me, is art.&nbsp;" },
+        },
+        { id: "eUi5bEwXjS", type: "paragraph", data: { text: "<b>✓</b>" } },
+        {
+          id: "v5MGqsiYm3",
+          type: "paragraph",
+          data: {
+            text: 'I was most recently enlivened by a book, so I can’t think of anything more fitting for my return to this format than an account of it:&nbsp;<a href="https://www.penguinrandomhouse.com/books/246165/1000-years-of-joys-and-sorrows-by-ai-weiwei/">1000 Years of Joys and Sorrows</a>, by the great Chinese artist&nbsp;<a href="https://en.wikipedia.org/wiki/Ai_Weiwei">Ai Wei-Wei</a>.',
+          },
+        },
+        {
+          id: "MKRlcqu_2f",
+          type: "image",
+          data: {
+            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb72b02f1-517a-4aeb-a77b-2d44f34399fe_296x450.jpeg",
+            caption: "",
+            withBorder: false,
+            withBackground: true,
+            stretched: false,
+          },
+        },
+        {
+          id: "3HAqdNNQmc",
+          type: "paragraph",
+          data: { text: "You don’t need me to tell you where to find books." },
+        },
+        {
+          id: "T3iHioaY6w",
+          type: "paragraph",
+          data: {
+            text: 'I never expected to find so much of my own story—of my own country’s story—in Ai Weiwei’s book, mostly because Ai’s life and mine could not have been more different. I grew up as the (old) Red Scare was in its death-throes, and until the cusp of my thirties I lived a comfortable existence as part of the newly ascendant clerisy of the computer. Ai, on the other hand, spent his childhood sleeping in a dugout amidst the frozen wastes of “<a href="https://en.wikipedia.org/wiki/Gurbant%C3%BCngg%C3%BCt_Desert">Little Siberia</a>” after his father, a politically-connected but free-thinking poet by the name of Ai Qing, was branded a “<a href="https://en.wikipedia.org/wiki/Five_Black_Categories">rightist</a>” and banished by the Maoists for “re-education.”',
+          },
+        },
+        {
+          id: "iPorGpG6t3",
+          type: "paragraph",
+          data: {
+            text: 'The first half of Ai’s memoir is a moving testament to his father, resurrecting for all of us a man who, despite&nbsp;<a href="https://en.wikipedia.org/wiki/Cultural_Revolution#Humanitarian_crisis">the terrors of the Cultural Revolution</a>, retained an ineradicable sense of self.&nbsp;',
+          },
+        },
+        {
+          id: "Lt1Mutc6To",
+          type: "paragraph",
+          data: {
+            text: "Ai’s dual structure—of an account of his life, yes, but also and perhaps more importantly an account of his times—was familiar to me, despite the exotic settings. He uses the classic dialectical frame (which I used in my own memoir), allowing him to bring intimacy to the political and historical context to the personal. In the case of&nbsp;1000 Years of Joys and Sorrows, choosing to include a deeply readable record of&nbsp;how&nbsp;and&nbsp;how quickly&nbsp;China’s violent intolerance became normalized into national policy is tremendously valuable and frequently alarming.&nbsp;",
+          },
+        },
+        { id: "AsSVpNymJW", type: "paragraph", data: { text: "Ai writes:" } },
+        {
+          id: "qEVZr14xZu",
+          type: "paragraph",
+          data: {
+            text: "Under the pressure to conform, everyone sank into an ideological swamp of “criticism” and “self-­criticism.” My father repeatedly wrote self-­critiques, and when controls on thought and expression rose to the level of threatening his very survival, he, like others, wrote an essay denouncing Wang Shiwei, the author of “Wild Lilies,” taking a public stand that went against his inner convictions.",
+          },
+        },
+        {
+          id: "Bev3_uwjfW",
+          type: "paragraph",
+          data: {
+            text: "Situations such as this occurred in Yan’an in the 1940s, occurred in China after 1949, and still occur in the present day.&nbsp;Ideological cleansing, I would note, exists not only under totalitarian regimes—­it is also present, in a different form, in liberal Western democracies.&nbsp;Under the influence of politically correct extremism, individual thought and expression are too often curbed and too often replaced by empty political slogans.&nbsp;",
+          },
+        },
+        {
+          id: "AQZGYYX5tU",
+          type: "paragraph",
+          data: { text: "The bolding is mine, but the boldness is Ai’s." },
+        },
+        {
+          id: "zCALV3iX9L",
+          type: "paragraph",
+          data: {
+            text: "From the time I began studying China’s quest to&nbsp;intermediate&nbsp;the information space of its domestic internet, as part of my classified work at the NSA, I’d experience an unpleasant spinal tingle whenever I came across a new report indicating that the United States government, was, piece by piece, building out a similar technological and political infrastructure, using similar the justifications of countering terrorism, misinformation, sedition, and subjective “social harms.” I don’t want to be misunderstood as saying “East” and “West” were, or are, the same; rather, it is my belief that market forces, democratic decline, and a toxic obsession with “national security”—a euphemism for state supremacy—are drawing the US and China to meet in the middle: a common extreme. A consensus-challenging internet is perceived by both governments as a threat to central authority, and the pervasive surveillance and speech restrictions they’ve begun to mutually embrace will produce an authoritarian center of gravity that over time will compress every aspect of individual and national political differences until little distance remains.",
+          },
+        },
+        { id: "_XaFDK5MDw", type: "paragraph", data: { text: "<b>✓</b>" } },
+        {
+          id: "00uCAfKpf5",
+          type: "paragraph",
+          data: {
+            text: "If this theory strikes you as ridiculous, it is enough for now to bear in mind that no matter how different you believe China to be from the United States, there are lessons from Ai’s history that are uncomfortably easy to recognize: “If you try to understand your country,” he writes, “it’s enough to put you on a collision course with the law.”",
+          },
+        },
+        {
+          id: "WR97w2quvn",
+          type: "image",
+          data: {
+            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6709e755-f349-4d40-9637-37c8d7662e83_640x465.jpeg",
+            caption: "",
+            withBorder: false,
+            withBackground: false,
+            stretched: false,
+          },
+        },
+        {
+          id: "n90KV-0azk",
+          type: "paragraph",
+          data: {
+            text: 'One need not nail&nbsp;<a href="https://en.wikipedia.org/wiki/Ninety-five_Theses">Ninety-five Theses</a>to the door for the church to perceive in them a threat; literacy alone may be enough to invite heresy.',
+          },
+        },
+        {
+          id: "bkYZI12f3m",
+          type: "paragraph",
+          data: {
+            text: "1000 Years of Joys and Sorrows is a memoir of a man attempting to understand his country, even as his country is trying, or purporting to try, to understand&nbsp;him—through surveillance and investigations, interrogations and detentions. It is also a reminder that, as during the (last) Cultural Revolution, the political battle with the highest stakes will always be waged against the imposition of a monoculture. Within a monoculture, there is tremendous pressure to participate in the enforcement of&nbsp;consensus&nbsp;as if it were&nbsp;truth, which alienates members from the possibility that truth can often stand in opposition to consensus.&nbsp;&nbsp;",
+          },
+        },
+        {
+          id: "yAwz8Rq7au",
+          type: "paragraph",
+          data: { text: "The vaccine against monoculture is tolerance." },
+        },
+        {
+          id: "t-f_BhtCHv",
+          type: "paragraph",
+          data: {
+            text: 'The message that emerges from Ai’s work is that the truest resistance to the oppression of conformity is the riot of human diversity, the singular nature of the individual and their individual expression, the non-deterministic variability of things we—all of us—think and do and make.&nbsp;Difference is the&nbsp;<a href="https://en.wikipedia.org/wiki/Random_seed">seed value</a>&nbsp;of our human process.',
+          },
+        },
+        {
+          id: "exu1V9EAdv",
+          type: "paragraph",
+          data: {
+            text: 'The public body is like Ai Weiwei’s&nbsp;<a href="https://en.wikipedia.org/wiki/Sunflower_Seeds_(artwork)">Sunflower Seeds</a>.&nbsp;Millions of handmade, ceramic seeds—identical from afar, but unique if you stopped to look, unique if you stopped to care—were poured into the bank-like lobby of the Tate Modern in London. Visitors could lie in them, they could touch them, they could roll around in their bounty and be renewed.&nbsp;',
+          },
+        },
+        {
+          id: "l_J2ENOlKd",
+          type: "image",
+          data: {
+            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ff25fdfff-c0fd-4d0f-9db2-b27f85639555_1600x1086.jpeg",
+            caption: "",
+            withBorder: false,
+            withBackground: false,
+            stretched: false,
+          },
+        },
+        {
+          id: "kb8_CnfY0H",
+          type: "paragraph",
+          data: { text: "Ai Weiwei amidstSunflower Seeds" },
+        },
+        {
+          id: "IfX2fFEBh2",
+          type: "paragraph",
+          data: { text: "I wish I could have been there to experience it." },
+        },
+        {
+          id: "vuoFl4GQwf",
+          type: "paragraph",
+          data: {
+            text: "But in consolation I have a book that has touched me, a book that I’ve been reading to my son. Though he’s not old enough to understand a word yet, I know he feels the sound, the vibrations of my chest, and the warmth of being held within the mystery of language.&nbsp;",
+          },
+        },
+        {
+          id: "h7k8xcMJOi",
+          type: "paragraph",
+          data: {
+            text: "In the final pages, Ai writes a phrase that I let hang in the air: “Freedom is not a goal, but a direction.”",
+          },
+        },
+        {
+          id: "i1DowsC4zO",
+          type: "paragraph",
+          data: { text: "And, I might add, wherever it leads you is home." },
+        },
+      ],
+      version: "2.24.3",
+    },
+  },
+
+  {
+    //Bitalik
     id: "9fb54e39-ab2e-48f2-b546-b780fdd21b94",
-    author: "0x20ce772c4ef862fF022E9dd0931b0c331e29715e",
+    publicKey: "0x20ce772c4ef862fF022E9dd0931b0c331e29715e",
     data: {
       time: 1654657175441,
       blocks: [
@@ -529,13 +1207,7 @@ const articles = [
             level: 1,
           },
         },
-        {
-          id: "jRb_1w3qhP",
-          type: "paragraph",
-          data: {
-            text: '2022 Feb 28<a href="https://vitalik.ca/index.html">See all posts</a>',
-          },
-        },
+
         {
           id: "F-3oVGCYWP",
           type: "paragraph",
@@ -779,217 +1451,11 @@ const articles = [
       version: "2.24.3",
     },
   },
-  //Chris Edgy
+
   {
-    id: "92be9c32-e44a-45e0-907f-9178dd2a4333",
-    author: "0xF9614b726727087C56c9045Fc0613c498e5B7f64",
-    data: {
-      time: 1654657469367,
-      blocks: [
-        {
-          id: "2nM5mrdE4D",
-          type: "header",
-          data: { text: "America’s Gun Fetish", level: 1 },
-        },
-        {
-          id: "oLO9kjucCa",
-          type: "header",
-          data: {
-            text: "There will be no gun control, not only because of the gun lobby and a corrupt political class, but because for many white Americans the idea of the gun is the only power they have left.",
-            level: 3,
-          },
-        },
-        {
-          id: "vzMTRPYcZR",
-          type: "image",
-          data: {
-            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F667ed472-1b6d-4bdc-a399-da89f09ec9e8_4713x3787.jpeg",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
-        {
-          id: "iF7-AlPI7m",
-          type: "paragraph",
-          data: { text: "“White Light/White Heat” - by Mr. Fish" },
-        },
-        {
-          id: "0Q9TfWp4mE",
-          type: "paragraph",
-          data: {
-            text: '<a href="https://chrishedges.substack.com/subscribe?utm_medium=web&amp;utm_source=subscribe-widget&amp;utm_content=58117687">Subscribe now</a>',
-          },
-        },
-        {
-          id: "w2rvdAwxzh",
-          type: "paragraph",
-          data: {
-            text: "Guns were a ubiquitous part of my childhood. My grandfather, who had been a master sergeant in the army, had a small arsenal in his house in Mechanic Falls, Maine. He gave me a 2020 bolt action Springfield rifle when I was 7. By the time I was 10, I had graduated to a Winchester lever action 30-30. I moved my way up the National Rifle Association’s (NRA) Marksmanship Qualification Program, helped along by a summer camp where riflery was mandatory. Like many boys in rural America, I was fascinated by guns, although I disliked hunting. Two decades as a reporter in war zones, however, resulted in a deep aversion to weapons. I saw what they did to human bodies. I inherited my grandfather’s guns and gave them to my uncle.",
-          },
-        },
-        {
-          id: "8OMaAMFmAR",
-          type: "paragraph",
-          data: {
-            text: "Guns made my family, lower working-class people in Maine, feel powerful, even when they were not. Take away their guns and what was left? Decaying small towns, shuttered textile and paper mills, dead-end jobs, seedy bars where veterans, nearly all the men in my family were veterans, drank away their trauma. Take away the guns, and the brute force of squalor, decline, and abandonment hit you in the face like a tidal wave.&nbsp;",
-          },
-        },
-        {
-          id: "sisNbD-Sxq",
-          type: "paragraph",
-          data: {
-            text: 'Yes, the gun lobby and weapons manufacturers fuel the violence with easily available assault-style weapons, whose small caliber 5.56 mm cartridges make them largely useless for hunting. Yes, the lax gun laws and risible background checks are partially to blame. But America also fetishizes guns. This fetish has intensified among white working-class men, who have seen everything slip beyond their grasp: economic stability, a sense of place within the society, hope for the future and political empowerment. The fear of losing the gun is the final crushing blow to self-esteem and dignity, a surrender to the economic and political forces that have destroyed their lives. They cling to the gun as an idea, a belief that with it they are strong, unassailable, and independent. The shifting sands of demographics, with white people&nbsp;<a href="https://www.brookings.edu/blog/the-avenue/2018/03/14/the-us-will-become-minority-white-in-2045-census-projects/">projected</a>&nbsp;to become a minority in the U.S. by 2045, intensifies this primal desire, they would say need, to own a weapon.',
-          },
-        },
-        {
-          id: "yuN9_8FzDz",
-          type: "paragraph",
-          data: {
-            text: 'There have been&nbsp;<a href="https://www.washingtonpost.com/nation/2022/06/02/mass-shootings-in-2022/">over 200</a>&nbsp;mass shootings this year. There are nearly 400 million guns in the U.S., some&nbsp;<a href="https://www.bbc.com/news/world-us-canada-41488081">120 guns</a>&nbsp;for every 100 Americans. Half of the privately-owned guns are owned by&nbsp;<a href="https://news.northeastern.edu/2016/09/26/study-70m-more-firearms-added-to-us-gun-stock-over-past-20-years/#_ga=2.130490438.814604189.1654280320-254802065.1654280320">3 percent</a>&nbsp;of the population,&nbsp;<a href="https://www.rsfjournal.org/content/rsfjss/3/5/38.full.pdf">according to</a>&nbsp;a 2016 study. Our neighbor in Maine had 23 guns. Restrictive gun laws, and gun laws that are inequitably enforced, block gun ownership for many Blacks, especially in urban neighborhoods. Federal law, for example, prohibits gun ownership for most people with felony convictions, effectively barring legal gun ownership for a third of Black men. The outlawing of guns for Blacks is part of a long continuum. Blacks were denied the right to own guns under the antebellum Slave Codes, the post-Civil War Black Codes, and the Jim Crow laws.&nbsp;',
-          },
-        },
-        {
-          id: "eFAo_dEQjt",
-          type: "paragraph",
-          data: {
-            text: "White people built their supremacy in America and globally with violence. They massacred Native Americans and stole their land. They kidnapped Africans, shipped them as cargo to the Americas, and then enslaved, lynched, imprisoned, and impoverished Black people for generations. They have always gunned down Black people with impunity, a historical reality only recently discernable to most white people because of cell phone videos of killings.&nbsp;",
-          },
-        },
-        {
-          id: "xTDxG0Iv-N",
-          type: "paragraph",
-          data: {
-            text: '“The essential American soul is hard, isolate, stoic and a killer,” D.H. Lawrence&nbsp;<a href="https://www.amazon.com/dp/1107457505/?tag=fopo-20">writes</a>. “It has never yet melted.”',
-          },
-        },
-        {
-          id: "ai2WEbeVAn",
-          type: "paragraph",
-          data: {
-            text: "White society, sometimes overtly and sometimes unconsciously, deeply fears Black retribution for its four centuries of murderous assaults.",
-          },
-        },
-        {
-          id: "dbcFoeRPi0",
-          type: "paragraph",
-          data: {
-            text: '“Again, I say that each and every Negro, during the last 300 years, possesses from that heritage a greater burden of hate for America than they themselves know,” Richard Wright notes in his&nbsp;<a href="https://archives.yale.edu/repositories/11/resources/972">journal</a>. “Perhaps it is well that Negroes try to be as unintellectual as possible, for if they ever started really thinking about what happened to them, they’d go wild. And perhaps that is the secret of whites who want to believe that Negroes really have no memory; for if they thought that Negroes remembered they would start out to shoot them all in sheer self-defense.”&nbsp;',
-          },
-        },
-        {
-          id: "BiKX_7PGn6",
-          type: "paragraph",
-          data: {
-            text: 'The Second Amendment, as the historian Roxanne Dunbar-Ortiz writes in&nbsp;<a href="https://www.rt.com/shows/on-contact/452901-amendment-supremacy-immigrants-constitution/">Loaded: A Disarming History of the Second Amendment</a>,”&nbsp;<a href="https://www.thecanary.co/feature/2019/08/06/amid-mass-shootings-leading-historian-says-white-supremacy-is-baked-into-the-us-constitution/">was designed</a>&nbsp;to solidify the rights, often demanded under state law, of whites to carry weapons. Southern white men were not only required&nbsp;to own guns but serve in slave patrols. These weapons were used to exterminate the indigenous population, hunt down enslaved people who escaped bondage and violently crush slave revolts, strikes and other uprisings by oppressed groups. Vigilante violence is wired into our DNA.',
-          },
-        },
-        {
-          id: "D6NWLe6dyM",
-          type: "paragraph",
-          data: {
-            text: '&nbsp;“Most American violence – and this also illuminates its relationship to state power – has been initiated with a ‘conservative’ bias,” the historian Richard Hofstadter&nbsp;<a href="https://books.google.com/books?id=BRVbcJGS_BUC&amp;pg=PT29&amp;lpg=PT29&amp;dq=%E2%80%9CMost+American+violence+%E2%80%93+and+this+also+illuminates+its+relationship+to+state+power+%E2%80%93+has+been+initiated+with+a+%E2%80%98conservative%E2%80%99+bias&amp;source=bl&amp;ots=9UiBN8NbNv&amp;sig=ACfU3U1TQdKWh7kPr7wLvTnYSfxip403qg&amp;hl=en&amp;sa=X&amp;ved=2ahUKEwiAobyjnJT4AhVmsIQIHfQqBbMQ6AF6BAgEEAM#v=onepage&amp;q=%E2%80%9CMost%20American%20violence%20%E2%80%93%20and%20this%20also%20illuminates%20its%20relationship%20to%20state%20power%20%E2%80%93%20has%20been%20initiated%20with%20a%20%E2%80%98conservative%E2%80%99%20bias&amp;f=false">writes</a>. “It has been unleashed against abolitionists, Catholics, radicals, workers and labor organizers, Negroes, Orientals, and other ethnic or racial or ideological minorities, and has been used ostensibly to protect the American, the Southern, the white Protestant, or simply the established middle-class way of life and morals. A high proportion of our violent actions has thus come from the top dogs or the middle dogs. Such has been the character of most mob and vigilante movements. This may help to explain why so little of it has been used against state authority, and why in turn it has been so easily and indulgently forgotten.”',
-          },
-        },
-        {
-          id: "HNNzHa_tp2",
-          type: "paragraph",
-          data: {
-            text: 'Payton Gendron, the 18-year-old white shooter in Buffalo who killed ten Black people and wounded three others, one of them Black, at the Tops Friendly Markets in a Black neighborhood, gave expression in a 180-page manifesto to this white fear, or “great replacement theory.” Gendron repeatedly cited Brenton Tarrant, the 28-year-old mass shooter who in 2019<a href="https://www.nbcnews.com/news/world/new-zealand-mosque-shootings">&nbsp;killed 51 people and injured 40 others at two mosque</a>s in&nbsp;<a href="https://www.nbcnews.com/news/world/new-zealand-mosque-shootings">Christchurch, New Zealand</a>. Tarrant, like Gendron, live streamed his attack so, he believed, he could be cheered on by a virtual audience. Robert Bowers, 46,&nbsp;<a href="https://www.nbcnews.com/news/us-news/active-shooter-reported-near-pittsburgh-synagogue-n925211">killed 11 people at the Tree of Life Synagogue in Pittsburgh</a>&nbsp;in 2018.&nbsp;<a href="https://www.npr.org/2019/10/10/769013051/el-paso-walmart-shooting-suspect-pleads-not-guilty">Patrick Crusius</a>, a 21-year-old, in 2019 drove more than 11 hours to target Hispanics, leaving 22 people dead and 26 injured in a Walmart in El Paso.&nbsp;<a href="https://www.nbcnews.com/news/us-news/california-synagogue-shooter-pleads-guilty-deadly-attack-will-spend-life-n1274564">John Earnest, who pleaded guilty</a>&nbsp;to murdering one and injuring three others in 2019 at a synagogue in Poway, California, saw the “white race” being supplanted by other races. Dylann Roof in 2015 fired 77 shots from his .45-caliber Glock pistol at parishioners attending a Bible study at the Black Emanuel AME Church in Charleston, South Carolina. He murdered nine of them. “You Blacks are killing white people on the streets everyday and raping white women everyday,” he&nbsp;<a href="https://www.nytimes.com/2017/01/10/us/dylann-roof-trial-charleston.html">shouted</a>&nbsp;at his victims as he was firing, according to a journal he kept in jail.',
-          },
-        },
-        {
-          id: "ZkIvaspNig",
-          type: "paragraph",
-          data: {
-            text: "The gun enforced white supremacy. It should not be surprising that it is embraced as the instrument that will prevent whites from being dethroned.",
-          },
-        },
-        {
-          id: "0ujUEh-E9V",
-          type: "paragraph",
-          data: {
-            text: "The specter of societal collapse, less and less a conspiracy theory as we barrel to climate breakdown, reinforces the gun fetish. Survivalist cults, infused with white supremacy, paint the scenario of gangs of marauding Black and brown people fleeing the chaos of lawless cities and ravaging the countryside. These hordes of Black and brown people, the survivalists believe, will only be kept at bay with guns, especially assault-style weapons. This is not far removed from calling for their extermination.",
-          },
-        },
-        {
-          id: "4ngH5tg0dM",
-          type: "paragraph",
-          data: {
-            text: 'Historian&nbsp;<a href="https://en.wikipedia.org/wiki/Richard_Slotkin">Richard Slotkin&nbsp;</a>calls our national lust for blood sacrifice the “structuring metaphor of the American experience,” a belief in “regeneration through violence.” Blood sacrifice, he writes in his trilogy&nbsp;<a href="https://www.oupress.com/9780806132297/regeneration-through-violence/">Regeneration Through Violence: The Mythology of the American Frontier,</a>&nbsp;&nbsp;<a href="https://www.oupress.com/9780806130309/the-fatal-environment/">The Fatal Environment: The Myth of the Frontier in the Age of Industrialization</a><a href="https://www.oupress.com/9780806130309/the-fatal-environment/">,</a>&nbsp;and&nbsp;<a href="https://www.oupress.com/9780806130316/">Gunfighter Nation: The Myth of the Frontier in Twentieth-Century America</a><a href="https://www.oupress.com/9780806130316/">,</a>&nbsp;is celebrated as the highest form of good. Sometimes it requires the blood of heroes, but most often it requires the blood of enemies.&nbsp;',
-          },
-        },
-        {
-          id: "_GmgYjumlC",
-          type: "paragraph",
-          data: {
-            text: 'This blood sacrifice, whether at home or in foreign wars, is racialized. The U.S. has slaughtered millions of the globe’s inhabitants, including women and children, in Korea, Vietnam, Afghanistan, Somalia, Iraq, Syria and Libya, as well as in numerous proxy wars, the latest in Ukraine, where the Biden administration will ship another&nbsp;<a href="https://www.usnews.com/news/world/articles/2022-06-01/u-s-rocket-systems-for-ukraine-not-meant-to-strike-russia-white-house-official">$ 700 million</a>&nbsp;in weapons to supplement&nbsp;<a href="https://www.nytimes.com/interactive/2022/05/20/upshot/ukraine-us-aid-size.html">$54 billion&nbsp;</a>in military and humanitarian aid.',
-          },
-        },
-        {
-          id: "WITGA7a0q4",
-          type: "paragraph",
-          data: {
-            text: '<a href="https://chrishedges.substack.com/subscribe?utm_medium=web&amp;utm_source=subscribe-widget&amp;utm_content=58117687">Subscribe now</a>',
-          },
-        },
-        {
-          id: "9j5TY7GjpH",
-          type: "paragraph",
-          data: {
-            text: 'When the national mythology inculcates into a population that it has the divine right to kill others to purge the earth of evil, how can this mythology not be ingested by naïve and alienated individuals? Kill them overseas. Kill them at home. The more&nbsp;<a href="https://chrishedges.substack.com/p/no-way-out-but-war?s=r">the empire deteriorates</a>, the more the impetus to kill grows. Violence, in desperation, becomes the only route to salvation.',
-          },
-        },
-        {
-          id: "7CNK6rHH5O",
-          type: "paragraph",
-          data: {
-            text: "“A people unaware of its myths is likely to continue living by them, though the world around that people may change and demand changes in their psychology, their world view, their ethics, and their institutions,” Slotkin writes.",
-          },
-        },
-        {
-          id: "ZbK1_yHEsU",
-          type: "paragraph",
-          data: {
-            text: "America’s gun fetish and culture of vigilante violence makes the U.S. very different from other industrialized nations. This is the reason there will never be serious gun control. It does not matter how many mass shootings take place, how many children are butchered in their classrooms, or how high the homicide rate climbs.",
-          },
-        },
-        {
-          id: "x2ckFML-GC",
-          type: "paragraph",
-          data: {
-            text: "The longer we remain in a state of political paralysis, dominated by a corporate oligarchy that refuses to respond to the mounting misery of the bottom half of the population, the more the rage of the underclass will find expression through violence. People who are Black, Muslim, Asian, Jewish, and LGBTQ, along with the undocumented, liberals, feminists and intellectuals, already branded as contaminants, will be slated for execution. Violence will spawn more violence.",
-          },
-        },
-        {
-          id: "lC6qrwJC5I",
-          type: "paragraph",
-          data: {
-            text: '“People pay for what they do, and, still more, for what they have allowed themselves to become,” James Baldwin&nbsp;<a href="https://www.amazon.com/James-Baldwin-Collected-Library-America/dp/1883011523/ref=sr_1_1?crid=4TIF4R2M8YBK&amp;keywords=james+baldwin+collected+essays&amp;qid=1654449402&amp;s=books&amp;sprefix=james+baldwin+collected+essays%2Cstripbooks%2C138&amp;sr=1-1">writes&nbsp;</a>of the American South. “The crucial thing, here, is that the sum of these individual abdications menaces life all over the world. For, in the generality, as social and moral and political and sexual entities, white Americans are probably the sickest and certainly the most dangerous people, of any color, to be found in the world today.” He added that he “was not struck by their wickedness, for that wickedness was but the spirit and the history of America. What struck me was the unbelievable dimension of their sorrow. I felt as though I had wandered into hell.”',
-          },
-        },
-        {
-          id: "oF0Gg10-gd",
-          type: "paragraph",
-          data: {
-            text: "Those who cling to the mythology of white supremacy cannot be reached through rational discussion. Mythology is all they have left. When this mythology appears under threat it triggers a ferocious backlash, for without the myth there is an emptiness, an emotional void, a crushing despair.",
-          },
-        },
-        {
-          id: "kVErV3bVEG",
-          type: "paragraph",
-          data: {
-            text: "America has two choices. It can reintegrate the dispossessed back into the society through radical New Deal types of reforms, or it can leave its underclass to wallow in the toxins of poverty, hate and resentment, fueling the blood sacrifices that afflict us. This choice, I fear, has already been made. The ruling oligarchy doesn’t take the subway or fly on commercial jets. It is protected by the FBI, Homeland Security, police escorts, and bodyguards. Its children attend private schools. It lives in gated communities with elaborate surveillance systems. We don’t matter.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",
-          },
-        },
-      ],
-      version: "2.24.3",
-    },
-  },
-  {
+    //Chris Edgy
     id: "b0d6ed82-038b-41f7-bc78-8f5dd01daf90",
-    author: "0xF9614b726727087C56c9045Fc0613c498e5B7f64",
+    publicKey: "0xF9614b726727087C56c9045Fc0613c498e5B7f64",
     data: {
       time: 1654657644864,
       blocks: [
@@ -1208,231 +1674,11 @@ const articles = [
       version: "2.24.3",
     },
   },
-  //Edward Snodamn
+
   {
-    id: "dc1af04f-e917-4b2d-89ed-4cb2cd511994",
-    author: "0x5Ae488390a369ad446d4eff61103e0fbDbABdE01",
-    data: {
-      time: 1654657822174,
-      blocks: [
-        {
-          id: "E8-gjSLeTO",
-          type: "header",
-          data: { text: "Cultural Revolutions", level: 1 },
-        },
-        {
-          id: "qKHvGlXOjK",
-          type: "header",
-          data: { text: "Freedom is not a goal, but a direction", level: 3 },
-        },
-        {
-          id: "XWh0t_cqes",
-          type: "image",
-          data: {
-            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F28bc047f-1a51-45f5-90e6-8bce6ed71973_1920x1065.jpeg",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
-        {
-          id: "lgLFJgUT6Y",
-          type: "paragraph",
-          data: {
-            text: "For a long time now, I’ve wanted to write to you, but found myself unable. Not from illness—although that came and went—but because I refuse to put something in your inbox that I feel isn’t worth your time.&nbsp;",
-          },
-        },
-        {
-          id: "ILq1wqnthX",
-          type: "paragraph",
-          data: {
-            text: "The endless stream of events that the world provides to remark upon has the tendency to take on an almost physical weight, and robs me of what I can only describe as origination energy: the creative spark that empowers us not simply to do something, but to do something&nbsp;new. Without it, even the best of what I can produce feels derivative and workmanlike—good enough for government, perhaps, but not good enough for you.&nbsp;",
-          },
-        },
-        {
-          id: "Z_XnFnYeqq",
-          type: "paragraph",
-          data: {
-            text: "I suspect you may know a similar struggle—you can tell me how you fight it below, if you like—but my only means for overcoming it is an aimless wandering in search of the unknown catalyst that might help me to refill my emptied well. Where once I might have had a good chance of walking away inspired by the empathy I felt while watching a sad, sad film, achieving such inspiration feels harder now, somehow. I have to search farther, and wander longer, across centuries of painting and music until at last, when passing by a dumpster, yesterday’s internet comment might suddenly pop into my head and blossom there, as if a poem. The thing—the artifact itself—doesn’t matter, so much as what it does for me—it&nbsp;enlivens&nbsp;me.",
-          },
-        },
-        {
-          id: "JcY6p6R3E8",
-          type: "paragraph",
-          data: { text: "This, to me, is art.&nbsp;" },
-        },
-        { id: "eUi5bEwXjS", type: "paragraph", data: { text: "<b>✓</b>" } },
-        {
-          id: "v5MGqsiYm3",
-          type: "paragraph",
-          data: {
-            text: 'I was most recently enlivened by a book, so I can’t think of anything more fitting for my return to this format than an account of it:&nbsp;<a href="https://www.penguinrandomhouse.com/books/246165/1000-years-of-joys-and-sorrows-by-ai-weiwei/">1000 Years of Joys and Sorrows</a>, by the great Chinese artist&nbsp;<a href="https://en.wikipedia.org/wiki/Ai_Weiwei">Ai Wei-Wei</a>.',
-          },
-        },
-        {
-          id: "MKRlcqu_2f",
-          type: "image",
-          data: {
-            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fb72b02f1-517a-4aeb-a77b-2d44f34399fe_296x450.jpeg",
-            caption: "",
-            withBorder: false,
-            withBackground: true,
-            stretched: false,
-          },
-        },
-        {
-          id: "3HAqdNNQmc",
-          type: "paragraph",
-          data: { text: "You don’t need me to tell you where to find books." },
-        },
-        {
-          id: "T3iHioaY6w",
-          type: "paragraph",
-          data: {
-            text: 'I never expected to find so much of my own story—of my own country’s story—in Ai Weiwei’s book, mostly because Ai’s life and mine could not have been more different. I grew up as the (old) Red Scare was in its death-throes, and until the cusp of my thirties I lived a comfortable existence as part of the newly ascendant clerisy of the computer. Ai, on the other hand, spent his childhood sleeping in a dugout amidst the frozen wastes of “<a href="https://en.wikipedia.org/wiki/Gurbant%C3%BCngg%C3%BCt_Desert">Little Siberia</a>” after his father, a politically-connected but free-thinking poet by the name of Ai Qing, was branded a “<a href="https://en.wikipedia.org/wiki/Five_Black_Categories">rightist</a>” and banished by the Maoists for “re-education.”',
-          },
-        },
-        {
-          id: "iPorGpG6t3",
-          type: "paragraph",
-          data: {
-            text: 'The first half of Ai’s memoir is a moving testament to his father, resurrecting for all of us a man who, despite&nbsp;<a href="https://en.wikipedia.org/wiki/Cultural_Revolution#Humanitarian_crisis">the terrors of the Cultural Revolution</a>, retained an ineradicable sense of self.&nbsp;',
-          },
-        },
-        {
-          id: "Lt1Mutc6To",
-          type: "paragraph",
-          data: {
-            text: "Ai’s dual structure—of an account of his life, yes, but also and perhaps more importantly an account of his times—was familiar to me, despite the exotic settings. He uses the classic dialectical frame (which I used in my own memoir), allowing him to bring intimacy to the political and historical context to the personal. In the case of&nbsp;1000 Years of Joys and Sorrows, choosing to include a deeply readable record of&nbsp;how&nbsp;and&nbsp;how quickly&nbsp;China’s violent intolerance became normalized into national policy is tremendously valuable and frequently alarming.&nbsp;",
-          },
-        },
-        { id: "AsSVpNymJW", type: "paragraph", data: { text: "Ai writes:" } },
-        {
-          id: "qEVZr14xZu",
-          type: "paragraph",
-          data: {
-            text: "Under the pressure to conform, everyone sank into an ideological swamp of “criticism” and “self-­criticism.” My father repeatedly wrote self-­critiques, and when controls on thought and expression rose to the level of threatening his very survival, he, like others, wrote an essay denouncing Wang Shiwei, the author of “Wild Lilies,” taking a public stand that went against his inner convictions.",
-          },
-        },
-        {
-          id: "Bev3_uwjfW",
-          type: "paragraph",
-          data: {
-            text: "Situations such as this occurred in Yan’an in the 1940s, occurred in China after 1949, and still occur in the present day.&nbsp;Ideological cleansing, I would note, exists not only under totalitarian regimes—­it is also present, in a different form, in liberal Western democracies.&nbsp;Under the influence of politically correct extremism, individual thought and expression are too often curbed and too often replaced by empty political slogans.&nbsp;",
-          },
-        },
-        {
-          id: "AQZGYYX5tU",
-          type: "paragraph",
-          data: { text: "The bolding is mine, but the boldness is Ai’s." },
-        },
-        {
-          id: "zCALV3iX9L",
-          type: "paragraph",
-          data: {
-            text: "From the time I began studying China’s quest to&nbsp;intermediate&nbsp;the information space of its domestic internet, as part of my classified work at the NSA, I’d experience an unpleasant spinal tingle whenever I came across a new report indicating that the United States government, was, piece by piece, building out a similar technological and political infrastructure, using similar the justifications of countering terrorism, misinformation, sedition, and subjective “social harms.” I don’t want to be misunderstood as saying “East” and “West” were, or are, the same; rather, it is my belief that market forces, democratic decline, and a toxic obsession with “national security”—a euphemism for state supremacy—are drawing the US and China to meet in the middle: a common extreme. A consensus-challenging internet is perceived by both governments as a threat to central authority, and the pervasive surveillance and speech restrictions they’ve begun to mutually embrace will produce an authoritarian center of gravity that over time will compress every aspect of individual and national political differences until little distance remains.",
-          },
-        },
-        { id: "_XaFDK5MDw", type: "paragraph", data: { text: "<b>✓</b>" } },
-        {
-          id: "00uCAfKpf5",
-          type: "paragraph",
-          data: {
-            text: "If this theory strikes you as ridiculous, it is enough for now to bear in mind that no matter how different you believe China to be from the United States, there are lessons from Ai’s history that are uncomfortably easy to recognize: “If you try to understand your country,” he writes, “it’s enough to put you on a collision course with the law.”",
-          },
-        },
-        {
-          id: "WR97w2quvn",
-          type: "image",
-          data: {
-            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F6709e755-f349-4d40-9637-37c8d7662e83_640x465.jpeg",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
-        {
-          id: "n90KV-0azk",
-          type: "paragraph",
-          data: {
-            text: 'One need not nail&nbsp;<a href="https://en.wikipedia.org/wiki/Ninety-five_Theses">Ninety-five Theses</a>to the door for the church to perceive in them a threat; literacy alone may be enough to invite heresy.',
-          },
-        },
-        {
-          id: "bkYZI12f3m",
-          type: "paragraph",
-          data: {
-            text: "1000 Years of Joys and Sorrows is a memoir of a man attempting to understand his country, even as his country is trying, or purporting to try, to understand&nbsp;him—through surveillance and investigations, interrogations and detentions. It is also a reminder that, as during the (last) Cultural Revolution, the political battle with the highest stakes will always be waged against the imposition of a monoculture. Within a monoculture, there is tremendous pressure to participate in the enforcement of&nbsp;consensus&nbsp;as if it were&nbsp;truth, which alienates members from the possibility that truth can often stand in opposition to consensus.&nbsp;&nbsp;",
-          },
-        },
-        {
-          id: "yAwz8Rq7au",
-          type: "paragraph",
-          data: { text: "The vaccine against monoculture is tolerance." },
-        },
-        {
-          id: "t-f_BhtCHv",
-          type: "paragraph",
-          data: {
-            text: 'The message that emerges from Ai’s work is that the truest resistance to the oppression of conformity is the riot of human diversity, the singular nature of the individual and their individual expression, the non-deterministic variability of things we—all of us—think and do and make.&nbsp;Difference is the&nbsp;<a href="https://en.wikipedia.org/wiki/Random_seed">seed value</a>&nbsp;of our human process.',
-          },
-        },
-        {
-          id: "exu1V9EAdv",
-          type: "paragraph",
-          data: {
-            text: 'The public body is like Ai Weiwei’s&nbsp;<a href="https://en.wikipedia.org/wiki/Sunflower_Seeds_(artwork)">Sunflower Seeds</a>.&nbsp;Millions of handmade, ceramic seeds—identical from afar, but unique if you stopped to look, unique if you stopped to care—were poured into the bank-like lobby of the Tate Modern in London. Visitors could lie in them, they could touch them, they could roll around in their bounty and be renewed.&nbsp;',
-          },
-        },
-        {
-          id: "l_J2ENOlKd",
-          type: "image",
-          data: {
-            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ff25fdfff-c0fd-4d0f-9db2-b27f85639555_1600x1086.jpeg",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
-        {
-          id: "kb8_CnfY0H",
-          type: "paragraph",
-          data: { text: "Ai Weiwei amidstSunflower Seeds" },
-        },
-        {
-          id: "IfX2fFEBh2",
-          type: "paragraph",
-          data: { text: "I wish I could have been there to experience it." },
-        },
-        {
-          id: "vuoFl4GQwf",
-          type: "paragraph",
-          data: {
-            text: "But in consolation I have a book that has touched me, a book that I’ve been reading to my son. Though he’s not old enough to understand a word yet, I know he feels the sound, the vibrations of my chest, and the warmth of being held within the mystery of language.&nbsp;",
-          },
-        },
-        {
-          id: "h7k8xcMJOi",
-          type: "paragraph",
-          data: {
-            text: "In the final pages, Ai writes a phrase that I let hang in the air: “Freedom is not a goal, but a direction.”",
-          },
-        },
-        {
-          id: "i1DowsC4zO",
-          type: "paragraph",
-          data: { text: "And, I might add, wherever it leads you is home." },
-        },
-      ],
-      version: "2.24.3",
-    },
-  },
-  {
+    //Edward Snodamn
     id: "2c8b4646-cff5-4d99-9128-c8fe917cd412",
-    author: "0x5Ae488390a369ad446d4eff61103e0fbDbABdE01",
+    publicKey: "0x5Ae488390a369ad446d4eff61103e0fbDbABdE01",
     data: {
       time: 1654657967084,
       blocks: [
@@ -1772,10 +2018,10 @@ const articles = [
       version: "2.24.3",
     },
   },
-  //Astral Codex Eleven
   {
+    //Astral Codex Eleven
     id: "b6d97632-79ad-4108-89bf-0339dc3b7bdd",
-    author: "0x16496589b001541701B6806a8870C4d9d7F459EF",
+    publicKey: "0x16496589b001541701B6806a8870C4d9d7F459EF",
     data: {
       time: 1654658144126,
       blocks: [
@@ -2730,141 +2976,11 @@ const articles = [
       version: "2.24.3",
     },
   },
+
   {
-    id: "842335f3-375a-4da6-bdb2-bdb1413292b3",
-    author: "0x16496589b001541701B6806a8870C4d9d7F459EF",
-    data: {
-      time: 1654658348337,
-      blocks: [
-        {
-          id: "mB2YfKA3KT",
-          type: "header",
-          data: { text: "Justice Creep", level: 1 },
-        },
-        {
-          id: "4TT2D6-c0c",
-          type: "paragraph",
-          data: {
-            text: 'Freddie deBoer says we’re a&nbsp;<a href="https://freddiedeboer.substack.com/p/planet-of-cops?s=r">planet of cops</a>. Maybe that’s why justice is eating the world.',
-          },
-        },
-        {
-          id: "Uj6vMkYUfA",
-          type: "paragraph",
-          data: {
-            text: 'Helping the poor becomes&nbsp;<a href="https://en.wikipedia.org/wiki/Economic_justice">economic justice</a>. If they’re minorities, then it’s&nbsp;<a href="https://www.aclu.org/issues/racial-justice">racial justice</a>, itself a subspecies of&nbsp;<a href="http://everythingintheworld/">social justice</a>. Saving the environment becomes&nbsp;<a href="https://www.epa.gov/environmentaljustice">environmental justice</a>, except when it’s about climate change in which case it’s&nbsp;<a href="https://en.wikipedia.org/wiki/Climate_justice">climate justice</a>. Caring about young people is actually about fighting for&nbsp;<a href="https://www.oecd.org/gov/youth-and-intergenerational-justice/">intergenerational justice</a>. The very laws of space and time are subject to&nbsp;<a href="https://en.wikipedia.org/wiki/Spatial_justice">spatial justice</a>&nbsp;and&nbsp;<a href="https://www.cambridge.org/core/journals/journal-of-social-policy/article/abs/temporal-justice/C19E923FB188E759B9ABA9E4B6823F56">temporal justice</a>.',
-          },
-        },
-        {
-          id: "t_BONSYc1g",
-          type: "paragraph",
-          data: {
-            text: 'I can’t find clear evidence&nbsp;<a href="https://trends.google.com/trends/explore?date=all&amp;geo=US&amp;q=%22climate%20justice%22,%22environmental%20justice%22,%22intergenerational%20justice%22">on Google Trends</a>&nbsp;that use of these terms is increasing - I just feel like I’ve been hearing them more and more often. Nor can I find a simple story behind why - it’s got to have something to do with Rawls, but I can’t trace any of these back to specific Rawlsian philosophers. Some of it seems to have something to do with Amartya Sen, who I don’t know enough about to have an opinion. But mostly it just seems to be the&nbsp;zeitgeist.',
-          },
-        },
-        {
-          id: "FWRYB3GHJS",
-          type: "paragraph",
-          data: {
-            text: "This is mostly a semantic shift - instead of saying “we should help the poor”, you can say “we should pursue economic justice”. But different framings have slightly different implications and connotations, and it’s worth examining what connotations all this justice talk has.",
-          },
-        },
-        {
-          id: "iDXDYyUjsv",
-          type: "paragraph",
-          data: {
-            text: "“We should help the poor” mildly suggests a friendly optimistic picture of progress. We are helpers - good people who are nice to others because that’s who we are. And the poor get helped - the world becomes a better place. Sometimes people go further: “We should save the poor” (or the whales, doesn’t matter). That makes us saviors, a rather more impressive title than helpers. And at the end of it, people/whales/whatever are saved - we’re one step closer to saving the world. Extrapolate the line out far enough, and you can dream of utopia.",
-          },
-        },
-        {
-          id: "JFYbzAU-GB",
-          type: "paragraph",
-          data: {
-            text: "“We should pursue economic justice” suggests other assumptions. Current economic conditions are unjust. There is some particular way to make them just, or at least closer to just. We have some kind of obligation to pursue it. We are not helpers or saviors, who can pat ourselves on the back and feel heroic for leaving the world better than we found it. We are some weird superposition of criminals and cops, both responsible for breaking the moral law and responsible for restoring it, trying to redress some sort of violation. The end result isn’t utopia, it’s people getting what they deserve.",
-          },
-        },
-        {
-          id: "plUNTgyLnj",
-          type: "paragraph",
-          data: {
-            text: "(cf. Thomas Jefferson: “I tremble for my country when I remember that God is just.”)",
-          },
-        },
-        {
-          id: "Az9LEzM0Xb",
-          type: "paragraph",
-          data: {
-            text: "What is “climate justice”? Was the Little Ice Age unjust? What if it killed millions? Is it unjust for Mali to have a less pleasant climate than California? What if I said that there’s a really high correlation between temperature and GDP, and Mali’s awful climate is a big part of why it’s so poor? Climate justice couldn’t care less about any of this. Why not? Hard to say. Maybe because there’s no violation and no villain.",
-          },
-        },
-        {
-          id: "P7CIsOmng8",
-          type: "paragraph",
-          data: {
-            text: 'Is that conflating the sophisticated Rawlsian sense of justice with the vulgar criminal sense? Maybe. But do you think the millions of people talking about _____ justice who have never heard of Rawls are somehow avoiding that conflation? I think it’s a&nbsp;<a href="https://slatestarcodex.com/2014/11/03/all-in-all-another-brick-in-the-motte/">motte-and-bailey</a>: justice - as it’s actually used - is catchy exactly because it&nbsp;does&nbsp;draw on criminal justice connotations. I don’t think it’s a coincidence people are talking about “climate justice” at the same time there are 311,000 Google hits for “climate villains”:',
-          },
-        },
-        {
-          id: "TPZR2dTKsC",
-          type: "image",
-          data: {
-            url: "https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7735a02f-d602-4ecc-9ff4-1aa66489aa7f_617x806.png",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
-        {
-          id: "I1CZBMMUK9",
-          type: "paragraph",
-          data: {
-            text: 'Slightly edited to avoid repeats. Also, the international group for pursuing climate justice is called&nbsp;<a href="https://unfccc.int/process/bodies/supreme-bodies/conference-of-the-parties-cop">COP</a>, and this is not a coincidence because nothing is ever a coincidence.',
-          },
-        },
-        {
-          id: "1eFiJblJzE",
-          type: "paragraph",
-          data: {
-            text: "You can’t “help the economy” or “save the poor” merely by harming rich people. Can you get “economic justice” this way? Depends who you ask, but I notice that “getting justice” for a murder involves punishing a suspect a lot more often than it involves resurrecting the victim.",
-          },
-        },
-        {
-          id: "EHw6pXZecj",
-          type: "paragraph",
-          data: {
-            text: "There’s one last disadvantage I’m having trouble putting into words, but which I think is the most important. A narrative of helpers and saviors allows&nbsp;saints. It allows people who are genuinely good, above and beyond expectations, who rightly serve as ideals and role models for others. A narrative of justice allows, at best,&nbsp;non-criminals&nbsp;- people who haven’t broken any of the rules yet, who don’t suck quite as much as everyone else. You either stand condemned, or you’re okay so far. If it has any real role models, it’s the cop who wins Officer Of The Year, the guy who’s more sensitive to violations and more efficient in punishment than anyone else. Turn this guy into your moral model, and you’ve got, well, the planet of cops.",
-          },
-        },
-        {
-          id: "DEBfU7fElp",
-          type: "paragraph",
-          data: {
-            text: 'Here’s a crazy theory: the moral transition from other virtues to Justice mirrors the literary transition from utopian fiction to dystopian. In Utopia, people practice virtues like Charity, Industry, and Humanity, excelling at them and making their good world even better. In Dystopia, Justice is all you can hope for. If I were in&nbsp;<a href="https://amzn.to/37DKzKB">Terra Ignota</a>, my fondest wish would be to excel in some way the same way Sniper, Apollo Mojave, and the other utopian characters excel, bringing glory to my Hive and giving its already-brilliant shine extra luster. But if I were in 1984, my fondest wish would be to bring O’Brien and the others to justice; to watch them suffer, to undo the wound in the world caused by their scheming.',
-          },
-        },
-        {
-          id: "unWnpyn6Z9",
-          type: "paragraph",
-          data: {
-            text: "Of course, every society is somewhere in between Utopia and Dystopia, and needs values relevant to both. Justice is a useful lens that I’m not at all trying to get rid of. But when it starts annexing all the other virtues, until it’s hard to think of them except as species of Justice, I do think that’s potentially a sign of a sick society.",
-          },
-        },
-        {
-          id: "eR6woWy71L",
-          type: "paragraph",
-          data: {
-            text: '(“A sick society? Sounds like you need some&nbsp;<a href="https://www.wcl.american.edu/impact/initiatives-programs/health/events/healthjustice2020/whatishealthjustice/">health justice</a>,&nbsp;<a href="https://www.msms.org/About-MSMS/News-Media/apply-now-for-medical-justice-in-advocacy-fellowship">medical justice</a>, and&nbsp;<a href="https://www.thealchemistskitchen.com/pages/wellnessjustice">wellness justice</a>!” —— “You’re not helping!”)',
-          },
-        },
-      ],
-      version: "2.24.3",
-    },
-  },
-  //Shoshanna
-  {
+    //Shoshanna
     id: "00c786ba-4057-49ee-9b8e-5b4b7133a6d9",
-    author: "0x56611e15b75aBE1818827747F933Bc132f3C54c3",
+    publicKey: "0x56611e15b75aBE1818827747F933Bc132f3C54c3",
     data: {
       time: 1654658627467,
       blocks: [
@@ -2883,17 +2999,7 @@ const articles = [
             text: "The tech giants use our data not only to predict our behaviour but to change it. But we can resist this attack on democracy",
           },
         },
-        {
-          id: "03y9KZu5qK",
-          type: "image",
-          data: {
-            url: "https://i.guim.co.uk/img/media/4acb40dbb466937e6b15468157d9431d1f0043a8/0_0_2560_1536/master/2560.jpg?width=465&amp;quality=45&amp;auto=format&amp;fit=max&amp;dpr=2&amp;s=78695529305404f6ee32d0c29e1a1c17",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
+
         {
           id: "CjXKUXhhE8",
           type: "paragraph",
@@ -3049,132 +3155,9 @@ const articles = [
       version: "2.24.3",
     },
   },
-
-  {
-    id: "b4770de6-2bfd-4830-bb86-0b327ca96273",
-    author: "0x56611e15b75aBE1818827747F933Bc132f3C54c3",
-    data: {
-      time: 1654658841182,
-      blocks: [
-        {
-          id: "wqKe9DLF2-",
-          type: "header",
-          data: {
-            text: "The Surveillance Threat Is Not What Orwell Imagined",
-            level: 1,
-          },
-        },
-        {
-          id: "i_0SsJu_Pv",
-          type: "image",
-          data: {
-            url: "https://api.time.com/wp-content/uploads/2019/06/george-orwell-1984-surveillance-big-brother.jpeg?quality=85&amp;w=1400",
-            caption: "",
-            withBorder: false,
-            withBackground: false,
-            stretched: false,
-          },
-        },
-        {
-          id: "nzPJETo7QA",
-          type: "paragraph",
-          data: {
-            text: 'Orwell\'s1984was published on June 8, 1949.Houghton Mifflin HarcourtIDEASBY&nbsp;<a href="https://time.com/author/shoshana-zuboff/">SHOSHANA ZUBOFF</a>JUNE 6, 2019 12:11 PM EDT',
-          },
-        },
-        {
-          id: "iPoWeLpA0j",
-          type: "paragraph",
-          data: {
-            text: 'Zuboff is the author of three major books, each signaling a new epoch in technological society. Her most recent work is&nbsp;<a href="https://www.amazon.com/Age-Surveillance-Capitalism-Future-Frontier/dp/1610395697?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=1610395697&amp;tag=timecom-20&amp;ascsubtag=dc4a326e70c6f4e4d4d5046ea44ae72e" target="_blank" rel="nofollow">The Age of Surveillance Capitalism</a>. She is the Charles Edward Wilson Professor Emeritus Harvard Business School and a faculty associate at the Harvard Kennedy School’s Carr Center for Human Rights.',
-          },
-        },
-        {
-          id: "GLRiE4Romv",
-          type: "paragraph",
-          data: {
-            text: 'George Orwell repeatedly delayed crucial medical care to complete&nbsp;<a href="https://www.amazon.com/gp/product/0451524934/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=time037-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0451524934&amp;linkId=802120e09e40ec7b81c1b2f470fd1e49" target="_blank">1984</a>,&nbsp;the book still synonymous with our worst fears of a totalitarian future — published 70 years ago this month. Half a year after his novel’s debut, he was dead. Because he believed everything was at stake, he forfeited everything, including a young son, a devoted sister, a wife of three months and a grateful public that canonized his prescient and pressing novel. But today we are haunted by a question: Did George Orwell die in vain?',
-          },
-        },
-        {
-          id: "kSaP9Nve0F",
-          type: "paragraph",
-          data: {
-            text: "Orwell sought to awaken British and U.S. societies to the totalitarian dangers that threatened democracy even after the Nazi defeat. In letters before and after his novel’s completion, Orwell urged “constant criticism,” warning that any “immunity” to totalitarianism must not be taken for granted: “Totalitarianism, if not fought against, could triumph anywhere.”",
-          },
-        },
-        {
-          id: "XTFNxry9Da",
-          type: "paragraph",
-          data: {
-            text: "State of the Art: 19840 seconds of 3 minutes, 2 secondsVolume 90%",
-          },
-        },
-        {
-          id: "aKUME1Cr1I",
-          type: "paragraph",
-          data: {
-            text: "Since&nbsp;1984’s publication, we have assumed with Orwell that the dangers of mass surveillance and social control could only originate in the state. We were wrong. This error has left us unprotected from an equally pernicious but profoundly different threat to freedom and democracy.",
-          },
-        },
-        {
-          id: "zBDVsvKNLI",
-          type: "paragraph",
-          data: {
-            text: "For 19 years, private companies practicing an unprecedented economic logic that I call&nbsp;surveillance capitalism&nbsp;have hijacked the Internet and its digital technologies. Invented at Google beginning in 2000, this new economics covertly claims private human experience as free raw material for translation into behavioral data. Some data are used to improve services, but the rest are turned into computational products that predict your behavior. These predictions are traded in a new futures market, where surveillance capitalists sell certainty to businesses determined to know what we will do next. This logic was first applied to finding which ads online will attract our interest, but similar practices now reside in nearly every sector — insurance, retail, health, education, finance and more — where personal experience is secretly captured and computed for behavioral predictions. By now it is no exaggeration to say that the Internet is owned and operated by private surveillance capital.",
-          },
-        },
-        {
-          id: "ONOANjxVud",
-          type: "paragraph",
-          data: {
-            text: 'In the competition for certainty, surveillance capitalists learned that the most predictive data come not just from monitoring but also from modifying and directing behavior. For example, by 2013, Facebook had learned how to engineer subliminal cues on its pages to shape users’ real-world actions and feelings. Later, these methods were combined with real-time emotional analyses, allowing marketers to cue behavior at the moment of maximum vulnerability. These inventions were celebrated for being both effective and undetectable.&nbsp;<a href="https://time.com/5205314/facebook-cambridge-analytica-breach/">Cambridge Analytica</a>&nbsp;later demonstrated that the same methods could be employed to shape political rather than commercial behavior.',
-          },
-        },
-        {
-          id: "3CKS7VrfHW",
-          type: "paragraph",
-          data: {
-            text: 'Augmented reality game&nbsp;<a href="https://time.com/4400791/pokemon-go-iphone-android-nintendo/">Pokémon Go</a>, developed at Google and released in 2016 by a Google spinoff, took the challenge of mass behavioral modification to a new level. Business customers from McDonalds to Starbucks paid for “footfall” to their establishments on a “cost per visit” basis, just as online advertisers pay for “cost per click.” The game engineers learned how to herd people through their towns and cities to destinations that contribute profits, all of it without game players’ knowledge.',
-          },
-        },
-        {
-          id: "7K2bjDOE3x",
-          type: "paragraph",
-          data: {
-            text: "Democracy slept while surveillance capitalism flourished. As a result, surveillance capitalists now wield a uniquely 21st century quality of power, as unprecedented as totalitarianism was nearly a century ago. I call it&nbsp;instrumentarian power,&nbsp;because it works its will through the ubiquitous architecture of digital instrumentation. Rather than an intimate Big Brother that uses murder and terror to possess each soul from the inside out, these digital networks are a Big Other: impersonal systems trained to monitor and shape our actions remotely, unimpeded by law.",
-          },
-        },
-        {
-          id: "7TQ_aXqQoN",
-          type: "paragraph",
-          data: {
-            text: "Instrumentarian power delivers our futures to surveillance capitalism’s interests, yet because this new power does not claim our bodies through violence and fear, we undervalue its effects and lower our guard. Instrumentarian power does not want to break us; it simply wants to automate us. To this end, it exiles us from our own behavior. It does not care what we think, feel or do, as long as we think, feel and do things in ways that are accessible to Big Other’s billions of sensate, computational, actuating eyes and ears.",
-          },
-        },
-        {
-          id: "6XL80T6gRM",
-          type: "paragraph",
-          data: {
-            text: "Instrumentarian power challenges democracy. Big Other knows everything, while its operations remain hidden, eliminating our right to resist. This undermines human autonomy and self-determination, without which democracy cannot survive. Instrumentarian power creates unprecedented asymmetries of knowledge, once associated with pre-modern times. Big Other’s knowledge is&nbsp;about&nbsp;us, but it is not used&nbsp;for&nbsp;us. Big Other knows everything about&nbsp;us, while we know almost nothing about&nbsp;it. This imbalance of power is not illegal, because we do not yet have laws to control it, but it is fundamentally anti-democratic.",
-          },
-        },
-        {
-          id: "bnYLt7m6OF",
-          type: "paragraph",
-          data: {
-            text: "Surveillance capitalists claim that their methods are inevitable consequences of digital technologies. This is false. It’s easy to imagine the digital future without surveillance capitalism, but impossible to imagine surveillance capitalism without digital technologies.",
-          },
-        },
-      ],
-      version: "2.24.3",
-    },
-  },
 ];
-
 
 module.exports = {
   users,
   articles,
-
 };
