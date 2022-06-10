@@ -37,14 +37,18 @@ const Header = ({ connect }) => {
   console.log("ENSAvatar", ENSAvatar);
 
   useEffect(() => {
-    // if (ENSName) {
-      const getENSAvatar = async () => {
-        let avatar = await ens.name(ENSName).getText("avatar");
-        setENSAvatar(avatar);
-        // console.log(typeof avatar);
-      };
-      getENSAvatar()
-    // }
+
+    const getENSAvatar = async () => {
+      let avatar = await ens.name(ENSName).getText("avatar");
+      setENSAvatar(avatar);
+      // fetch("/api/connect-user", {
+      //   method: "POST",
+      //   body: JSON.stringify(accounts[0]),
+      // });
+      // console.log(typeof avatar);
+    };
+    getENSAvatar();
+
   }, [ENSName, setENSAvatar]);
 
   return (

@@ -161,6 +161,8 @@ const Circle = styled.span`
   flex-direction: row;
   border: blue 1.5px solid;
 `;
+
+
 const Avatar = styled.img`
 padding: 3px;
   border-radius: 50px;

@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import styled from "styled-components";
 import Aegis from "./components/Aegis";
+import { stringify } from "uuid";
 
 function App() {
   const {
@@ -30,16 +31,15 @@ function App() {
           method: "eth_requestAccounts",
         });
         setAccounts(res);
-        // setIsLoggedIn(true);
       } catch (error) {
         console.log(error);
       }
     } else {
-      // setAccounts([]);
       alert("already connected!");
     }
   };
 
+  // Set log in state
   useEffect(() => {
     if (accounts.length > 0) {
       setIsLoggedIn(true);
@@ -48,7 +48,7 @@ function App() {
     }
   }, [accounts, setIsLoggedIn]);
 
-  // Set account on load if connected & listen to accounts changes
+  // Set account on load if already connected & listen to accounts changes
   useEffect(() => {
     // Check if account is connected
     const checkAccount = async () => {

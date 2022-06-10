@@ -71,9 +71,9 @@ const getUsers = async (req, res) => {
 };
 
 // ======================================================================
-const getUser = async (req, res) => {
+const connectUser = async (req, res) => {
   const user = req.body;
-  const userKey = req.params.key;
+  const userKey = user.publicKey;
 
   await client.connect();
   console.log("connected!");
@@ -87,8 +87,8 @@ const getUser = async (req, res) => {
   }
 
   result
-    ? res.status(200).json({ status: 200, data: result })
-    : res.status(400).json({ status: 400, message: "user data not available" });
+    ? res.status(200).json({ status: 200, data: result, message:"user returning" })
+    : res.status(200).json({ status: 200, message: "new user registered" });
   console.log("disconnected!");
   // client.close();
 };
@@ -122,7 +122,7 @@ const publishArticle = async (req, res) => {
 module.exports = {
   getArticles,
   getUsers,
-  getUser,
+  connectUser,
   getArticle,
   publishArticle,
 };
