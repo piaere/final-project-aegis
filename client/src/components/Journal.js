@@ -64,10 +64,10 @@ const Journal = () => {
               <Preview key={id}>
                 <Circle>
                   <Avatar src={avatar} alt="author's avatar" />
-                <Author>{author}</Author>
+                  <Author>{author}</Author>
                 </Circle>
                 {/* <PublicKey>{publicKey}</PublicKey> */}
-                <div>{parse(result)}</div>
+                <Div>{parse(result)}</Div>
                 {/* <div>{title}</div> */}
                 {/* <div>{paragraph}</div> */}
               </Preview>
@@ -87,11 +87,15 @@ const Wrapper = styled.div`
 `;
 const Preview = styled.div`
   padding: 2em;
-  margin: 2em 0;
-  border:  solid blue 0.5px;
+  margin: 1.2em 0; 
+  border: solid blue 0.5px;
   border-radius: 20px;
-  background-color: #FEF4FD;
+  background-color: #fef4fd;
   color: black;
+`;
+
+const Div = styled.div`
+  text-decoration: none;
 `;
 const Circle = styled.span`
   width: 5vw;
@@ -99,8 +103,7 @@ const Circle = styled.span`
   border-radius: 50px;
 
   display: flex;
-	flex-direction: row;
-
+  flex-direction: row;
 `;
 const Avatar = styled.img`
   border-radius: 50px;

@@ -37,6 +37,7 @@ a:visited {
   font-size: 5vh;
 `;
 const Section = styled.span``;
-const Publish = styled.span``;
+const Publish = styled.span`
+`;
 
 export default Navbar;
