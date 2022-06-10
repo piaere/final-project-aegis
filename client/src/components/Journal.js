@@ -82,6 +82,10 @@ const Journal = () => {
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
+  border: solid blue 0.5px;
+  padding: 0.5em 1.5em;
+
+  border-radius: 20px;
 
   /* background-color: aliceblue; */
 `;
