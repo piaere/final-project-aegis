@@ -5,7 +5,7 @@ const morgan = require("morgan");
 
 const { users, articles } = require("./data");
 
-const { getArticles, getUsers, getArticle, publishArticle } = require("./handlers");
+const { getArticles, getUsers, getArticle, publishArticle, getUser } = require("./handlers");
 
 express()
   .use(morgan("tiny"))
@@ -16,6 +16,7 @@ express()
   .get("/api/get-articles", getArticles)
   .get("/api/get-article/:id", getArticle)
   .get("/api/get-users", getUsers)
+  .get("/api/get-user/:key", getUser)
   .post("/api/publish-article", publishArticle)
 
 

@@ -13,8 +13,40 @@ import styled from "styled-components";
 import Aegis from "./components/Aegis";
 
 function App() {
-  const { accounts, setAccounts, isLoggedIn, setIsLoggedIn } =
-    useContext(Context);
+  const {
+    accounts,
+    setAccounts,
+    shortenAddy,
+    setShortenAddy,
+    isLoggedIn,
+    setIsLoggedIn,
+  } = useContext(Context);
+
+  // Connect function (on buttons click)
+  const connect = async () => {
+    if (accounts.length === 0) {
+      try {
+        const res = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        setAccounts(res);
+        // setIsLoggedIn(true);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      // setAccounts([]);
+      alert("already connected!");
+    }
+  };
+
+  useEffect(() => {
+    if (accounts.length > 0) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [accounts, setIsLoggedIn]);
 
   // Set account on load if connected & listen to accounts changes
   useEffect(() => {
@@ -33,25 +65,18 @@ function App() {
       });
     };
     checkAccount();
-  }, [setAccounts]);
+  }, []);
 
-  // Connect function (on buttons click)
-  const connect = async () => {
-    if (accounts.length === 0) {
-      try {
-        const res = await window.ethereum.request({
-          method: "eth_requestAccounts",
-        });
-        setAccounts(res);
-        setIsLoggedIn(true);
-      } catch (error) {
-        console.log(error);
-      }
-    } else {
-      // setAccounts([]);
-      alert("already connected!");
+  useEffect(() => {
+    console.log("accounts", accounts);
+    if (accounts > 0) {
+      let short = accounts[0].slice(0, 5) + "..." + accounts[0].slice(-4);
+      setShortenAddy(short);
     }
-  };
+  }, [isLoggedIn]);
+
+  console.log("shortenAddy", shortenAddy);
+  console.log("accounts", accounts[0]);
 
   // Set isLoggedIn state
   useEffect(() => {

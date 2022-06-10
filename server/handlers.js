@@ -45,10 +45,6 @@ const getArticle = async (req, res) => {
 
   const db = client.db(dbName);
 
-  //     const result = await db
-  //       .collection("users")
-  //       .findOne({ flight: flightNumber });
-
   const result = await db.collection("articles").findOne({ id: articleId });
 
   result
@@ -75,13 +71,36 @@ const getUsers = async (req, res) => {
 };
 
 // ======================================================================
+const getUser = async (req, res) => {
+  const user = req.body;
+  const userKey = req.params.key;
+
+  await client.connect();
+  console.log("connected!");
+
+  const db = client.db(dbName);
+
+  const result = await db.collection("users").findOne({ publicKey: userKey });
+
+  if (!result) {
+    const insert = await db.collection("users").insertOne(user);
+  }
+
+  result
+    ? res.status(200).json({ status: 200, data: result })
+    : res.status(400).json({ status: 400, message: "user data not available" });
+  console.log("disconnected!");
+  // client.close();
+};
+
+// ======================================================================
 
 const publishArticle = async (req, res) => {
   const newArticle = req.body;
   const id = uuidv4();
   newArticle.id = id;
 
-  console.log(newArticle)
+  console.log(newArticle);
 
   await client.connect();
   console.log("connected!");
@@ -90,7 +109,6 @@ const publishArticle = async (req, res) => {
 
   const insert = await db.collection("articles").insertOne(newArticle);
   const result = await db.collection("articles").findOne({ id: id });
-
 
   result
     ? res
@@ -104,6 +122,7 @@ const publishArticle = async (req, res) => {
 module.exports = {
   getArticles,
   getUsers,
+  getUser,
   getArticle,
   publishArticle,
 };

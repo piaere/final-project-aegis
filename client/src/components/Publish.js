@@ -7,6 +7,7 @@ import EditorJS from "@editorjs/editorjs";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
+import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 // import ImageTool from "@editorjs/image";
 import { Context } from "../Context";
 const LinkTool = require("@editorjs/link");
@@ -15,7 +16,7 @@ const SimpleImage = require("@editorjs/simple-image");
 const Publish = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [currentEditor, setCurrentEditor] = useState(null);
-  const { accounts } = useContext(Context);
+  const { accounts, ENSName, ENSAvatar, shortenAddy } = useContext(Context);
   const history = useHistory();
 
   useEffect(() => {
@@ -113,6 +114,18 @@ const Publish = () => {
 
   return (
     <div>
+      <AuthorHeader>
+        <Circle>
+          {ENSAvatar ? (
+            <Avatar src={ENSAvatar} alt="user ENS avatar"></Avatar>
+          ) : (
+            <Jazzicon diameter={69} seed={jsNumberForAddress(accounts[0])} />
+          )}
+        </Circle>
+
+        <AuthorName>{ENSName ? ENSName : shortenAddy}</AuthorName>
+      </AuthorHeader>
+
       <Right>
         <HollowButton handleFunction={saveDraft} string={"Save draft"} />
         <ColorButton handleFunction={deleteDraft} string={"Delete draft"} />
@@ -123,16 +136,48 @@ const Publish = () => {
   );
 };
 
+const AuthorHeader = styled.div`
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+`;
+
+const AuthorName = styled.span`
+  margin-left: 1.5vw;
+  font-size: 2em;
+  font-weight: 500;
+  color: blue;
+  font-family: "Amiri", serif;
+`;
+
+const Circle = styled.span`
+  width: 5vw;
+  height: 5vw;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  border: blue 1.5px solid;
+`;
+const Avatar = styled.img`
+padding: 3px;
+  border-radius: 50px;
+  width: 100%;
+  object-fit: cover;
+`;
+
 const EditorSection = styled.div`
   padding: 2em;
-border:  solid blue 0.5px;
+  border: solid blue 0.5px;
   border-radius: 20px;
 `;
 
 const Right = styled.div`
-  margin-top: 62vh;
+  margin-top: 50vh;
   margin-left: 65%;
-  /* left: 7vh; */
+
   height: 25vh;
   border: solid blue 2px;
   border-radius: 20px;

@@ -1,32 +1,51 @@
 import styled from "styled-components";
 import ColorButton from "./buttons/SmallButtonColor";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import ENS, { getEnsAddress } from "@ensdomains/ensjs";
-import {web3} from "web3";
 
-// Set-up Ethereum Name Service provider
-
-
-// const ens = new ENS({
-//   provider: web3.currentProvider,
-//   ensAddress: getEnsAddress("1"),
-// });
+const ens = new ENS({
+  provider: window.ethereum,
+  ensAddress: getEnsAddress("1"),
+});
 
 const Header = ({ connect }) => {
-  const { accounts, isLoggedIn, ENSName, setENSName } = useContext(Context);
+  const {
+    accounts,
+    isLoggedIn,
+    ENSName,
+    setENSName,
+    ENSAvatar,
+    setENSAvatar,
+    shortenAddy,
+  } = useContext(Context);
 
-  // useEffect(() => {
-  //   const getENS = async () => {
-  //     const name = await ens.getName(accounts[0]);
-  //     if (name.name) {
-  //       setENSName(name.name);
-  //     }
-  //   };
-  //   getENS();
-  // }, []);
+  useEffect(() => {
+    const getENSName = async () => {
+      let name = await ens.getName(accounts[0]);
+      const ensName = name.name;
+
+      setENSName(ensName);
+    };
+    getENSName();
+  }, [accounts]);
+
+  console.log("ENSName", ENSName);
+  console.log("shortenAddy", shortenAddy);
+  console.log("ENSAvatar", ENSAvatar);
+
+  useEffect(() => {
+    // if (ENSName) {
+      const getENSAvatar = async () => {
+        let avatar = await ens.name(ENSName).getText("avatar");
+        setENSAvatar(avatar);
+        // console.log(typeof avatar);
+      };
+      getENSAvatar()
+    // }
+  }, [ENSName, setENSAvatar]);
 
   return (
     <Wrapper>
@@ -42,16 +61,18 @@ const Header = ({ connect }) => {
             accounts.length > 0
               ? ENSName
                 ? ENSName
-                : accounts[0]
+                : shortenAddy
               : "Connect wallet"
           }
           handleFunction={connect}
         />
         {isLoggedIn ? (
           <Circle>
-            {/* <Avatar> */}
-            <Jazzicon diameter={36} seed={jsNumberForAddress(accounts[0])} />
-            {/* </Avatar> */}
+            {ENSAvatar ? (
+              <Avatar src={ENSAvatar} alt="user ENS avatar"></Avatar>
+            ) : (
+              <Jazzicon diameter={36} seed={jsNumberForAddress(accounts[0])} />
+            )}
           </Circle>
         ) : null}
       </Right>
@@ -81,9 +102,7 @@ const Right = styled.span`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* width: 15vw; */
 `;
-// const Center = styled.span``;
 
 const Circle = styled.span`
   width: 3vw;
@@ -96,10 +115,9 @@ const Circle = styled.span`
   border: blue 1.5px solid;
   margin-left: 10px;
 `;
-const Avatar = styled.span`
-  /* border-radius: 50px; */
-  width: 100%;
-  object-fit: cover;
+const Avatar = styled.img`
+  border-radius: 50px;
+  padding: 2px;
 `;
 
 const Aegis = styled.span`
