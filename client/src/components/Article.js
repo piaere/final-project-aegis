@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Context } from "../Context";
 import ColorButton from "./buttons/SmallButtonColor";
-// import Web3 from 'web3';
+import Web3 from "web3";
 import EditorJS from "@editorjs/editorjs";
 import List from "@editorjs/list";
 import Header from "@editorjs/header";
@@ -77,13 +77,15 @@ const Article = () => {
 
   const tip = () => {
     if (isLoggedIn) {
+      const amount = Web3.utils.toWei("0.01", "ether");
+
       window.ethereum.request({
         method: "eth_sendTransaction",
         params: [
           {
             from: accounts[0],
             to: authorKey,
-            value: "100000000",
+            value: Web3.utils.toHex(amount),
           },
         ],
       });
@@ -104,7 +106,7 @@ const Article = () => {
       <Right>
         <LikeArticle>Like this article?</LikeArticle>
         <LikeArticle>Tip its author!</LikeArticle>
-        <ColorButton handleFunction={tip} string={"Send some ETH"} />
+        <ColorButton handleFunction={tip} string={"Send 0.01 ETH"} />
       </Right>
       <EditorSection id="editor"></EditorSection>
     </>

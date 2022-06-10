@@ -60,7 +60,7 @@ const Journal = () => {
           const result = Parser(article.data.blocks);
 
           return (
-            <ArticleLink to={`/aegis/article/${id}`}>
+            <ArticleLink  key={id} to={`/aegis/article/${id}`}>
               <Preview key={id}>
                 <Circle>
                   <Avatar src={avatar} alt="author's avatar" />

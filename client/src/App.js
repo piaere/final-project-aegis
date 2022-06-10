@@ -24,14 +24,12 @@ function App() {
       if (accounts !== res) {
         setAccounts(res);
       }
-      // res.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
 
       // Check if user disconnect or change account
       window.ethereum.on("accountsChanged", function (res) {
         if (accounts !== res) {
           setAccounts(res);
         }
-        // res.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
       });
     };
     checkAccount();

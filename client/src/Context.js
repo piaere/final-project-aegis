@@ -7,6 +7,7 @@ export const Provider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [users, setUsers] = useState([]);
   const [articles, setArticles] = useState([]);
+  const [ENSName, setENSName] = useState();
 
   return (
     <Context.Provider
@@ -19,6 +20,8 @@ export const Provider = ({ children }) => {
         setUsers,
         articles,
         setArticles,
+        ENSName,
+        setENSName,
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import styled from "styled-components";
 const ColorButton = ({ string, handleFunction }) => {
   const keyLength = 14;
   if (string.length > keyLength) {
-    string = string.slice(0, keyLength) + "...";
+    string = string.slice(0, 5) + "..." + string.slice(-4);
   }
 
   return <StyledButton onClick={() => handleFunction()}>{string}</StyledButton>;
