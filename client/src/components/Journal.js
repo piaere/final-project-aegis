@@ -31,14 +31,11 @@ const Journal = () => {
       previewArticlesBlocks.push(article.data.blocks.slice(0, 2));
       // previewArticles.data.blocks = previewArticlesBlocks;
     });
-    console.log("previewArticlesBlocks", previewArticlesBlocks);
 
     const previewArticles = [...articles];
     previewArticles.forEach((article, index) => {
       article.data.blocks = previewArticlesBlocks[index];
     });
-
-    console.log("previewArticles", previewArticles);
 
     return (
       <Wrapper>
@@ -60,7 +57,7 @@ const Journal = () => {
           const result = Parser(article.data.blocks);
 
           return (
-            <ArticleLink  key={id} to={`/aegis/article/${id}`}>
+            <ArticleLink key={id} to={`/aegis/article/${id}`}>
               <Preview key={id}>
                 <Circle>
                   <Avatar src={avatar} alt="author's avatar" />
@@ -84,14 +81,13 @@ const Wrapper = styled.div`
   height: 100%;
   border: solid blue 0.5px;
   padding: 0.5em 1.5em;
-
   border-radius: 20px;
 
   /* background-color: aliceblue; */
 `;
 const Preview = styled.div`
   padding: 2em;
-  margin: 1.2em 0; 
+  margin: 1.2em 0;
   border: solid blue 0.5px;
   border-radius: 20px;
   background-color: #fef4fd;

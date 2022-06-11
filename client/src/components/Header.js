@@ -1,55 +1,13 @@
 import styled from "styled-components";
 import ColorButton from "./buttons/SmallButtonColor";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-import ENS, { getEnsAddress } from "@ensdomains/ensjs";
-
-const ens = new ENS({
-  provider: window.ethereum,
-  ensAddress: getEnsAddress("1"),
-});
 
 const Header = ({ connect }) => {
-  const {
-    accounts,
-    isLoggedIn,
-    ENSName,
-    setENSName,
-    ENSAvatar,
-    setENSAvatar,
-    shortenAddy,
-  } = useContext(Context);
-
-  useEffect(() => {
-    const getENSName = async () => {
-      let name = await ens.getName(accounts[0]);
-      const ensName = name.name;
-
-      setENSName(ensName);
-    };
-    getENSName();
-  }, [accounts]);
-
-  console.log("ENSName", ENSName);
-  console.log("shortenAddy", shortenAddy);
-  console.log("ENSAvatar", ENSAvatar);
-
-  useEffect(() => {
-
-    const getENSAvatar = async () => {
-      let avatar = await ens.name(ENSName).getText("avatar");
-      setENSAvatar(avatar);
-      // fetch("/api/connect-user", {
-      //   method: "POST",
-      //   body: JSON.stringify(accounts[0]),
-      // });
-      // console.log(typeof avatar);
-    };
-    getENSAvatar();
-
-  }, [ENSName, setENSAvatar]);
+  const { accounts, isLoggedIn, ENSName, ENSAvatar, shortenAddy } =
+    useContext(Context);
 
   return (
     <Wrapper>

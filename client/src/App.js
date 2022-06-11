@@ -5,25 +5,33 @@ import {
   Route,
 } from "react-router-dom";
 import { useContext, useEffect } from "react";
-
 import { Context } from "./Context";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import styled from "styled-components";
 import Aegis from "./components/Aegis";
-import { stringify } from "uuid";
+import ENS, { getEnsAddress } from "@ensdomains/ensjs";
+
+//Initiating the connection to the Ethereum Name Service (ENS)
+const ens = new ENS({
+  provider: window.ethereum,
+  ensAddress: getEnsAddress("1"),
+});
 
 function App() {
   const {
     accounts,
     setAccounts,
-    shortenAddy,
     setShortenAddy,
     isLoggedIn,
     setIsLoggedIn,
+    setENSAvatar,
+    setENSName,
+    ENSName,
+    ENSAvatar,
   } = useContext(Context);
 
-  // Connect function (on buttons click)
+  // Connect app to user's wallet account (on buttons click)
   const connect = async () => {
     if (accounts.length === 0) {
       try {
@@ -39,7 +47,7 @@ function App() {
     }
   };
 
-  // Set log in state
+  // Set login state
   useEffect(() => {
     if (accounts.length > 0) {
       setIsLoggedIn(true);
@@ -48,7 +56,7 @@ function App() {
     }
   }, [accounts, setIsLoggedIn]);
 
-  // Set account on load if already connected & listen to accounts changes
+  // Check if already connected + listen to any accounts changes
   useEffect(() => {
     // Check if account is connected
     const checkAccount = async () => {
@@ -56,7 +64,6 @@ function App() {
       if (accounts !== res) {
         setAccounts(res);
       }
-
       // Check if user disconnect or change account
       window.ethereum.on("accountsChanged", function (res) {
         if (accounts !== res) {
@@ -67,25 +74,52 @@ function App() {
     checkAccount();
   }, []);
 
+  // Check if user has a Ethereum Service Name registered
   useEffect(() => {
-    console.log("accounts", accounts);
+    const getENSName = async () => {
+      let name = await ens.getName(accounts[0]);
+      const ensName = name.name;
+      // If yes, stating the name
+      setENSName(ensName);
+    };
+    getENSName();
+  }, [accounts]);
+
+  // Check if user has a Ethereum Service Name avatar
+  useEffect(() => {
+    const getENSAvatar = async () => {
+      let avatar = await ens.name(ENSName).getText("avatar");
+      // If yes, stating the avatar
+      setENSAvatar(avatar);
+    };
+    getENSAvatar();
+  }, [ENSName, setENSAvatar]);
+
+  useEffect(() => {
+    fetch("/api/connect-user", {
+      method: "POST",
+      body: JSON.stringify(accounts[0], ENSName, ENSAvatar),
+
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((json) => {
+        const { data, status, message } = json;
+        console.log(message);
+      });
+  }, []);
+
+  // If the user doesn't have an ENS name we will display an abbrevation on his PublicKey
+  useEffect(() => {
     if (accounts > 0) {
       let short = accounts[0].slice(0, 5) + "..." + accounts[0].slice(-4);
       setShortenAddy(short);
     }
   }, [isLoggedIn]);
 
-  console.log("shortenAddy", shortenAddy);
-  console.log("accounts", accounts[0]);
-
-  // Set isLoggedIn state
-  useEffect(() => {
-    console.log("setting loggedIn");
-    accounts.length > 0 ? setIsLoggedIn(true) : setIsLoggedIn(false);
-  }, [accounts, setIsLoggedIn]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // console.log("accounts", accounts);
-  // console.log("isLoggedIn", isLoggedIn);
   return (
     <Main>
       <Router>
@@ -110,6 +144,7 @@ function App() {
 const Main = styled.main`
   width: 100vw;
   height: 100vh;
+  padding-bottom: 10vh;
 
   background: rgb(238, 174, 202);
   background: linear-gradient(

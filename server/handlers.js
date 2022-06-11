@@ -87,8 +87,12 @@ const connectUser = async (req, res) => {
   }
 
   result
-    ? res.status(200).json({ status: 200, data: result, message:"user returning" })
-    : res.status(200).json({ status: 200, message: "new user registered" });
+    ? res
+        .status(200)
+        .json({ status: 200, data: result, message: "user returning" })
+    : res
+        .status(200)
+        .json({ status: 200, data: result, message: "new user registered" });
   console.log("disconnected!");
   // client.close();
 };

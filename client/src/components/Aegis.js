@@ -20,19 +20,16 @@ const Aegis = () => {
         // console.log(data.data);
       })
       .catch((error) => console.log("Error: ", error));
-
-      
   }, []);
 
   useEffect(() => {
-    console.log("second");
     fetch("/api/get-users")
       .then((res) => res.json())
       .then((data) => {
         setUsers(data.data);
-    // console.log(data.data);
-    })
-    .catch((error) => console.log("Error: ", error));
+        // console.log(data.data);
+      })
+      .catch((error) => console.log("Error: ", error));
   }, []);
 
   return (
@@ -78,6 +75,5 @@ const Center = styled.div`
   width: 100%;
   height: 100%;
 `;
-
 
 export default Aegis;
