@@ -2,7 +2,6 @@ import { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import { Context } from "../Context";
 
-import Parser from "editorjs-viewer";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 
@@ -10,36 +9,57 @@ const Journal = () => {
   const [isMounted, setIsMounted] = useState(false);
   const { users, articles } = useContext(Context);
 
-  const data = {
-    time: 1605667704216,
-    version: "2.19.0",
-    blocks: [
-      {
-        data: { text: "header example", level: 2 },
-        type: "header",
-      },
-    ],
-  };
-
   useEffect(() => {
     users.length > 0 && articles.length > 0 && setIsMounted(true);
   }, [users, articles]);
 
   if (isMounted) {
-    const previewArticlesBlocks = [];
+    const newPreview = [];
     articles.forEach((article) => {
-      previewArticlesBlocks.push(article.data.blocks.slice(0, 2));
-      // previewArticles.data.blocks = previewArticlesBlocks;
-    });
+      const firstHeaderBlock = article.data.blocks.find(
+        (block) => block.type === "header"
+      );
+      const firstParagraphBlock = article.data.blocks.find(
+        (block) => block.type === "paragraph"
+      );
+      const firstImageBlock = article.data.blocks.find(
+        (block) => block.type === "image"
+      );
+      const headerText = firstHeaderBlock.data.text;
+      let paragraphText = parse(firstParagraphBlock.data.text);
 
-    const previewArticles = [...articles];
-    previewArticles.forEach((article, index) => {
-      article.data.blocks = previewArticlesBlocks[index];
+      if (Array.isArray(paragraphText)) {
+        let removedLinkArray = [];
+        paragraphText.forEach((element) => {
+          if (typeof element === "object") {
+            removedLinkArray.push(element.props.children);
+          } else {
+            removedLinkArray.push(element);
+          }
+        });
+        paragraphText = removedLinkArray.join("");
+      }
+
+      headerText &&
+        paragraphText &&
+        firstImageBlock &&
+        newPreview.push({
+          header: headerText,
+          paragraph: paragraphText,
+          imgSrc: firstImageBlock.data.url,
+          id: article.id,
+          publicKey: article.publicKey,
+        });
+
+      // console.log(newPreview);
     });
 
     return (
       <Wrapper>
-        {previewArticles.map((article) => {
+        {newPreview.map((article) => {
+          const header = article.header;
+          const paragraph = article.paragraph;
+          const imgSrc = article.imgSrc;
           const publicKey = article.publicKey;
           const id = article.id;
           let author;
@@ -50,23 +70,26 @@ const Journal = () => {
               avatar = user.avatarSrc;
             }
           });
-          // console.log(result)
-          // const title = article.data.blocks[0].data.text;
-          // const paragraph = article.data.blocks[1].data.text;
-
-          const result = Parser(article.data.blocks);
 
           return (
             <ArticleLink key={id} to={`/aegis/article/${id}`}>
               <Preview key={id}>
-                <Circle>
-                  <Avatar src={avatar} alt="author's avatar" />
+                <AuthorSection>
+                  <Circle>
+                    <Avatar src={avatar} alt="author's avatar" />
+                  </Circle>
                   <Author>{author}</Author>
-                </Circle>
+                </AuthorSection>
                 {/* <PublicKey>{publicKey}</PublicKey> */}
-                <Div>{parse(result)}</Div>
-                {/* <div>{title}</div> */}
-                {/* <div>{paragraph}</div> */}
+                <ArticleSection>
+                  <TextSection>
+                    <Header>{header}</Header>
+                    <Paragraph>{paragraph}</Paragraph>
+                  </TextSection>
+                  <ImgSection>
+                    <Img src={imgSrc}></Img>
+                  </ImgSection>
+                </ArticleSection>
               </Preview>
             </ArticleLink>
           );
@@ -82,8 +105,6 @@ const Wrapper = styled.div`
   border: solid blue 0.5px;
   padding: 0.5em 1.5em;
   border-radius: 20px;
-
-  /* background-color: aliceblue; */
 `;
 const Preview = styled.div`
   padding: 2em;
@@ -91,19 +112,53 @@ const Preview = styled.div`
   border: solid blue 0.5px;
   border-radius: 20px;
   background-color: #fef4fd;
-  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;
 
-const Div = styled.div`
-  text-decoration: none;
-`;
-const Circle = styled.span`
-  width: 5vw;
-  height: 5vw;
-  border-radius: 50px;
-
+const AuthorSection = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+`;
+const ArticleSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+`;
+const TextSection = styled.div`
+  width: 80%;
+  `;
+const ImgSection = styled.div`
+  width: 16%;
+  text-align: center;
+  /* background-color: white; */
+  `;
+
+const Img = styled.img`
+  max-height: 33vh;
+  `;
+
+const Header = styled.h2``;
+const Paragraph = styled.p`
+color: #404040;
+
+`;
+
+const Circle = styled.span`
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  border: blue 1.5px solid;
+  padding: 2px;
 `;
 const Avatar = styled.img`
   border-radius: 50px;
@@ -115,7 +170,13 @@ const ArticleLink = styled(Link)`
   color: black;
   cursor: pointer;
 `;
-const PublicKey = styled.span``;
-const Author = styled.span``;
+// const PublicKey = styled.span``;
+const Author = styled.span`
+  margin-left: 1vw;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #404040;
+  font-family: "Amiri", serif;
+`;
 
 export default Journal;
