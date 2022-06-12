@@ -50,9 +50,6 @@ const Journal = () => {
       firstImageBlock ? (imgUrl = firstImageBlock.data.url) : (imgUrl = "");
 
       // Create the preview object
-      // headerText &&
-      // paragraphText &&
-      // imgUrl &&
       preview.push({
         header: headerText,
         paragraph: paragraphText,
@@ -77,8 +74,8 @@ const Journal = () => {
           let avatar;
           users.forEach((user) => {
             if (user.publicKey === publicKey) {
-              author = user.displayName;
-              avatar = user.avatarSrc;
+              author = user.ENSName;
+              avatar = user.ENSAvatar;
             }
           });
 
@@ -87,8 +84,6 @@ const Journal = () => {
               <Preview key={id}>
                 <AuthorSection>
                   <Circle>
-                    {/* <Avatar src={avatar} alt="author's avatar" /> */}
-
                     {avatar ? (
                       <Avatar src={avatar} alt="author avatar"></Avatar>
                     ) : (
@@ -100,7 +95,6 @@ const Journal = () => {
                   </Circle>
                   <Author>{author ? author : shortenKey}</Author>
                 </AuthorSection>
-                {/* <PublicKey>{publicKey}</PublicKey> */}
                 <ArticleSection>
                   <TextSection>
                     <Header>{header}</Header>
@@ -159,7 +153,6 @@ const TextSection = styled.div`
 const ImgSection = styled.div`
   width: 16%;
   text-align: center;
-  /* background-color: white; */
 `;
 
 const Img = styled.img`
@@ -198,7 +191,7 @@ const Author = styled.span`
   margin-left: 1vw;
   font-size: 1.2em;
   font-weight: 500;
-  color: #404040;
+  color: blue;
   font-family: "Amiri", serif;
 `;
 

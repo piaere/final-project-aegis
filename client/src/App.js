@@ -101,8 +101,8 @@ function App() {
       method: "POST",
       body: JSON.stringify({
         publicKey: accounts[0],
-        displayName: ENSName,
-        avatarSrc: ENSAvatar,
+        ENSName: ENSName,
+        ENSAvatar: ENSAvatar,
       }),
 
       headers: {

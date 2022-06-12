@@ -95,15 +95,29 @@ const Article = () => {
     } else alert("Please connect your wallet.");
   };
 
+  let avatar;
+  let authorName;
+  let shortenKey;
+
+  if (author) {
+    avatar = author.ENSAvatar;
+    authorName = author.ENSName;
+    shortenKey = authorKey.slice(0, 5) + "..." + article.publicKey.slice(-4);
+  }
+
   return (
     <>
       {author && (
         <AuthorHeader>
           {" "}
           <Circle>
-            <Avatar src={author.avatarSrc} alt="author's avatar"></Avatar>
+            {avatar ? (
+              <Avatar src={avatar} alt="author avatar"></Avatar>
+            ) : (
+              <Jazzicon diameter={65} seed={jsNumberForAddress(authorKey)} />
+            )}
           </Circle>
-          <AuthorName>{author.displayName}</AuthorName>
+          <AuthorName>{authorName ? authorName : shortenKey}</AuthorName>
         </AuthorHeader>
       )}
       <Right>
@@ -159,6 +173,7 @@ const Circle = styled.span`
   display: flex;
   flex-direction: row;
   border: blue 1.5px solid;
+  padding: 2px;
 `;
 const Avatar = styled.img`
   border-radius: 50px;
