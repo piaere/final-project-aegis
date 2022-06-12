@@ -6,7 +6,10 @@ import EditorJS from "@editorjs/editorjs";
 import List from "@editorjs/list";
 import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
+
 // import ImageTool from "@editorjs/image";
+import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
+
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 const LinkTool = require("@editorjs/link");
@@ -115,7 +118,6 @@ const Article = () => {
 const Right = styled.div`
   margin-top: 55vh;
   margin-left: 63%;
-  /* left: 7vh; */
   height: 20vh;
   border: solid blue 2px;
   border-radius: 20px;

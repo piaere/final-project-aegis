@@ -16,7 +16,8 @@ const SimpleImage = require("@editorjs/simple-image");
 const Publish = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [currentEditor, setCurrentEditor] = useState(null);
-  const { accounts, ENSName, ENSAvatar, shortenAddy } = useContext(Context);
+  const { accounts, ENSName, ENSAvatar, shortenAddy, setNewArticlepublished } =
+    useContext(Context);
   const history = useHistory();
 
   useEffect(() => {
@@ -106,6 +107,9 @@ const Publish = () => {
           console.log(data);
           history.push(`/aegis/article/${data.id}`);
           window.localStorage.clear();
+          //Refresh the Journal list (triggers the get-articles useEffect)
+          setNewArticlepublished(true);
+          setNewArticlepublished(false);
         } else {
           alert(message);
         }
@@ -162,9 +166,8 @@ const Circle = styled.span`
   border: blue 1.5px solid;
 `;
 
-
 const Avatar = styled.img`
-padding: 3px;
+  padding: 3px;
   border-radius: 50px;
   width: 100%;
   object-fit: cover;

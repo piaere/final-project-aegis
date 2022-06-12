@@ -96,9 +96,14 @@ function App() {
   }, [ENSName, setENSAvatar]);
 
   useEffect(() => {
+    console.log(accounts[0], ENSName, ENSAvatar);
     fetch("/api/connect-user", {
       method: "POST",
-      body: JSON.stringify(accounts[0], ENSName, ENSAvatar),
+      body: JSON.stringify({
+        publicKey: accounts[0],
+        displayName: ENSName,
+        avatarSrc: ENSAvatar,
+      }),
 
       headers: {
         Accept: "application/json",
@@ -110,7 +115,7 @@ function App() {
         const { data, status, message } = json;
         console.log(message);
       });
-  }, []);
+  }, [ENSAvatar, ENSName, accounts]);
 
   // If the user doesn't have an ENS name we will display an abbrevation on his PublicKey
   useEffect(() => {

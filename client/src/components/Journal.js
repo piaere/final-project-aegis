@@ -1,9 +1,9 @@
 import { useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import { Context } from "../Context";
-
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
+import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 
 const Journal = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -14,7 +14,12 @@ const Journal = () => {
   }, [users, articles]);
 
   if (isMounted) {
-    const newPreview = [];
+    // PREPARE THE PREVIEW ELEMENTS
+    const preview = [];
+
+    console.log(articles);
+
+    // Get the first header, paragraph and image to display
     articles.forEach((article) => {
       const firstHeaderBlock = article.data.blocks.find(
         (block) => block.type === "header"
@@ -28,6 +33,7 @@ const Journal = () => {
       const headerText = firstHeaderBlock.data.text;
       let paragraphText = parse(firstParagraphBlock.data.text);
 
+      // Remove the links from the text
       if (Array.isArray(paragraphText)) {
         let removedLinkArray = [];
         paragraphText.forEach((element) => {
@@ -40,27 +46,32 @@ const Journal = () => {
         paragraphText = removedLinkArray.join("");
       }
 
-      headerText &&
-        paragraphText &&
-        firstImageBlock &&
-        newPreview.push({
-          header: headerText,
-          paragraph: paragraphText,
-          imgSrc: firstImageBlock.data.url,
-          id: article.id,
-          publicKey: article.publicKey,
-        });
+      let imgUrl;
+      firstImageBlock ? (imgUrl = firstImageBlock.data.url) : (imgUrl = "");
 
-      // console.log(newPreview);
+      // Create the preview object
+      // headerText &&
+      // paragraphText &&
+      // imgUrl &&
+      preview.push({
+        header: headerText,
+        paragraph: paragraphText,
+        imgSrc: imgUrl,
+        id: article.id,
+        publicKey: article.publicKey,
+      });
     });
 
     return (
       <Wrapper>
-        {newPreview.map((article) => {
+        {preview.map((article) => {
           const header = article.header;
           const paragraph = article.paragraph;
           const imgSrc = article.imgSrc;
           const publicKey = article.publicKey;
+          const shortenKey =
+            article.publicKey.slice(0, 5) + "..." + article.publicKey.slice(-4);
+
           const id = article.id;
           let author;
           let avatar;
@@ -76,9 +87,18 @@ const Journal = () => {
               <Preview key={id}>
                 <AuthorSection>
                   <Circle>
-                    <Avatar src={avatar} alt="author's avatar" />
+                    {/* <Avatar src={avatar} alt="author's avatar" /> */}
+
+                    {avatar ? (
+                      <Avatar src={avatar} alt="author avatar"></Avatar>
+                    ) : (
+                      <Jazzicon
+                        diameter={50}
+                        seed={jsNumberForAddress(publicKey)}
+                      />
+                    )}
                   </Circle>
-                  <Author>{author}</Author>
+                  <Author>{author ? author : shortenKey}</Author>
                 </AuthorSection>
                 {/* <PublicKey>{publicKey}</PublicKey> */}
                 <ArticleSection>
@@ -134,21 +154,24 @@ const ArticleSection = styled.div`
 `;
 const TextSection = styled.div`
   width: 80%;
-  `;
+  letter-spacing: 0.03em;
+`;
 const ImgSection = styled.div`
   width: 16%;
   text-align: center;
   /* background-color: white; */
-  `;
+`;
 
 const Img = styled.img`
   max-height: 33vh;
-  `;
+  border-radius: 10px;
+`;
 
 const Header = styled.h2``;
 const Paragraph = styled.p`
-color: #404040;
-
+  color: #404040;
+  line-height: 120%;
+  font-family: "Amiri", serif;
 `;
 
 const Circle = styled.span`

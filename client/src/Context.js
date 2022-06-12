@@ -8,6 +8,7 @@ export const Provider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [users, setUsers] = useState([]);
   const [articles, setArticles] = useState([]);
+  const [newArticlepublished, setNewArticlepublished] = useState(false);
   const [ENSName, setENSName] = useState();
   const [ENSAvatar, setENSAvatar] = useState();
 
@@ -28,6 +29,8 @@ export const Provider = ({ children }) => {
         setENSName,
         ENSAvatar,
         setENSAvatar,
+        newArticlepublished,
+        setNewArticlepublished,
       }}
     >
       {children}

@@ -75,6 +75,8 @@ const connectUser = async (req, res) => {
   const user = req.body;
   const userKey = user.publicKey;
 
+  console.log("user", user);
+
   await client.connect();
   console.log("connected!");
 
@@ -84,6 +86,12 @@ const connectUser = async (req, res) => {
 
   if (!result) {
     const insert = await db.collection("users").insertOne(user);
+  }
+
+  if (result) {
+    const update = await db
+      .collection("users")
+      .updateOne({ publicKey: userKey }, { $set: { ...user } });
   }
 
   result
