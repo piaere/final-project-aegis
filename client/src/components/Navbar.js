@@ -53,7 +53,7 @@ const Wrapper = styled.span`
 const Section = styled.span``;
 
 const Animated = styled.span`
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in;
 
   &:hover {
     transform: scale(1.05);

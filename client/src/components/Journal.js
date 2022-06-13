@@ -132,7 +132,7 @@ const Wrapper = styled.div`
 `;
 
 const Animated = styled.div`
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in;
 
   &:hover {
     transform: scale(1.01);
