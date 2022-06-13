@@ -212,6 +212,9 @@ const Author = styled.span`
   font-weight: 500;
   color: blue;
   font-family: "Amiri", serif;
+  border: 1px solid blue;
+  border-radius:50px;
+  padding: 0.5em 1em;
 `;
 
 const Logo = styled.span`
