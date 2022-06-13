@@ -39,7 +39,6 @@ const Home = ({ connect }) => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      console.log("push to journal")
       history.push("/aegis/journal");
     }
   }, [isLoggedIn]);

@@ -96,7 +96,7 @@ function App() {
   }, [ENSName, setENSAvatar]);
 
   useEffect(() => {
-    console.log(accounts[0], ENSName, ENSAvatar);
+
     fetch("/api/connect-user", {
       method: "POST",
       body: JSON.stringify({
@@ -113,7 +113,7 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         const { data, status, message } = json;
-        console.log(message);
+
       });
   }, [ENSAvatar, ENSName, accounts]);
 

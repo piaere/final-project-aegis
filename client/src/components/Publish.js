@@ -79,8 +79,6 @@ const Publish = () => {
   }, []);
 
   const saveDraft = () => {
-    console.log(currentArticle);
-
     currentArticle &&
       window.localStorage.setItem(
         "currentArticle",
@@ -100,7 +98,6 @@ const Publish = () => {
       ENSName ? ENSName : shortenAddy
     }, to validate this publication, please sign to confirm you are the author of this article.`;
     const signature = await web3.eth.personal.sign(message, accounts[0]);
-    await console.log(signature);
 
     await fetch("/api/publish-article", {
       method: "POST",
@@ -113,15 +110,13 @@ const Publish = () => {
       .then((res) => res.json())
       .then((json) => {
         const { status, message, data } = json;
-        console.log(json);
+
         if (status === 200) {
-          console.log(data);
           history.push(`/aegis/article/${data.id}`);
           window.localStorage.clear();
 
-          //Refresh the Journal list (triggers the get-articles useEffect)
+          //Display mess and + Refresh the Journal list (triggers the get-articles useEffect)
           setNewArticlepublished("Article published successfully! 🎉");
-          // setNewArticlepublished(false);
         } else {
           alert(message);
         }

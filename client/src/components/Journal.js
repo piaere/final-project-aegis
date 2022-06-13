@@ -88,32 +88,34 @@ const Journal = () => {
           });
 
           return (
-            <ArticleLink key={id} to={`/aegis/article/${id}`}>
-              <Preview key={id}>
-                <AuthorSection>
-                  <Circle>
-                    {avatar ? (
-                      <Avatar src={avatar} alt="author avatar"></Avatar>
-                    ) : (
-                      <Jazzicon
-                        diameter={50}
-                        seed={jsNumberForAddress(publicKey)}
-                      />
-                    )}
-                  </Circle>
-                  <Author>{author ? author : shortenKey}</Author>
-                </AuthorSection>
-                <ArticleSection>
-                  <TextSection>
-                    <Header>{header}</Header>
-                    <Paragraph>{paragraph}</Paragraph>
-                  </TextSection>
-                  <ImgSection>
-                    <Img src={imgSrc}></Img>
-                  </ImgSection>
-                </ArticleSection>
-              </Preview>
-            </ArticleLink>
+            <Animated>
+              <ArticleLink key={id} to={`/aegis/article/${id}`}>
+                <Preview key={id}>
+                  <AuthorSection>
+                    <Circle>
+                      {avatar ? (
+                        <Avatar src={avatar} alt="author avatar"></Avatar>
+                      ) : (
+                        <Jazzicon
+                          diameter={50}
+                          seed={jsNumberForAddress(publicKey)}
+                        />
+                      )}
+                    </Circle>
+                    <Author>{author ? author : shortenKey}</Author>
+                  </AuthorSection>
+                  <ArticleSection>
+                    <TextSection>
+                      <Header>{header}</Header>
+                      <Paragraph>{paragraph}</Paragraph>
+                    </TextSection>
+                    <ImgSection>
+                      <Img src={imgSrc}></Img>
+                    </ImgSection>
+                  </ArticleSection>
+                </Preview>
+              </ArticleLink>
+            </Animated>
           );
         })}
       </Wrapper>
@@ -127,6 +129,14 @@ const Wrapper = styled.div`
   border: solid blue 0.5px;
   padding: 0.5em 1.5em;
   border-radius: 20px;
+`;
+
+const Animated = styled.div`
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 `;
 const Preview = styled.div`
   padding: 2em;

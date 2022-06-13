@@ -10,16 +10,13 @@ import Publish from "./Publish";
 import { Context } from "../Context";
 
 const Aegis = () => {
-  const { setArticles, setUsers, newArticlepublished,  } = useContext(Context);
+  const { setArticles, setUsers, newArticlepublished } = useContext(Context);
 
   useEffect(() => {
-    
-
     fetch("/api/get-articles")
       .then((res) => res.json())
       .then((data) => {
         setArticles(data.data);
-        // console.log(data.data);
       })
       .catch((error) => console.log("Error: ", error));
   }, [setArticles, newArticlepublished]);
@@ -29,7 +26,6 @@ const Aegis = () => {
       .then((res) => res.json())
       .then((data) => {
         setUsers(data.data);
-        // console.log(data.data);
       })
       .catch((error) => console.log("Error: ", error));
   }, [setUsers]);

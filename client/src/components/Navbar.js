@@ -10,17 +10,27 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <Section>
-        <NavLink to={"/aegis/journal"} onClick={()=>setNewArticlepublished(null)}>
-          <BsBook />
-        </NavLink>
-      </Section>
+      <Animated>
+        <Section>
+          <NavLink
+            to={"/aegis/journal"}
+            onClick={() => setNewArticlepublished(null)}
+          >
+            <BsBook />
+          </NavLink>
+        </Section>
+      </Animated>
 
-      <Publish>
-        <NavLink to={"/aegis/publish"} onClick={()=>setNewArticlepublished(null)}>
-          <GiFeather />
-        </NavLink>
-      </Publish>
+      <Animated>
+        <Publish>
+          <NavLink
+            to={"/aegis/publish"}
+            onClick={() => setNewArticlepublished(null)}
+          >
+            <GiFeather />
+          </NavLink>
+        </Publish>
+      </Animated>
     </Wrapper>
   );
 };
@@ -41,6 +51,14 @@ const Wrapper = styled.span`
   font-size: 5vh;
 `;
 const Section = styled.span``;
+
+const Animated = styled.span`
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
 const Publish = styled.span``;
 
 export default Navbar;
