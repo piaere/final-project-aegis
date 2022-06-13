@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HollowButton = ({ string, handleFunction }) => {
-  return <StyledButton onClick={()=>handleFunction()} >{string}</StyledButton>;
+  return <StyledButton onClick={() => handleFunction()}>{string}</StyledButton>;
 };
 
 const StyledButton = styled.button`
@@ -17,6 +17,7 @@ const StyledButton = styled.button`
   border-radius: 50px;
 
   cursor: pointer;
+  transition: background-color 0.2s ease-in;
 
   &:hover {
     color: white;
