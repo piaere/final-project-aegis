@@ -5,7 +5,7 @@ export const Context = createContext(null);
 export const Provider = ({ children }) => {
   const [accounts, setAccounts] = useState([]);
   const [shortenAddy, setShortenAddy] = useState([]);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [users, setUsers] = useState([]);
   const [articles, setArticles] = useState([]);
   const [newArticlepublished, setNewArticlepublished] = useState(false);

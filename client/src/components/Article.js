@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Context } from "../Context";
 import ColorButton from "./buttons/SmallButtonColor";
 import Web3 from "web3";
@@ -110,9 +110,6 @@ const Article = () => {
       article.signature.slice(0, 37) + "..." + article.signature.slice(-4);
   }
 
-
-
-
   return (
     <Wrapper>
       {author && (
@@ -145,7 +142,6 @@ const Article = () => {
             {authorKey} <FiExternalLink />
           </EtherScanLink>
         </Cell>
-
         <Cell>Signature :</Cell>
         <Cell>{shortenSig}</Cell>
       </Infos>
@@ -153,12 +149,12 @@ const Article = () => {
   );
 };
 const Wrapper = styled.div`
-position: relative;
-`
+  position: relative;
+`;
 
 const Right = styled.div`
-  margin-top: 55vh;
-  margin-left: 63%;
+  margin-top: 52vh;
+  margin-left: 64.3vw;
   height: 20vh;
   border: solid blue 2px;
   border-radius: 20px;
@@ -169,6 +165,26 @@ const Right = styled.div`
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.6);
+      transform: translatey(0);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0 rgba(0, 0, 0, 0.2);
+      transform: translatey(-1vh);
+    }
+    100% {
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.6);
+      transform: translatey(0);
+    }
+  }
+  &:hover {
+    animation-play-state: paused;
+  }
 `;
 
 const EditorSection = styled.div`
@@ -216,7 +232,7 @@ const PublishMessage = styled.div`
   position: absolute;
   top: -40px;
   color: gray;
-/* padding-bottom: 100px; */
+  /* padding-bottom: 100px; */
   left: 22vw;
 `;
 

@@ -1,4 +1,4 @@
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import Article from "./Article";
@@ -9,8 +9,17 @@ import Profile from "./Profile";
 import Publish from "./Publish";
 import { Context } from "../Context";
 
+
+
 const Aegis = () => {
-  const { setArticles, setUsers, newArticlepublished } = useContext(Context);
+  const { setArticles, setUsers, newArticlepublished,accounts } = useContext(Context);
+
+// useEffect(() => {
+
+// }, [accounts])
+
+
+
 
   useEffect(() => {
     fetch("/api/get-articles")
@@ -62,7 +71,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 20vw 60vw 20vw;
+  grid-template-columns: 18vw 60vw 20vw;
   grid-template-rows: 1fr;
 `;
 const LeftMargin = styled.div`

@@ -87,40 +87,40 @@ const Journal = () => {
             }
           });
 
+          const logo = "_";
+
           return (
-            <Animated>
-              <ArticleLink key={id} to={`/aegis/article/${id}`}>
-                <Preview key={id}>
-                  <AuthorSection>
-                    <Circle>
-                      {avatar ? (
-                        <Avatar src={avatar} alt="author avatar"></Avatar>
-                      ) : (
-                        <Jazzicon
-                          diameter={50}
-                          seed={jsNumberForAddress(publicKey)}
-                        />
-                      )}
-                    </Circle>
-                    <Author>{author ? author : shortenKey}</Author>
-                  </AuthorSection>
-                  <ArticleSection>
-                    <TextSection>
-                      <Header>{header}</Header>
-                      <Paragraph>{paragraph}</Paragraph>
-                    </TextSection>
-                    <ImgSection>
-                      <Img src={imgSrc}></Img>
-                    </ImgSection>
-                  </ArticleSection>
-                </Preview>
-              </ArticleLink>
-            </Animated>
+            <ArticleLink key={id} to={`/aegis/article/${id}`}>
+              <Preview key={id}>
+                <AuthorSection>
+                  <Circle>
+                    {avatar ? (
+                      <Avatar src={avatar} alt="author avatar"></Avatar>
+                    ) : (
+                      <Jazzicon
+                        diameter={50}
+                        seed={jsNumberForAddress(publicKey)}
+                      />
+                    )}
+                  </Circle>
+                  <Author>{author ? author : shortenKey}</Author>
+                </AuthorSection>
+                <ArticleSection>
+                  <TextSection>
+                    <Header>{header}</Header>
+                    <Paragraph>{paragraph}</Paragraph>
+                  </TextSection>
+                  <ImgSection>
+                    <Img src={imgSrc}></Img>
+                  </ImgSection>
+                </ArticleSection>
+              </Preview>
+            </ArticleLink>
           );
         })}
       </Wrapper>
     );
-  } else return <div>loading</div>;
+  } else return <Logo>_</Logo>;
 };
 
 const Wrapper = styled.div`
@@ -131,13 +131,6 @@ const Wrapper = styled.div`
   border-radius: 20px;
 `;
 
-const Animated = styled.div`
-  transition: transform 0.2s ease-in;
-
-  &:hover {
-    transform: scale(1.01);
-  }
-`;
 const Preview = styled.div`
   padding: 2em;
   margin: 1.2em 0;
@@ -147,6 +140,14 @@ const Preview = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  transition: all 200ms ease;
+  transition-property: box-shadow, transform;
+
+  &:hover {
+    transform: scale(1.01);
+    -webkit-box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 5px 10px -1px rgba(0, 0, 0, 0.46);
+  }
 `;
 
 const AuthorSection = styled.div`
@@ -211,6 +212,14 @@ const Author = styled.span`
   font-weight: 500;
   color: blue;
   font-family: "Amiri", serif;
+`;
+
+const Logo = styled.span`
+  padding: 0.4em 0.2em;
+  max-width: 1.5vw;
+  max-height: 9vh;
+  background-color: #0000ff;
+  color: #0000ff;
 `;
 
 export default Journal;

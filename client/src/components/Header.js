@@ -14,7 +14,7 @@ const Header = ({ connect }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowText((showText) => !showText);
-    }, 1000);
+    }, 800);
     return () => clearInterval(interval);
   }, []);
 

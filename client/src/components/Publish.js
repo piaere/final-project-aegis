@@ -21,6 +21,7 @@ var web3 = new Web3(
 const Publish = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
   const [currentEditor, setCurrentEditor] = useState(null);
+  const [isDraftSaved, setIsDraftSaved] = useState(false);
   const { accounts, ENSName, ENSAvatar, shortenAddy, setNewArticlepublished } =
     useContext(Context);
   const history = useHistory();
@@ -84,11 +85,13 @@ const Publish = () => {
         "currentArticle",
         JSON.stringify(currentArticle)
       );
+    setIsDraftSaved(true);
   };
 
   const deleteDraft = () => {
     window.localStorage.clear();
     currentEditor.clear();
+    setIsDraftSaved(false);
   };
 
   const publish = async () => {
@@ -124,7 +127,9 @@ const Publish = () => {
   };
 
   return (
-    <div>
+    <Wrapper>
+      {isDraftSaved && <SavedMessage>💾 Your article is saved!</SavedMessage>}
+
       <AuthorHeader>
         <Circle>
           {ENSAvatar ? (
@@ -143,9 +148,22 @@ const Publish = () => {
         <HollowButton handleFunction={publish} string={"Publish!"} />
       </Right>
       <EditorSection id="editor"></EditorSection>
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  position: relative;
+`;
+
+const SavedMessage = styled.div`
+  font-size: 1.1em;
+  position: absolute;
+  top: -40px;
+  color: gray;
+  /* padding-bottom: 100px; */
+  left: 24vw;
+`;
 
 const AuthorHeader = styled.div`
   margin-bottom: 2em;
@@ -187,9 +205,8 @@ const EditorSection = styled.div`
 `;
 
 const Right = styled.div`
-  margin-top: 50vh;
+  margin-top: 48vh;
   margin-left: 65%;
-
   height: 25vh;
   border: solid blue 2px;
   border-radius: 20px;
@@ -198,6 +215,28 @@ const Right = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  transform: translatey(0px);
+  animation: float 5s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.6);
+      transform: translatey(0);
+    }
+    50% {
+      box-shadow: 0 25px 15px 0 rgba(0, 0, 0, 0.2);
+      transform: translatey(-1vh);
+    }
+    100% {
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.6);
+      transform: translatey(0);
+    }
+  }
+
+  
+  &:hover {
+    animation-play-state: paused;
+  }
 `;
 
 export default Publish;

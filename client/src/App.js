@@ -3,6 +3,7 @@ import {
   Redirect,
   Switch,
   Route,
+  useHistory,
 } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Context } from "./Context";
@@ -30,6 +31,7 @@ function App() {
     ENSName,
     ENSAvatar,
   } = useContext(Context);
+  const history = useHistory();
 
   // Connect app to user's wallet account (on buttons click)
   const connect = async () => {
@@ -49,6 +51,7 @@ function App() {
 
   // Set login state
   useEffect(() => {
+    console.log(accounts.length);
     if (accounts.length > 0) {
       setIsLoggedIn(true);
     } else {
@@ -61,9 +64,11 @@ function App() {
     // Check if account is connected
     const checkAccount = async () => {
       let res = await window.ethereum.request({ method: "eth_accounts" });
-      if (accounts !== res) {
-        setAccounts(res);
-      }
+      await console.log(res);
+
+      // if (accounts !== res) {
+      await setAccounts(res);
+
       // Check if user disconnect or change account
       window.ethereum.on("accountsChanged", function (res) {
         if (accounts !== res) {
@@ -73,6 +78,9 @@ function App() {
     };
     checkAccount();
   }, []);
+
+
+  console.log(isLoggedIn);
 
   // Check if user has a Ethereum Service Name registered
   useEffect(() => {
@@ -96,7 +104,6 @@ function App() {
   }, [ENSName, setENSAvatar]);
 
   useEffect(() => {
-
     fetch("/api/connect-user", {
       method: "POST",
       body: JSON.stringify({
@@ -113,7 +120,6 @@ function App() {
       .then((res) => res.json())
       .then((json) => {
         const { data, status, message } = json;
-
       });
   }, [ENSAvatar, ENSName, accounts]);
 
@@ -134,11 +140,9 @@ function App() {
             <Route exact path="/">
               <Home connect={connect} />
             </Route>
-            {isLoggedIn && (
-              <Route path="/aegis">
-                {!isLoggedIn ? <Redirect to="/" /> : <Aegis />}
-              </Route>
-            )}
+            <Route path="/aegis">
+              {!isLoggedIn ? <Redirect to="/" /> : <Aegis />}
+            </Route>
           </Body>
         </Switch>
       </Router>

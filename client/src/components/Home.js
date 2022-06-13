@@ -10,6 +10,8 @@ const Home = ({ connect }) => {
 
   const history = useHistory();
 
+  console.log("Home")
+
   useEffect(() => {
     const wordList = [
       "Care",
@@ -53,7 +55,9 @@ const Home = ({ connect }) => {
         Welcome to <span>aegis</span>, the web3 plateform where writers and
         readers connect.
       </Pitch>
-      <Button string={"Try it now"} connect={connect} />
+      <Animated>
+        <Button string={"Try it now"} connect={connect} />
+      </Animated>
     </Section>
   );
 };
@@ -93,6 +97,14 @@ const Pitch = styled.p`
   span {
     color: #0000ff;
     font-weight: 500;
+  }
+`;
+
+const Animated = styled.span`
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    transform: scale(1.05);
   }
 `;
 
