@@ -1,17 +1,22 @@
 import styled from "styled-components";
 import { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { Context } from "../Context";
+import Web3 from "web3";
 import HollowButton from "./buttons/SmallButtonHollow";
 import ColorButton from "./buttons/SmallButtonColor";
 import EditorJS from "@editorjs/editorjs";
+// import ImageTool from "@editorjs/image";
 import Header from "@editorjs/header";
 import List from "@editorjs/list";
 import Embed from "@editorjs/embed";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-// import ImageTool from "@editorjs/image";
-import { Context } from "../Context";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
+
+var web3 = new Web3(
+  Web3.givenProvider || "ws://some.local-or-remote.node:8546"
+);
 
 const Publish = () => {
   const [currentArticle, setCurrentArticle] = useState(null);
@@ -88,12 +93,18 @@ const Publish = () => {
     currentEditor.clear();
   };
 
-  const publish = () => {
+  const publish = async () => {
     const data = currentArticle;
 
-    fetch("/api/publish-article", {
+    const message = `Hi ${
+      ENSName ? ENSName : shortenAddy
+    }, to validate this publication, please sign to confirm you are the author of this article.`;
+    const signature = await web3.eth.personal.sign(message, accounts[0]);
+    await console.log(signature);
+
+    await fetch("/api/publish-article", {
       method: "POST",
-      body: JSON.stringify({ data, publicKey: accounts[0] }),
+      body: JSON.stringify({ data, publicKey: accounts[0], signature }),
       headers: {
         Accept: "application/json",
         "Content-type": "application/json",
@@ -107,9 +118,10 @@ const Publish = () => {
           console.log(data);
           history.push(`/aegis/article/${data.id}`);
           window.localStorage.clear();
+
           //Refresh the Journal list (triggers the get-articles useEffect)
-          setNewArticlepublished(true);
-          setNewArticlepublished(false);
+          setNewArticlepublished("Article published successfully! 🎉");
+          // setNewArticlepublished(false);
         } else {
           alert(message);
         }

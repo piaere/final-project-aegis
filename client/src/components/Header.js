@@ -1,20 +1,29 @@
 import styled from "styled-components";
 import ColorButton from "./buttons/SmallButtonColor";
-import { useContext } from "react";
+import { useContext,useState, useEffect } from "react";
 import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 
 const Header = ({ connect }) => {
-  const { accounts, isLoggedIn, ENSName, ENSAvatar, shortenAddy } =
+  const { accounts, isLoggedIn, ENSName, ENSAvatar, shortenAddy,setNewArticlepublished } =
     useContext(Context);
+
+    const [showText, setShowText] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowText((showText) => !showText);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Wrapper>
-      <LogoLink to={"/aegis/journal"}>
+      <LogoLink to={"/aegis/journal"}   onClick={()=>setNewArticlepublished(null)}>
         <Left>
           <Aegis>aegis</Aegis>
-          <Logo></Logo>
+          {showText ? <Logo></Logo> : <span></span>}
         </Left>
       </LogoLink>
       <Right>
@@ -90,7 +99,7 @@ const Aegis = styled.span`
 `;
 
 const Logo = styled.span`
-  margin-top: 0.7vh;
+  margin-top: 0.8vh;
   max-width: 1.1vw;
   max-height: 3.6vh;
   background-color: #0000ff;

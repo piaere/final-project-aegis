@@ -10,9 +10,11 @@ import Publish from "./Publish";
 import { Context } from "../Context";
 
 const Aegis = () => {
-  const { setArticles, setUsers, newArticlepublished } = useContext(Context);
+  const { setArticles, setUsers, newArticlepublished,  } = useContext(Context);
 
   useEffect(() => {
+    
+
     fetch("/api/get-articles")
       .then((res) => res.json())
       .then((data) => {

@@ -6,12 +6,13 @@ import EditorJS from "@editorjs/editorjs";
 import List from "@editorjs/list";
 import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
+import { FiExternalLink } from "react-icons/fi";
 
 // import ImageTool from "@editorjs/image";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
 
@@ -21,7 +22,8 @@ const Article = () => {
   const [authorKey, setAuthorKey] = useState(null);
   const [currentEditor, setCurrentEditor] = useState(null);
 
-  const { users, accounts, isLoggedIn } = useContext(Context);
+  const { users, accounts, isLoggedIn, newArticlepublished } =
+    useContext(Context);
 
   let articleId = useParams().id;
 
@@ -98,15 +100,21 @@ const Article = () => {
   let avatar;
   let authorName;
   let shortenKey;
+  let shortenSig;
 
   if (author) {
     avatar = author.ENSAvatar;
     authorName = author.ENSName;
     shortenKey = authorKey.slice(0, 5) + "..." + article.publicKey.slice(-4);
+    shortenSig =
+      article.signature.slice(0, 37) + "..." + article.signature.slice(-4);
   }
 
+
+
+
   return (
-    <>
+    <Wrapper>
       {author && (
         <AuthorHeader>
           {" "}
@@ -120,15 +128,34 @@ const Article = () => {
           <AuthorName>{authorName ? authorName : shortenKey}</AuthorName>
         </AuthorHeader>
       )}
+      <PublishMessage>{newArticlepublished}</PublishMessage>
       <Right>
         <LikeArticle>Like this article?</LikeArticle>
         <LikeArticle>Tip its author!</LikeArticle>
         <ColorButton handleFunction={tip} string={"Send 0.01 ETH"} />
       </Right>
       <EditorSection id="editor"></EditorSection>
-    </>
+      <Infos>
+        <Cell>Ethereum address :</Cell>
+        <Cell>
+          <EtherScanLink
+            to={{ pathname: `https://etherscan.io/address/${authorKey}` }}
+            target="_blank"
+          >
+            {authorKey} <FiExternalLink />
+          </EtherScanLink>
+        </Cell>
+
+        <Cell>Signature :</Cell>
+        <Cell>{shortenSig}</Cell>
+      </Infos>
+    </Wrapper>
   );
 };
+const Wrapper = styled.div`
+position: relative;
+`
+
 const Right = styled.div`
   margin-top: 55vh;
   margin-left: 63%;
@@ -183,7 +210,40 @@ const Avatar = styled.img`
 const LikeArticle = styled.div`
   font-size: 1.2em;
   color: blue;
-  /* font-weight: 500; */
+`;
+const PublishMessage = styled.div`
+  font-size: 1.1em;
+  position: absolute;
+  top: -40px;
+  color: gray;
+/* padding-bottom: 100px; */
+  left: 22vw;
 `;
 
+const Infos = styled.table`
+  margin-top: 5vh;
+  padding: 5px;
+  color: gray;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  /* border: 0.5px blue solid; */
+  background-color: silver;
+  color: white;
+  border-radius: 20px;
+  padding-left: 25px;
+`;
+
+const Cell = styled.td`
+  padding: 5px;
+`;
+
+const EtherScanLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: blue;
+  }
+`;
 export default Article;

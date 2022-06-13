@@ -17,8 +17,6 @@ const Journal = () => {
     // PREPARE THE PREVIEW ELEMENTS
     const preview = [];
 
-    console.log(articles);
-
     // Get the first header, paragraph and image to display
     articles.forEach((article) => {
       const firstHeaderBlock = article.data.blocks.find(
@@ -30,8 +28,21 @@ const Journal = () => {
       const firstImageBlock = article.data.blocks.find(
         (block) => block.type === "image"
       );
-      const headerText = firstHeaderBlock.data.text;
-      let paragraphText = parse(firstParagraphBlock.data.text);
+
+      //Fall case if any of them return null
+      // For header
+      let headerText;
+      firstHeaderBlock
+        ? (headerText = firstHeaderBlock.data.text)
+        : (headerText = "");
+      //For paragraph
+      let paragraphText;
+      firstParagraphBlock
+        ? (paragraphText = parse(firstParagraphBlock.data.text))
+        : (paragraphText = "");
+      //For image
+      let imgUrl;
+      firstImageBlock ? (imgUrl = firstImageBlock.data.url) : (imgUrl = "");
 
       // Remove the links from the text
       if (Array.isArray(paragraphText)) {
@@ -45,9 +56,6 @@ const Journal = () => {
         });
         paragraphText = removedLinkArray.join("");
       }
-
-      let imgUrl;
-      firstImageBlock ? (imgUrl = firstImageBlock.data.url) : (imgUrl = "");
 
       // Create the preview object
       preview.push({

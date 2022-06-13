@@ -2,18 +2,22 @@ import styled from "styled-components";
 import { GiFeather } from "react-icons/gi";
 import { BsBook } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import { Context } from "../Context";
+import { useContext } from "react";
 
 const Navbar = () => {
+  const { setNewArticlepublished } = useContext(Context);
+
   return (
     <Wrapper>
       <Section>
-        <NavLink to={"/aegis/journal"}>
+        <NavLink to={"/aegis/journal"} onClick={()=>setNewArticlepublished(null)}>
           <BsBook />
         </NavLink>
       </Section>
 
       <Publish>
-        <NavLink to={"/aegis/publish"}>
+        <NavLink to={"/aegis/publish"} onClick={()=>setNewArticlepublished(null)}>
           <GiFeather />
         </NavLink>
       </Publish>
@@ -22,9 +26,9 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.span`
-a:visited {
-  color: blue;
-}
+  a:visited {
+    color: blue;
+  }
   width: 10%;
   height: 32vh;
   display: grid;
@@ -37,7 +41,6 @@ a:visited {
   font-size: 5vh;
 `;
 const Section = styled.span``;
-const Publish = styled.span`
-`;
+const Publish = styled.span``;
 
 export default Navbar;
