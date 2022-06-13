@@ -4,6 +4,7 @@ import { Context } from "../Context";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
+import moment from "moment";
 
 const Journal = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -28,6 +29,8 @@ const Journal = () => {
       const firstImageBlock = article.data.blocks.find(
         (block) => block.type === "image"
       );
+
+      const time = article.data.time;
 
       //Fall case if any of them return null
       // For header
@@ -59,6 +62,7 @@ const Journal = () => {
 
       // Create the preview object
       preview.push({
+        time: time,
         header: headerText,
         paragraph: paragraphText,
         imgSrc: imgUrl,
@@ -70,8 +74,12 @@ const Journal = () => {
     return (
       <Wrapper>
         {preview.map((article) => {
+          const time = moment(article.time).format("LL");
           const header = article.header;
-          const paragraph = article.paragraph;
+          let paragraph = article.paragraph;
+          if (paragraph.length > 400) {
+            paragraph = article.paragraph.slice(0, 400) + "...";
+          }
           const imgSrc = article.imgSrc;
           const publicKey = article.publicKey;
           const shortenKey =
@@ -92,19 +100,22 @@ const Journal = () => {
           return (
             <ArticleLink key={id} to={`/aegis/article/${id}`}>
               <Preview key={id}>
-                <AuthorSection>
-                  <Circle>
-                    {avatar ? (
-                      <Avatar src={avatar} alt="author avatar"></Avatar>
-                    ) : (
-                      <Jazzicon
-                        diameter={50}
-                        seed={jsNumberForAddress(publicKey)}
-                      />
-                    )}
-                  </Circle>
-                  <Author>{author ? author : shortenKey}</Author>
-                </AuthorSection>
+                <Top>
+                  <AuthorSection>
+                    <Circle>
+                      {avatar ? (
+                        <Avatar src={avatar} alt="author avatar"></Avatar>
+                      ) : (
+                        <Jazzicon
+                          diameter={50}
+                          seed={jsNumberForAddress(publicKey)}
+                        />
+                      )}
+                    </Circle>
+                    <Author>{author ? author : shortenKey}</Author>
+                  </AuthorSection>
+                  <Time>{time}</Time>
+                </Top>
                 <ArticleSection>
                   <TextSection>
                     <Header>{header}</Header>
@@ -150,6 +161,21 @@ const Preview = styled.div`
   }
 `;
 
+const Top = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+`;
+const Time = styled.span`
+  margin-top: 0.5em;
+  color: seashell;
+  background-color:gainsboro ;
+  padding: 3px 15px;
+  border-radius: 50px;
+`;
+
 const AuthorSection = styled.div`
   display: flex;
   flex-direction: row;
@@ -161,29 +187,33 @@ const ArticleSection = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   align-content: stretch;
 `;
 const TextSection = styled.div`
-  width: 80%;
-  letter-spacing: 0.03em;
+  width: 75%;
 `;
 const ImgSection = styled.div`
-  width: 16%;
+  width: 22%;
   text-align: center;
 `;
 
 const Img = styled.img`
-  max-height: 33vh;
-  border-radius: 10px;
+  max-height: 10em;
+  border-radius: 5px;
 `;
 
-const Header = styled.h2``;
+const Header = styled.h2`
+ text-align: justify;
+  text-justify: inter-word;`;
 const Paragraph = styled.p`
   color: #404040;
   line-height: 120%;
   font-family: "Amiri", serif;
+  font-size: 1.2em;
+  text-align: justify;
+  text-justify: inter-word;
 `;
 
 const Circle = styled.span`
@@ -213,7 +243,7 @@ const Author = styled.span`
   color: blue;
   font-family: "Amiri", serif;
   border: 1px solid blue;
-  border-radius:50px;
+  border-radius: 50px;
   padding: 0.5em 1em;
 `;
 

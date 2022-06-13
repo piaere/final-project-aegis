@@ -205,7 +205,7 @@ const EditorSection = styled.div`
 `;
 
 const Right = styled.div`
-  margin-top: 48vh;
+  margin-top: 46vh;
   margin-left: 65%;
   height: 25vh;
   border: solid blue 2px;

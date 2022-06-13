@@ -7,6 +7,7 @@ import List from "@editorjs/list";
 import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
 import { FiExternalLink } from "react-icons/fi";
+import moment from "moment";
 
 // import ImageTool from "@editorjs/image";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
@@ -80,6 +81,7 @@ const Article = () => {
     });
   }, [authorKey, users]);
 
+  // Tip Functionnality
   const tip = () => {
     if (isLoggedIn) {
       const amount = Web3.utils.toWei("0.01", "ether");
@@ -101,6 +103,7 @@ const Article = () => {
   let authorName;
   let shortenKey;
   let shortenSig;
+  let time;
 
   if (author) {
     avatar = author.ENSAvatar;
@@ -108,6 +111,10 @@ const Article = () => {
     shortenKey = authorKey.slice(0, 5) + "..." + article.publicKey.slice(-4);
     shortenSig =
       article.signature.slice(0, 37) + "..." + article.signature.slice(-4);
+  }
+
+  if (article) {
+    time = moment(article.time).format("LL");
   }
 
   return (
@@ -132,6 +139,11 @@ const Article = () => {
         <ColorButton handleFunction={tip} string={"Send 0.01 ETH"} />
       </Right>
       <EditorSection id="editor"></EditorSection>
+      <TimeCenter>
+        <Time>
+          Published {time} on aegis <Logo>_</Logo>
+        </Time>
+      </TimeCenter>
       <Infos>
         <Cell>Ethereum address :</Cell>
         <Cell>
@@ -153,7 +165,7 @@ const Wrapper = styled.div`
 `;
 
 const Right = styled.div`
-  margin-top: 52vh;
+  margin-top: 50vh;
   margin-left: 64.3vw;
   height: 20vh;
   border: solid blue 2px;
@@ -208,7 +220,7 @@ const AuthorName = styled.span`
   color: blue;
   font-family: "Amiri", serif;
   border: 1px solid blue;
-  border-radius:50px;
+  border-radius: 50px;
   padding: 0.5em 1em;
 `;
 
@@ -226,6 +238,18 @@ const Avatar = styled.img`
   width: 100%;
   object-fit: cover;
 `;
+
+const TimeCenter = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* align-content: flex-end; */
+`;
+const Time = styled.span`
+  color: blue;
+  margin: 2em 5em 0 0;
+  font-style: italic;
+`;
 const LikeArticle = styled.div`
   font-size: 1.2em;
   color: blue;
@@ -240,7 +264,7 @@ const PublishMessage = styled.div`
 `;
 
 const Infos = styled.table`
-  margin-top: 5vh;
+  margin-top: 4vh;
   padding: 5px;
   color: gray;
   display: grid;
@@ -264,5 +288,14 @@ const EtherScanLink = styled(Link)`
   &:hover {
     color: blue;
   }
+`;
+
+const Logo = styled.span`
+  margin-left: 5px;
+  padding: 0.2em 0.1em;
+  max-width: 1.5vw;
+  max-height: 9vh;
+  background-color: #0000ff;
+  color: #0000ff;
 `;
 export default Article;
