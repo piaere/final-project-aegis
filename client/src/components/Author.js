@@ -1,9 +1,9 @@
 
 
-const Error = () => {
+const Author = () => {
   return (
     <div>Looks like you're lost</div>
   )
 }
 
-export default Error
+export default Author

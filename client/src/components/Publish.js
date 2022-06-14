@@ -128,7 +128,7 @@ const Publish = () => {
 
   return (
     <Wrapper>
-      {isDraftSaved && <SavedMessage>💾 Your article is saved!</SavedMessage>}
+      {isDraftSaved && <SavedMessage>💾  Your draft has been saved!</SavedMessage>}
 
       <AuthorHeader>
         <Circle>
@@ -162,7 +162,7 @@ const SavedMessage = styled.div`
   top: -40px;
   color: gray;
   /* padding-bottom: 100px; */
-  left: 24vw;
+  left: 23vw;
 `;
 
 const AuthorHeader = styled.div`

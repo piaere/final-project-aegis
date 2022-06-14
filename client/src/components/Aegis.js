@@ -2,7 +2,7 @@ import { Route, useHistory } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import Article from "./Article";
-import Error from "./Error";
+import Author from "./Author";
 import Journal from "./Journal";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
@@ -58,9 +58,10 @@ const Aegis = () => {
           <Route path="/aegis/publish">
             <Publish />
           </Route>
-          <Route path="/aegis/error">
-            <Error />
+          <Route path="/aegis/author">
+            <Author />
           </Route>
+
         </Center>
       </Wrapper>
     </>

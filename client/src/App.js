@@ -3,7 +3,6 @@ import {
   Redirect,
   Switch,
   Route,
-  useHistory,
 } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { Context } from "./Context";
@@ -31,7 +30,6 @@ function App() {
     ENSName,
     ENSAvatar,
   } = useContext(Context);
-  const history = useHistory();
 
   // Connect app to user's wallet account (on buttons click)
   const connect = async () => {
@@ -78,7 +76,6 @@ function App() {
     };
     checkAccount();
   }, []);
-
 
   console.log(isLoggedIn);
 

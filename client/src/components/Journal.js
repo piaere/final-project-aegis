@@ -81,6 +81,7 @@ const Journal = () => {
             paragraph = article.paragraph.slice(0, 400) + "...";
           }
           const imgSrc = article.imgSrc;
+
           const publicKey = article.publicKey;
           const shortenKey =
             article.publicKey.slice(0, 5) + "..." + article.publicKey.slice(-4);
@@ -121,9 +122,13 @@ const Journal = () => {
                     <Header>{header}</Header>
                     <Paragraph>{paragraph}</Paragraph>
                   </TextSection>
-                  <ImgSection>
-                    <Img src={imgSrc}></Img>
-                  </ImgSection>
+                  {/* {imgSrc ? ( */}
+                    <ImgSection imgSrcBool={imgSrc}>
+                      <Img src={imgSrc}></Img>
+                    </ImgSection>
+                  {/* ) : (
+                    null
+                  )} */}
                 </ArticleSection>
               </Preview>
             </ArticleLink>
@@ -175,8 +180,6 @@ const Time = styled.span`
   padding: 3px 15px;
   border-radius: 50px;
   font-weight: 500;
-
-
 `;
 
 const AuthorSection = styled.div`
@@ -199,10 +202,11 @@ const TextSection = styled.div`
 `;
 const ImgSection = styled.div`
   width: 22%;
-  text-align: center;
+  /* text-align: center; */
 `;
 
 const Img = styled.img`
+margin-top: 2.5em;
   max-height: 10em;
   border-radius: 10px;
 `;

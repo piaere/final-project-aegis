@@ -245,7 +245,7 @@ const TimeCenter = styled.div`
   justify-content: flex-end;
 `;
 const Time = styled.span`
-  color: blue;
+  color: grey;
   margin: 2em 5em 0 0;
   font-style: italic;
 `;
@@ -279,7 +279,7 @@ const PublishMessage = styled.div`
 `;
 
 const Infos = styled.table`
-  margin-top: 5vh;
+  margin-top: 6vh;
   padding: 5px;
   color: gray;
   display: grid;

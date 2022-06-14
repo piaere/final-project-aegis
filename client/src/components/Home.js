@@ -10,8 +10,6 @@ const Home = ({ connect }) => {
 
   const history = useHistory();
 
-  console.log("Home")
-
   useEffect(() => {
     const wordList = [
       "Care",
