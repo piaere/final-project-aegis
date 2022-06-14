@@ -170,10 +170,13 @@ const Top = styled.div`
 `;
 const Time = styled.span`
   margin-top: 0.5em;
-  color: seashell;
-  background-color:gainsboro ;
+  color: white;
+  background-color: gainsboro;
   padding: 3px 15px;
   border-radius: 50px;
+  font-weight: 500;
+
+
 `;
 
 const AuthorSection = styled.div`
@@ -201,12 +204,13 @@ const ImgSection = styled.div`
 
 const Img = styled.img`
   max-height: 10em;
-  border-radius: 5px;
+  border-radius: 10px;
 `;
 
 const Header = styled.h2`
- text-align: justify;
-  text-justify: inter-word;`;
+  text-align: justify;
+  text-justify: inter-word;
+`;
 const Paragraph = styled.p`
   color: #404040;
   line-height: 120%;

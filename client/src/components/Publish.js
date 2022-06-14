@@ -233,7 +233,6 @@ const Right = styled.div`
     }
   }
 
-  
   &:hover {
     animation-play-state: paused;
   }
