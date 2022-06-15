@@ -49,7 +49,6 @@ function App() {
 
   // Set login state
   useEffect(() => {
-    console.log(accounts.length);
     if (accounts.length > 0) {
       setIsLoggedIn(true);
     } else {
@@ -62,7 +61,6 @@ function App() {
     // Check if account is connected
     const checkAccount = async () => {
       let res = await window.ethereum.request({ method: "eth_accounts" });
-      await console.log(res);
 
       // if (accounts !== res) {
       await setAccounts(res);
@@ -76,9 +74,6 @@ function App() {
     };
     checkAccount();
   }, []);
-
-  console.log(isLoggedIn);
-  console.log(accounts.length);
 
   // Check if user has a Ethereum Service Name registered
   useEffect(() => {

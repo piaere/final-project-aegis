@@ -3,7 +3,7 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
-console.log(MONGO_URI)
+console.log(MONGO_URI);
 
 const options = {
   useNewUrlParser: true,
@@ -13,12 +13,11 @@ const options = {
 const { users, articles } = require("./data");
 
 const batchImport = async () => {
-  
   const client = new MongoClient(MONGO_URI, options);
-  console.log("client")
+  console.log("client");
   try {
     const dbName = "aegis";
-    console.log(dbName)
+    console.log(dbName);
     await client.connect();
     console.log("connected!");
 
@@ -26,17 +25,10 @@ const batchImport = async () => {
     // const resultUsers = await db.collection("users").insertMany(users);
 
     const resultArticles = await db.collection("articles").insertMany(articles);
-
-    console.log("resultUsers", resultUsers);
-    console.log("resultArticles", resultArticles);
-  } 
-  catch (err) {
+  } catch (err) {
     console.log(err.stack);
-  }
-  finally{
-
+  } finally {
     client.close();
-
   }
 
   console.log("disconnected!");

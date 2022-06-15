@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import moment from "moment";
+import UnderscoreCSS from "./BlinkingCursor";
 
 const Journal = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -127,13 +128,9 @@ const Journal = () => {
                     <Header>{header}</Header>
                     <Paragraph>{paragraph}</Paragraph>
                   </TextSection>
-                  {/* {imgSrc ? ( */}
                   <ImgSection imgSrcBool={imgSrc}>
                     <Img src={imgSrc}></Img>
                   </ImgSection>
-                  {/* ) : (
-                    null
-                  )} */}
                 </ArticleSection>
               </Preview>
             </ArticleLink>
@@ -143,10 +140,12 @@ const Journal = () => {
     );
   } else
     return (
-      <Center>
-        <Logo>_</Logo>
-        <Loading>Loading ...</Loading>
-      </Center>
+      <Wrapper>
+        <Center>
+          <UnderscoreCSS />
+          <Loading>Loading articles ...</Loading>
+        </Center>
+      </Wrapper>
     );
 };
 
@@ -213,8 +212,6 @@ const TextSection = styled.div`
 `;
 const ImgSection = styled.div`
   width: 22%;
-  /* min-width: 20%; */
-  /* text-align: center; */
   display: flex;
   justify-content: flex-end;
 `;
@@ -257,7 +254,7 @@ const ArticleLink = styled(Link)`
   color: black;
   cursor: pointer;
 `;
-// const PublicKey = styled.span``;
+
 const Author = styled.span`
   margin-left: 1vw;
   font-size: 1.2em;
@@ -270,6 +267,7 @@ const Author = styled.span`
 `;
 const Center = styled.div`
   margin-top: 30vh;
+  margin-bottom: 50vh;
   text-align: center;
 `;
 const Loading = styled.span`
@@ -277,18 +275,7 @@ const Loading = styled.span`
   font-weight: 500;
   color: blue;
   font-family: "Amiri", serif;
-
   padding: 0.5em;
-
-`;
-
-const Logo = styled.span`
-  padding: 0.2em 0.1em;
-  max-width: 1.3vw;
-  max-height: 8vh;
-  background-color: #0000ff;
-  color: #0000ff;
-
 `;
 
 export default Journal;

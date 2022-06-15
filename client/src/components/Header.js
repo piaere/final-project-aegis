@@ -4,6 +4,8 @@ import { useContext, useState, useEffect } from "react";
 import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
+import UnderscoreCSS from "./BlinkingCursor";
+
 // import SearchBar from "./SearchBar";
 
 const Header = ({ connect }) => {
@@ -16,17 +18,6 @@ const Header = ({ connect }) => {
     setNewArticlepublished,
   } = useContext(Context);
 
-  const [showText, setShowText] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowText((showText) => !showText);
-    }, 800);
-    return () => clearInterval(interval);
-  }, []);
-
-  console.log("accounts[0]", typeof accounts[0]);
-
   return (
     <Wrapper>
       <LogoLink
@@ -35,7 +26,10 @@ const Header = ({ connect }) => {
       >
         <Left>
           <Aegis>aegis</Aegis>
-          {showText ? <Logo></Logo> : <span></span>}
+          <Lower>
+            {" "}
+            <UnderscoreCSS speed={0.5} />
+          </Lower>
         </Left>
       </LogoLink>
       {/* <SearchBar /> */}
@@ -49,6 +43,7 @@ const Header = ({ connect }) => {
               : "Connect wallet"
           }
           handleFunction={connect}
+          isLoggedIn={isLoggedIn}
         />
         {isLoggedIn ? (
           <Circle>
@@ -114,11 +109,10 @@ const Aegis = styled.span`
   color: #0000ff;
 `;
 
-const Logo = styled.span`
-  margin-top: 0.8vh;
-  max-width: 1.1vw;
-  max-height: 3.6vh;
-  background-color: #0000ff;
+const Lower = styled.span`
+  position: absolute;
+  left: 6vw;
+  top: 3vh;
 `;
 
 const LogoLink = styled(NavLink)`

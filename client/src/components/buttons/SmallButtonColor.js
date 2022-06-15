@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-const ColorButton = ({ string, handleFunction }) => {
-
-
-  return <StyledButton onClick={() => handleFunction()}>{string}</StyledButton>;
+const ColorButton = ({ string, handleFunction, isLoggedIn }) => {
+  return (
+    <StyledButton
+      style={{ cursor: isLoggedIn ? "default" : "pointer" }}
+      onClick={isLoggedIn ? null : () => handleFunction()}
+    >
+      {string}
+    </StyledButton>
+  );
 };
 
 const StyledButton = styled.button`
@@ -17,11 +22,6 @@ const StyledButton = styled.button`
   border-style: none;
   border-radius: 50px;
   max-width: 15vw;
-  cursor: pointer;
-
- 
-
 `;
-
 
 export default ColorButton;

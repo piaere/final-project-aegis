@@ -16,7 +16,7 @@ const SearchBar = () => {
     setText("");
   };
 
-  console.log(articles);
+
   const handleClickAway = () => {
     setText("");
   };
@@ -31,7 +31,7 @@ const SearchBar = () => {
     let filteredBlocks;
     articleBlocks.forEach((article) => {
       const blocks = article.blocks;
-      //  console.log(blocks)
+
       filteredBlocks = blocks.filter((block) => block.type == "header");
 
       filteredBlocks.forEach((block) => {

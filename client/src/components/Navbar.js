@@ -21,7 +21,6 @@ const Navbar = () => {
               <BsBook />
             </Icon>
           </NavLink>
-
         </Section>
       </Animated>
 
@@ -36,7 +35,6 @@ const Navbar = () => {
               <GiFeather />
             </Icon>
           </NavLink>
-
         </Publish>
       </Animated>
     </Wrapper>
@@ -58,36 +56,17 @@ const Wrapper = styled.span`
   padding: 5vh 7vw;
   font-size: 5vh;
 `;
-const Section = styled.span`
-
-`;
-
+const Section = styled.span``;
 
 const Animated = styled.span`
   transition: transform 0.3s ease-in;
-  
+
   &:hover {
     transform: scale(1.1);
-
   }
 `;
-const Publish = styled.span`
+const Publish = styled.span``;
 
-`;
-
-const Icon = styled.span`
-  /* -webkit-box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.31); 
-box-shadow: 5px 5px 15px 2px rgba(0,0,0,0.31);
-
-border-radius: 100%;
-padding: 13px 10px 0 10px;
-
-
-transition: color 0.3s ease-in;
-border: 2px blue solid; */
-
-  &:hover {
-  }
-`;
+const Icon = styled.span``;
 
 export default Navbar;
