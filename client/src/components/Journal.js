@@ -8,6 +8,7 @@ import moment from "moment";
 
 const Journal = () => {
   const [isMounted, setIsMounted] = useState(false);
+
   const { users, articles } = useContext(Context);
 
   useEffect(() => {
@@ -16,6 +17,7 @@ const Journal = () => {
 
   if (isMounted) {
     // PREPARE THE PREVIEW ELEMENTS
+
     const preview = [];
 
     // Get the first header, paragraph and image to display
@@ -74,15 +76,20 @@ const Journal = () => {
     return (
       <Wrapper>
         {preview.map((article) => {
+          // Format Time
           const time = moment(article.time).format("LL");
           const header = article.header;
           let paragraph = article.paragraph;
+
+          // Truncate long paragraph
           if (paragraph.length > 400) {
             paragraph = article.paragraph.slice(0, 400) + "...";
           }
           const imgSrc = article.imgSrc;
 
           const publicKey = article.publicKey;
+
+          // Truncate PublicKey length
           const shortenKey =
             article.publicKey.slice(0, 5) + "..." + article.publicKey.slice(-4);
 
@@ -95,8 +102,6 @@ const Journal = () => {
               avatar = user.ENSAvatar;
             }
           });
-
-          const logo = "_";
 
           return (
             <ArticleLink key={id} to={`/aegis/article/${id}`}>
@@ -123,9 +128,9 @@ const Journal = () => {
                     <Paragraph>{paragraph}</Paragraph>
                   </TextSection>
                   {/* {imgSrc ? ( */}
-                    <ImgSection imgSrcBool={imgSrc}>
-                      <Img src={imgSrc}></Img>
-                    </ImgSection>
+                  <ImgSection imgSrcBool={imgSrc}>
+                    <Img src={imgSrc}></Img>
+                  </ImgSection>
                   {/* ) : (
                     null
                   )} */}
@@ -136,7 +141,13 @@ const Journal = () => {
         })}
       </Wrapper>
     );
-  } else return <Logo>_</Logo>;
+  } else
+    return (
+      <Center>
+        <Logo>_</Logo>
+        <Loading>Loading ...</Loading>
+      </Center>
+    );
 };
 
 const Wrapper = styled.div`
@@ -202,11 +213,14 @@ const TextSection = styled.div`
 `;
 const ImgSection = styled.div`
   width: 22%;
+  /* min-width: 20%; */
   /* text-align: center; */
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const Img = styled.img`
-margin-top: 2.5em;
+  margin-top: 2.5em;
   max-height: 10em;
   border-radius: 10px;
 `;
@@ -254,13 +268,27 @@ const Author = styled.span`
   border-radius: 50px;
   padding: 0.5em 1em;
 `;
+const Center = styled.div`
+  margin-top: 30vh;
+  text-align: center;
+`;
+const Loading = styled.span`
+  font-size: 1.5em;
+  font-weight: 500;
+  color: blue;
+  font-family: "Amiri", serif;
+
+  padding: 0.5em;
+
+`;
 
 const Logo = styled.span`
-  padding: 0.4em 0.2em;
-  max-width: 1.5vw;
-  max-height: 9vh;
+  padding: 0.2em 0.1em;
+  max-width: 1.3vw;
+  max-height: 8vh;
   background-color: #0000ff;
   color: #0000ff;
+
 `;
 
 export default Journal;

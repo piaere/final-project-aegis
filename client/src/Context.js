@@ -7,7 +7,7 @@ export const Provider = ({ children }) => {
   const [shortenAddy, setShortenAddy] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [users, setUsers] = useState([]);
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]); 
   const [newArticlepublished, setNewArticlepublished] = useState(false);
   const [ENSName, setENSName] = useState();
   const [ENSAvatar, setENSAvatar] = useState();

@@ -141,7 +141,7 @@ const Article = () => {
       <EditorSection id="editor"></EditorSection>
       <TimeCenter>
         <Time>
-        ✍ Published {time}, proudly on <Aegis>aegis</Aegis> <Logo>_</Logo>
+          ✍ Published {time}, proudly on <Aegis>aegis</Aegis> <Logo>_</Logo>
         </Time>
       </TimeCenter>
       <Infos>
@@ -254,11 +254,10 @@ const Aegis = styled.span`
   margin: 2em 0 0 3px;
   font-style: normal;
   font-size: 1.2em;
-font-weight: 500;
+  font-weight: 500;
 `;
 
 const Logo = styled.span`
-
   padding: 0.2em 0.1em;
   max-width: 1.5vw;
   max-height: 9vh;
@@ -274,7 +273,7 @@ const PublishMessage = styled.div`
   position: absolute;
   top: -40px;
   color: gray;
-  /* padding-bottom: 100px; */
+
   left: 22vw;
 `;
 
@@ -285,7 +284,7 @@ const Infos = styled.table`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  /* border: 0.5px blue solid; */
+
   background-color: silver;
   color: white;
   border-radius: 20px;
@@ -304,6 +303,5 @@ const EtherScanLink = styled(Link)`
     color: blue;
   }
 `;
-
 
 export default Article;

@@ -162,7 +162,7 @@ const SavedMessage = styled.div`
   top: -40px;
   color: gray;
   /* padding-bottom: 100px; */
-  left: 23vw;
+  left: 22.5vw;
 `;
 
 const AuthorHeader = styled.div`

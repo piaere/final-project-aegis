@@ -1,15 +1,22 @@
 import styled from "styled-components";
 import ColorButton from "./buttons/SmallButtonColor";
-import { useContext,useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
+// import SearchBar from "./SearchBar";
 
 const Header = ({ connect }) => {
-  const { accounts, isLoggedIn, ENSName, ENSAvatar, shortenAddy,setNewArticlepublished } =
-    useContext(Context);
+  const {
+    accounts,
+    isLoggedIn,
+    ENSName,
+    ENSAvatar,
+    shortenAddy,
+    setNewArticlepublished,
+  } = useContext(Context);
 
-    const [showText, setShowText] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -18,14 +25,20 @@ const Header = ({ connect }) => {
     return () => clearInterval(interval);
   }, []);
 
+  console.log("accounts[0]", typeof accounts[0]);
+
   return (
     <Wrapper>
-      <LogoLink to={"/aegis/journal"}   onClick={()=>setNewArticlepublished(null)}>
+      <LogoLink
+        to={"/aegis/journal"}
+        onClick={() => setNewArticlepublished(null)}
+      >
         <Left>
           <Aegis>aegis</Aegis>
           {showText ? <Logo></Logo> : <span></span>}
         </Left>
       </LogoLink>
+      {/* <SearchBar /> */}
       <Right>
         <ColorButton
           string={
@@ -42,7 +55,10 @@ const Header = ({ connect }) => {
             {ENSAvatar ? (
               <Avatar src={ENSAvatar} alt="user ENS avatar"></Avatar>
             ) : (
-              <Jazzicon diameter={36} seed={jsNumberForAddress(accounts[0])} />
+              <Jazzicon
+                diameter={36}
+                seed={jsNumberForAddress(accounts[0] || [])}
+              />
             )}
           </Circle>
         ) : null}

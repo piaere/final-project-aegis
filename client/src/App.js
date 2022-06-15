@@ -78,6 +78,7 @@ function App() {
   }, []);
 
   console.log(isLoggedIn);
+  console.log(accounts.length);
 
   // Check if user has a Ethereum Service Name registered
   useEffect(() => {
@@ -126,7 +127,7 @@ function App() {
       let short = accounts[0].slice(0, 5) + "..." + accounts[0].slice(-4);
       setShortenAddy(short);
     }
-  }, [isLoggedIn]);
+  }, [accounts]);
 
   return (
     <Main>
@@ -152,7 +153,6 @@ const Main = styled.main`
   height: 100vh;
   padding-bottom: 10vh;
 
-  background: rgb(238, 174, 202);
   background: linear-gradient(
     352deg,
     rgba(238, 174, 202, 0.7805716036414566) 0%,

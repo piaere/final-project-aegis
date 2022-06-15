@@ -1,25 +1,16 @@
-import { Route, useHistory } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import Article from "./Article";
-import Author from "./Author";
+
 import Journal from "./Journal";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
 import Publish from "./Publish";
 import { Context } from "../Context";
 
-
-
 const Aegis = () => {
-  const { setArticles, setUsers, newArticlepublished,accounts } = useContext(Context);
-
-// useEffect(() => {
-
-// }, [accounts])
-
-
-
+  const { setArticles, setUsers, newArticlepublished } = useContext(Context);
 
   useEffect(() => {
     fetch("/api/get-articles")
@@ -57,9 +48,6 @@ const Aegis = () => {
           </Route>
           <Route path="/aegis/publish">
             <Publish />
-          </Route>
-          <Route path="/aegis/author">
-            <Author />
           </Route>
 
         </Center>
