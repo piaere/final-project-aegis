@@ -15,7 +15,6 @@ const Home = ({ connect }) => {
       "Care",
       "Own",
       "Support",
-      "Echo",
       "Amplify",
       "Inspire",
       "Learn",

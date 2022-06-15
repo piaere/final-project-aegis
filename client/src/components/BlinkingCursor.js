@@ -1,12 +1,10 @@
 import styled, { keyframes } from "styled-components";
 
-const UnderscoreCSS = (speed) => (
-  <Underscore speed={speed}>
+const BlinkingCursor = () => (
+  <Underscore>
     <Logo>_</Logo>
   </Underscore>
 );
-
-export default UnderscoreCSS;
 
 const blink = keyframes`
 0%{opacity:1}
@@ -26,3 +24,5 @@ const Logo = styled.span`
   background-color: #0000ff;
   color: #0000ff;
 `;
+
+export default BlinkingCursor;

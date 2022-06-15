@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import moment from "moment";
-import UnderscoreCSS from "./BlinkingCursor";
+import BlinkingCursor from "./BlinkingCursor";
 
 const Journal = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -142,7 +142,7 @@ const Journal = () => {
     return (
       <Wrapper>
         <Center>
-          <UnderscoreCSS />
+          <BlinkingCursor />
           <Loading>Loading articles ...</Loading>
         </Center>
       </Wrapper>

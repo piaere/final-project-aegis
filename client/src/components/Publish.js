@@ -14,8 +14,9 @@ import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 const LinkTool = require("@editorjs/link");
 const SimpleImage = require("@editorjs/simple-image");
 
+
 var web3 = new Web3(
-  Web3.givenProvider || "ws://some.local-or-remote.node:8546"
+  Web3.givenProvider || "wss://mainnet.infura.io/ws/v3/28696900a2cf490eb160741dc63e4707"
 );
 
 const Publish = () => {

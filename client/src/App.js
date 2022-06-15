@@ -38,6 +38,7 @@ function App() {
         const res = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
+
         setAccounts(res);
       } catch (error) {
         console.log(error);

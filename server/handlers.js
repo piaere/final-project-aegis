@@ -38,8 +38,6 @@ const getArticles = async (req, res) => {
 const getArticle = async (req, res) => {
   const articleId = req.params.id;
 
-  await console.log(articleId);
-
   await client.connect();
   console.log("connected!");
 
@@ -75,8 +73,6 @@ const connectUser = async (req, res) => {
   const user = req.body;
   const userKey = user.publicKey;
 
-  console.log("user", user);
-
   await client.connect();
   console.log("connected!");
 
@@ -111,8 +107,6 @@ const publishArticle = async (req, res) => {
   const newArticle = req.body;
   const id = uuidv4();
   newArticle.id = id;
-
-  console.log(newArticle);
 
   await client.connect();
   console.log("connected!");

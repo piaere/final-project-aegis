@@ -2,7 +2,6 @@ import { Route } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import Article from "./Article";
-
 import Journal from "./Journal";
 import Navbar from "./Navbar";
 import Profile from "./Profile";

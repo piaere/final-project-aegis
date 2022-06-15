@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import ColorButton from "./buttons/SmallButtonColor";
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-import UnderscoreCSS from "./BlinkingCursor";
-
+import BlinkingCursor from "./BlinkingCursor";
 // import SearchBar from "./SearchBar";
 
 const Header = ({ connect }) => {
@@ -28,7 +27,7 @@ const Header = ({ connect }) => {
           <Aegis>aegis</Aegis>
           <Lower>
             {" "}
-            <UnderscoreCSS speed={0.5} />
+            <BlinkingCursor />
           </Lower>
         </Left>
       </LogoLink>

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Context } from "../Context";
 import ColorButton from "./buttons/SmallButtonColor";
 import Web3 from "web3";
@@ -8,10 +8,7 @@ import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
 import { FiExternalLink } from "react-icons/fi";
 import moment from "moment";
-
-// import ImageTool from "@editorjs/image";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
-
 import { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 const LinkTool = require("@editorjs/link");
@@ -37,6 +34,7 @@ const Article = () => {
         currentEditor && currentEditor.render(article.data);
       })
       .catch((error) => console.log("Error: ", error));
+    // eslint-disable-next-line
   }, [articleId, currentEditor]);
 
   useEffect(() => {
@@ -60,9 +58,9 @@ const Article = () => {
         embed: Embed,
         linkTool: {
           class: LinkTool,
-          config: {
-            // endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
-          },
+          // config: {
+          // endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
+          // },
         },
       },
       readOnly: true,
@@ -105,6 +103,7 @@ const Article = () => {
   let shortenSig;
   let time;
 
+  // Setting the author section
   if (author) {
     avatar = author.ENSAvatar;
     authorName = author.ENSName;
@@ -277,7 +276,7 @@ const PublishMessage = styled.div`
   left: 22vw;
 `;
 
-const Infos = styled.table`
+const Infos = styled.div`
   margin-top: 6vh;
   padding: 5px;
   color: gray;
@@ -291,7 +290,7 @@ const Infos = styled.table`
   padding-left: 25px;
 `;
 
-const Cell = styled.td`
+const Cell = styled.span`
   padding: 5px;
 `;
 
