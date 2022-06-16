@@ -6,7 +6,7 @@ import EditorJS from "@editorjs/editorjs";
 import List from "@editorjs/list";
 import Header from "@editorjs/header";
 import Embed from "@editorjs/embed";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiCopy } from "react-icons/fi";
 import moment from "moment";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import { useState, useEffect, useContext } from "react";
@@ -154,7 +154,14 @@ const Article = () => {
           </EtherScanLink>
         </Cell>
         <Cell>Signature :</Cell>
-        <Cell>{shortenSig}</Cell>
+        <SigLink
+          onClick={() => {
+            navigator.clipboard.writeText(article.signature);
+          }}
+        >
+          <Cell>{shortenSig}</Cell>
+          <FiCopy />
+        </SigLink>
       </Infos>
     </Wrapper>
   );
@@ -295,6 +302,14 @@ const Cell = styled.span`
 `;
 
 const EtherScanLink = styled(Link)`
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    color: blue;
+  }
+`;
+const SigLink = styled(Link)`
   color: white;
   text-decoration: none;
 

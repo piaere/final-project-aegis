@@ -21,8 +21,11 @@ const Journal = () => {
 
     const preview = [];
 
+    //Reversing the array order to diplay newest publications first
+    const reversedOrderArticles = [...articles].reverse();
+
     // Get the first header, paragraph and image to display
-    articles.forEach((article) => {
+    reversedOrderArticles.forEach((article) => {
       const firstHeaderBlock = article.data.blocks.find(
         (block) => block.type === "header"
       );
