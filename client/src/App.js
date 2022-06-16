@@ -32,19 +32,15 @@ function App() {
   } = useContext(Context);
 
   // Connect app to user's wallet account (on buttons click)
-  const connect = async () => {
-    if (accounts.length === 0) {
-      try {
-        const res = await window.ethereum.request({
-          method: "eth_requestAccounts",
+  const connect = () => {
+    if (window.ethereum) {
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then((result) => {
+          setAccounts(result);
         });
-
-        setAccounts(res);
-      } catch (error) {
-        console.log(error);
-      }
     } else {
-      alert("already connected!");
+      alert("please install Metamask!");
     }
   };
 

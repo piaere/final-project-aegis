@@ -16,7 +16,6 @@ const SearchBar = () => {
     setText("");
   };
 
-
   const handleClickAway = () => {
     setText("");
   };

@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
-
-
-
 const Button = ({ string, connect }) => {
-  return <StyledButton onClick={()=>connect()}>{string}</StyledButton>;
+  return <StyledButton onClick={() => connect()}>{string}</StyledButton>;
 };
 
 const StyledButton = styled.button`
@@ -19,7 +16,6 @@ const StyledButton = styled.button`
   border-radius: 50px;
   margin-top: 8vh;
   cursor: pointer;
-
 `;
 
 export default Button;
