@@ -9,7 +9,7 @@ The front-end has been built using React, the backend with Node.js and I’m usi
 
 Thanks to the characteristics of blockchain technology, high security is maintain for authentification and paiements thruout the website. No sensitive personal data, email, password needs to be stored, to the exception of the articles themselves, the users public addresses as well as public informations provided by the Ethereum Name Service API if the user has its account registered.
 
-The publication section is using Editor.js : https://editorjs.io/
+The publication section is using a block-styled editor, Editor.js : https://editorjs.io/
 
 4 distinct sections :
 
