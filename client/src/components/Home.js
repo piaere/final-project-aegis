@@ -28,11 +28,12 @@ const Home = ({ connect }) => {
       "Build",
       "Research",
       "Publish",
+      "Verify",
     ];
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * wordList.length);
       setLastWord(wordList[randomIndex]);
-    }, 500);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
