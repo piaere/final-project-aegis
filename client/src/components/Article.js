@@ -58,9 +58,6 @@ const Article = () => {
         embed: Embed,
         linkTool: {
           class: LinkTool,
-          // config: {
-          // endpoint: "http://localhost:8008/fetchUrl", // Your backend endpoint for url data fetching,
-          // },
         },
       },
       readOnly: true,
@@ -77,7 +74,7 @@ const Article = () => {
         setAuthor(user);
       }
     });
-  }, [authorKey, users]);
+  }, [authorKey, users, articleId]);
 
   // Tip Functionnality
   const tip = () => {
@@ -211,6 +208,7 @@ const EditorSection = styled.div`
   border-radius: 20px;
 `;
 const AuthorHeader = styled.div`
+  margin-top: 1.2em;
   margin-bottom: 2em;
   display: flex;
   flex-direction: row;

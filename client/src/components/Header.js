@@ -5,7 +5,7 @@ import { Context } from "../Context";
 import { NavLink } from "react-router-dom";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import BlinkingCursor from "./BlinkingCursor";
-// import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar";
 
 const Header = ({ connect }) => {
   const {
@@ -31,7 +31,7 @@ const Header = ({ connect }) => {
           </Lower>
         </Left>
       </LogoLink>
-      {/* <SearchBar /> */}
+      <SearchBar />
       <Right>
         <ColorButton
           string={
@@ -71,6 +71,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  /* background-color: transparent; */
+  z-index: 2;
 `;
 const Left = styled.span`
   display: grid;

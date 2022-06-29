@@ -158,6 +158,7 @@ const Wrapper = styled.div`
   border: solid blue 0.5px;
   padding: 0.5em 1.5em;
   border-radius: 20px;
+  margin: 2em 0;
 `;
 
 const Preview = styled.div`

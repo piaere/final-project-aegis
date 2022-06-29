@@ -2,23 +2,19 @@ import styled from "styled-components";
 import { useContext, useState, useEffect } from "react";
 import { Context } from "../Context";
 import { useHistory } from "react-router-dom";
-import ClickAwayListener from "react-click-away-listener";
 
 const SearchBar = () => {
-  const { articles } = useContext(Context);
-  let history = useHistory();
+  const { articles, isLoggedIn } = useContext(Context);
+  const history = useHistory();
   const [articlesData, setArticlesData] = useState([]);
   const [text, setText] = useState("");
   const [results, setResults] = useState([]);
-  let resultArr = [];
+
   const handleSelect = (id) => {
-    history(`aegis/article/${id}`);
+    history.push(`/aegis/article/${id}`);
     setText("");
   };
 
-  const handleClickAway = () => {
-    setText("");
-  };
   useEffect(() => {
     let filteredData = [];
 
@@ -31,98 +27,86 @@ const SearchBar = () => {
     articleBlocks.forEach((article) => {
       const blocks = article.blocks;
 
-      filteredBlocks = blocks.filter((block) => block.type == "header");
+      filteredBlocks = blocks.filter((block) => block.type === "header");
 
       filteredBlocks.forEach((block) => {
         filteredData.push({ header: block.data.text, id: article.id });
       });
-      setArticlesData([...filteredData]);
-      console.log("filteredData", filteredData);
     });
+
+    setArticlesData([...filteredData]);
   }, [articles]);
 
-  console.log(articlesData);
-
   useEffect(() => {
-    articlesData
-      .filter((item) => item.header.toLowerCase().includes(text.toLowerCase()))
-      .map((result) => {
-        resultArr.push(result);
-        setResults(resultArr);
-      });
+    let resultArr = [];
+    if (articlesData.length > 0) {
+      articlesData
+        .filter((item) =>
+          item.header.toLowerCase().includes(text.toLowerCase())
+        )
+        .forEach((result) => {
+          resultArr.push(result);
+          setResults(resultArr);
+        });
+    }
   }, [text]);
+
   return (
     <>
-      <Wrapper>
-        <InputWrapper>
-          <Input
-            type="text"
-            value={text}
-            placeholder="Search"
-            onChange={(e) => {
-              setText(e.target.value);
-            }}
-          />
-        </InputWrapper>
-        {text && (
-          <ClickAwayListener onClickAway={handleClickAway}>
+      {isLoggedIn && (
+        <Wrapper>
+          <InputWrapper>
+            <Input
+              type="text"
+              value={text}
+              placeholder="Search"
+              onChange={(e) => {
+                setText(e.target.value);
+              }}
+            />
+          </InputWrapper>
+          {text && (
             <>
-              <div>
-                <Ul>
-                  {results.map((element) => {
-                    return (
-                      <Li
-                        key={element._id}
-                        onClick={() => handleSelect(element._id)}
-                      >
-                        <span>{element.name}</span>
-                      </Li>
-                    );
-                  })}
-                </Ul>
-              </div>
+              <Ul>
+                {results.map((element) => {
+                  return (
+                    <Li
+                      key={element.id}
+                      onClick={() => handleSelect(element.id)}
+                    >
+                      <span>{element.header}</span>
+                    </Li>
+                  );
+                })}
+              </Ul>
             </>
-          </ClickAwayListener>
-        )}
-      </Wrapper>
+          )}
+        </Wrapper>
+      )}
     </>
   );
 };
 
-const InputWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  span {
-    display: flex;
-    align-items: center;
-    margin-right: 0.5em;
-  }
-`;
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 40vw;
+  background-color: #fff7ff;
 `;
+
+const InputWrapper = styled.div``;
 const Ul = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1em;
+  position: absolute;
+  margin-top: 1px;
   padding: 0.5em;
-  width: 77%;
-  background-color: white;
+  width: 31%;
+  background-color: #fffaff;
   max-height: 200px;
-  box-sizing: border-box;
-  overflow: visible;
   overflow-y: scroll;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  z-index: 500;
+  border-radius: 5px;
 `;
 const Li = styled.li`
   width: 100%;
-  padding: 0.25em;
-  background-color: white;
+  padding: 0.5em;
+  cursor: pointer;
   font-size: 0.85em;
   font-weight: 300;
   &:hover {
@@ -130,9 +114,16 @@ const Li = styled.li`
   }
 `;
 const Input = styled.input`
+  z-index: 1;
   padding: 0.4em;
   width: 30vw;
   height: 1.5em;
+  background-color: transparent;
+  font-style: italic;
+  font-weight: 100;
+  border: solid 0.5px blue;
+  border-radius: 5px;
+  padding: 15px;
   &:focus {
     border: 2px solid var(--color-light-blue);
   }

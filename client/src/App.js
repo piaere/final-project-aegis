@@ -74,13 +74,15 @@ function App() {
 
   // Check if user has a Ethereum Service Name registered
   useEffect(() => {
-    const getENSName = async () => {
-      let name = await ens.getName(accounts[0]);
-      const ensName = name.name;
-      // If yes, stating the name
-      setENSName(ensName);
-    };
-    getENSName();
+    if (accounts.length > 0) {
+      const getENSName = async () => {
+        let name = await ens.getName(accounts[0]);
+        const ensName = name.name;
+        // If yes, stating the name
+        setENSName(ensName);
+      };
+      getENSName();
+    }
   }, [accounts]);
 
   // Check if user has a Ethereum Service Name avatar
