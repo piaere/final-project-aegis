@@ -3,6 +3,8 @@ Concordia U full-stack web developer bootcamp - final project : aegis
 
 aegis is a non-custodial open plateforme for  writers and readers to interact directly. Users can support their favourite creators with a p2p tipping function. Log in and paiements are done using MetaMask and the Ethereum blockchain. 
 
+Watch demo here : https://youtu.be/twCqmOA_QwQ
+
 <img width="1296" alt="Screen Shot 2022-06-23 at 06 41 21" src="https://user-images.githubusercontent.com/98769814/175210770-7ae93bf1-051f-4f22-bc32-ab7007ce3ae0.png">
 
 The front-end has been built using React, the backend with Node.js and I’m using Mongodb for the database.
