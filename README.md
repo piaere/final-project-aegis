@@ -1,7 +1,7 @@
 # aegis
 Concordia U full-stack web developer bootcamp - final project : aegis
 
-aegis is a non-custodial open plateforme for  writers and readers to interact directly. Users can support their favourite creators with a p2p tipping function. Log in and paiements are done using MetaMask and the Ethereum blockchain. 
+aegis is a non-custodial open plateform for  writers and readers to interact directly. Users can support their favourite creators with a p2p tipping function. Log in and paiements are done using MetaMask and the Ethereum blockchain. 
 
 Watch demo here : https://youtu.be/twCqmOA_QwQ
 
