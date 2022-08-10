@@ -19,3 +19,5 @@ The publication section is using a block-styled editor, Editor.js : https://edit
 2. Journal - Where you can scroll thru the feed and see of all articles thumbnails
 3. Publish - Where the user can write, save, edit and publish their article
 4. Article - Where an article is fully displayed, with a tipping functionality
+
+Update : Journal now has a search bar
